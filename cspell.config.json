@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+      "mkdirp",
+      "tsmerge",
+      "githubusercontent",
+      "streetsidesoftware",
+      "noopener",
+      "noreferrer"
+  ],
+  // flagWords - list of words to be always considered incorrect
+  "flagWords": [
+      "hte"
+  ],
+  "ignorePaths": ["node_modules/**", "src/service-worker.js", "src/serviceWorkerRegistration.js", "src/reportWebVitals.js"]
+}
