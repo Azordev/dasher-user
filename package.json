@@ -1,14 +1,15 @@
 {
   "name": "dasher-user",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "@apollo/client": "^3.4.15",
+    "google-map-react": "^2.1.10",
+    "graphql": "^15.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
+    "styled-components": "^5.3.1",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
@@ -24,16 +25,18 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "eject": "react-app-rewired eject",
+    "cspell": "cspell run src/**/*.js",
+    "lint:css": "stylelint --config .stylelintrc.json './**/*.styled.jsx'",
+    "lint": "eslint src --color --cache -f table",
+    "lint:f": "eslint src --fix",
+    "prettier": "prettier src  --write --config ./.prettierrc.js",
+    "test": "jest",
+    "test:c": "jest --coverage --watchAll=false --ci --passWithNoTests",
+    "test:cw": "jest --coverage --watchAll",
+    "ci": "npm run lint:css && npm run lint && npm run prettier && npm run test:c"
   },
   "browserslist": {
     "production": [
@@ -46,5 +49,25 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@arkweid/lefthook": "^0.7.6",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "cspell": "^5.11.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.26.0",
+    "prettier": "^2.4.1",
+    "react-app-rewired": "^2.1.8",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "stylelint-webpack-plugin": "^3.0.1"
   }
 }

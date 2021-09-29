@@ -1,0 +1,30 @@
+# cSpell:word commitlint typecheck
+
+parallel: true
+  commands:
+    eslint:
+      glob: '*.{js,jsx}'
+      run: npm run lint:fix {staged_files}
+    stylelint:
+      glob: '*.{js,jsx, css}' # For CSS-in-JS
+      run: npm run lint:css {staged_files}
+    spelling:
+      glob: '*.{js,jsx,md}'
+      run: npm run cspell {staged_files}
+    markdown-link-check:
+      glob: '*.md'
+      run: npx markdown-link-check {staged_files}
+
+commit-msg:
+  parallel: true
+  commands:
+    lint-commit-msg:
+      run: npx commitlint --edit
+    spell-check:
+      run: npn cspell --no-summary {1}
+
+pre-push:
+  parallel: true
+  commands:
+    test:
+      run: npm test
