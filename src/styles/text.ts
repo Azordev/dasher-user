@@ -1,6 +1,6 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
-const text = {
+export const text = {
   xs: css`
     font-size: 0.75rem;
     line-height: 1rem;
@@ -53,36 +53,35 @@ const text = {
     font-size: 8rem;
     line-height: 1;
   `,
-  400: css`
+  '400': css`
     font-weight: 400;
   `,
-  500: css`
+  '500': css`
     font-weight: 500;
   `,
-  600: css`
+  '600': css`
     font-weight: 600;
   `,
-  700: css`
+  '700': css`
     font-weight: 700;
   `,
-  800: css`
+  '800': css`
     font-weight: 800;
   `,
   primary: css`
-    color: var(--primary);
+    color: var(--dasher-primary);
   `,
   secondary: css`
-    color: var(--secondary);
+    color: var(--dasher-primary);
   `,
   black: css`
-    color: var(--black);
+    color: var(--dasher-black);
   `,
   white: css`
-    color: var(--white);
+    color: var(--dasher-white);
   `,
   danger: css`
-    color: var(--danger);
+    color: var(--dasher-danger);
   `,
-}
-
-export default text
+  test: 'color: red;',
+};

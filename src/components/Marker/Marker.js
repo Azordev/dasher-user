@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types'
-import Wrapper from './Marker.styled'
+import PropTypes from 'prop-types';
+import Wrapper from './Marker.styled';
 
 // InfoWindow component
 const InfoWindow = props => {
-  const { place } = props
+  const { place } = props;
   const infoWindowStyle = {
     position: 'relative',
     bottom: 150,
@@ -14,7 +14,7 @@ const InfoWindow = props => {
     padding: 10,
     fontSize: 14,
     zIndex: 100,
-  }
+  };
 
   return (
     <div style={infoWindowStyle}>
@@ -31,18 +31,18 @@ const InfoWindow = props => {
       <div style={{ fontSize: 14, color: 'grey' }}>{'$'.repeat(place.price_level)}</div>
       <div style={{ fontSize: 14, color: 'green' }}>{place.opening_hours.open_now ? 'Open' : 'Closed'}</div>
     </div>
-  )
-}
+  );
+};
 
 const Marker = ({ place, show, onClick }) => (
   <Wrapper alt={place.name} show={show} onClick={onClick}>
     {show && <InfoWindow place={place} />}
   </Wrapper>
-)
+);
 
 Marker.defaultProps = {
   onClick: null,
-}
+};
 
 InfoWindow.propTypes = {
   place: PropTypes.shape({
@@ -56,7 +56,7 @@ InfoWindow.propTypes = {
       open_now: PropTypes.bool,
     }),
   }).isRequired,
-}
+};
 
 Marker.propTypes = {
   onClick: PropTypes.func,
@@ -71,6 +71,6 @@ Marker.propTypes = {
       open_now: PropTypes.bool,
     }),
   }).isRequired,
-}
+};
 
-export default Marker
+export default Marker;

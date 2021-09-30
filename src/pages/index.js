@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Chat from './Chat'
-import Check from './Check'
-import Confirm from './Confirm'
-import Delivery from './Delivery'
-import Error from './Error'
-import Home from './Home'
-import NotFound from './NotFound'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Chat from './Chat';
+import Check from './Check';
+import Confirm from './Confirm';
+import Delivery from './Delivery';
+import Error from './Error';
+import Home from './Home';
+import NotFound from './NotFound';
 
 const Pages = () => (
   <BrowserRouter>
@@ -33,6 +33,6 @@ const Pages = () => (
       </Route>
     </Switch>
   </BrowserRouter>
-)
+);
 
-export default Pages
+export default Pages;

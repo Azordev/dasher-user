@@ -148,6 +148,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 |:---:|:---:|
 | ![author-pic][] | ![banner][] |
 
+| [Kembert Nieves][author-github] | ![email-icon][] Email me to [contact@kembertnieves.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
+|:---:|:---:|
+| ![author-pic][] | ![banner][] |
+
 ## Contributing
 
 [![contributions welcome][contributions-welcome]][issues-url]

@@ -1,8 +1,8 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import PropTypes from 'prop-types'
-import { Normalize } from 'styled-normalize'
-import colors from './colors'
-import { breakpoints } from './breakpoints'
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import PropTypes from 'prop-types';
+import { Normalize } from 'styled-normalize';
+import { colors } from './colors';
+import { breakpoints } from './breakpoints';
 
 const GlobalStyles = createGlobalStyle`
 :root {
@@ -35,12 +35,12 @@ h1, h2, h3, h4, h5, h6, p, span, b, strong, em, i, a {
   letter-spacing: 0em;
   overflow-wrap: break-word;
 }
-`
+`;
 
 const theme = {
   colors,
   breakpoints,
-}
+};
 
 const Theme = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -48,10 +48,10 @@ const Theme = ({ children }) => (
     <GlobalStyles />
     {children}
   </ThemeProvider>
-)
+);
 
 Theme.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Theme
+export default Theme;

@@ -1,6 +1,6 @@
-import { css } from 'styled-components'
-import breakpoints from './breakpoints'
-import text from './text'
+import { css } from 'styled-components';
+import { breakpoints } from './breakpoints';
+import { text } from './text';
 
 export const border = ({ all, x = all, y = all, bottom = y, left = x, right = x, top = y }) => css`
   border-block-end: ${bottom};
@@ -13,7 +13,7 @@ export const border = ({ all, x = all, y = all, bottom = y, left = x, right = x,
     border-right: ${right};
     border-top: ${top};
   }
-`
+`;
 
 export const rounded = ({ all, bl = all, br = all, tl = all, tr = all }) => css`
   border-end-end-radius: ${br};
@@ -26,7 +26,7 @@ export const rounded = ({ all, bl = all, br = all, tl = all, tr = all }) => css`
     border-top-left-radius: ${tl};
     border-top-right-radius: ${tr};
   }
-`
+`;
 
 export const m = ({ all, x = all, y = all, bottom = y, left = x, right = x, top = y }) => css`
   margin-block-end: ${bottom};
@@ -39,7 +39,7 @@ export const m = ({ all, x = all, y = all, bottom = y, left = x, right = x, top 
     margin-right: ${right};
     margin-top: ${top};
   }
-`
+`;
 
 export const p = ({ all, x = all, y = all, bottom = y, left = x, right = x, top = y }) => css`
   padding-block-end: ${bottom};
@@ -52,7 +52,7 @@ export const p = ({ all, x = all, y = all, bottom = y, left = x, right = x, top 
     padding-right: ${right};
     padding-top: ${top};
   }
-`
+`;
 export const size = ({ height, maxHeight, maxWidth, minHeight, minWidth, width }) => css`
   block-size: ${height};
   inline-size: ${width};
@@ -70,20 +70,20 @@ export const size = ({ height, maxHeight, maxWidth, minHeight, minWidth, width }
     min-width: ${minWidth};
     width: ${width};
   }
-`
+`;
 
 export const mediaQuery = Object.keys(breakpoints).reduce((accumulator, label) => {
   accumulator[label] = (...args) => css`
     @media (min-width: ${breakpoints[label]}) {
       ${css(...args)};
     }
-  `
-  return accumulator
-}, {})
+  `;
+  return accumulator;
+}, {});
 
 export const hidden = css`
   display: none;
-`
+`;
 
 export const bg = {
   white: css`
@@ -95,6 +95,6 @@ export const bg = {
   secondary: css`
     background-color: var(--dasher-secondary);
   `,
-}
+};
 
-export { text }
+export { text };
