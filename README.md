@@ -15,10 +15,7 @@
 | [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url] |
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
-## Live project at [healthy-foodie.surge.sh](http://healthy-foodie.surge.sh)
-
 - [dasher-user - Delivery Maps for your users](#dasher-user---delivery-maps-for-your-users)
-  - [Live project at healthy-foodie.surge.sh](#live-project-at-healthy-foodiesurgesh)
   - [The Project](#the-project)
     - [Features](#features)
     - [Built With](#built-with)
@@ -169,6 +166,7 @@ Feel free to check the [issues page][issues-url].
 - Favicon from [favicon.io](https://favicon.io/emoji-favicons/)
 - Production deployment using [Netlify](https://app.netlify.com/sites/azordev-dasher-user/overview)
 - <https://www.seoptimer.com/meta-tag-generator>
+- <https://dev.to/nitzano/linting-docker-containers-2lo6?utm_source=lefthook>
 
 ## License
 
