@@ -186,12 +186,9 @@ Feel free to fork this project and improve it!
 [stars-url]: https://github.com/Azordev/dasher-user/stargazers
 [issues-open-shield]: https://img.shields.io/github/issues/Azordev/dasher-user?style=for-the-badge
 [issues-closed-shield]: https://img.shields.io/github/issues-closed/Azordev/dasher-user?style=for-the-badge
-[badge-framework]: https://img.shields.io/badge/store-Redux-000?style=for-the-badge&logo=redux
-[framework-url]: https://redux.js.org/
 [react]: https://img.shields.io/badge/React-16+-61DAFB?style=for-the-badge&logo=react
 [javascript]: https://img.shields.io/badge/JAVASCRIPT-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript
 [css]: https://img.shields.io/badge/style-CSS-1572B6?style=for-the-badge&logo=css3
-[bootstrap]: https://img.shields.io/badge/style-Bootstrap4-563D7C?style=for-the-badge&logo=bootstrap
 [contributions-welcome]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge
 [issues-url]: https://github.com/Azordev/dasher-user/issues
 [badge-apache]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge
