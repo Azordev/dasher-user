@@ -23,6 +23,17 @@ jobs:
         with:
           node-version: 14.17
 
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --ignore-scripts
+
       - name: Lint Code Base
         uses: github/super-linter@v4.8.0
         env:
@@ -33,11 +44,11 @@ jobs:
           VALIDATE_JAVASCRIPT_ES: true
           VALIDATE_CSS: true
 
-      - name: npm ci
-        run: npm ci
       - name: test
         run: npm test
       - name: build
         run: npm run build --if-present
+        with:
+          node-version: '14'
       - name: gitleaks-action
         uses: zricethezav/gitleaks-action@master
