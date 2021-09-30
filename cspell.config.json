@@ -1,19 +1,24 @@
 {
   "version": "0.2",
-  // language - current active spelling language
-  "language": "en",
-  // words - list of words to be always considered correct
+  "language": "en,es",
   "words": [
-      "mkdirp",
-      "tsmerge",
-      "githubusercontent",
-      "streetsidesoftware",
-      "noopener",
-      "noreferrer"
+    "stylelint",
+    "quickstart",
+    "linkedin",
+    "lefthook",
+    "configurated",
+    "noopener",
+    "noreferrer"
   ],
-  // flagWords - list of words to be always considered incorrect
   "flagWords": [
-      "hte"
+    "hte"
   ],
-  "ignorePaths": ["node_modules/**", "src/service-worker.js", "src/serviceWorkerRegistration.js", "src/reportWebVitals.js"]
+  "ignorePaths": [
+    "node_modules/**",
+    "public/**",
+    "src/service-worker.js",
+    "src/serviceWorkerRegistration.js",
+    "src/reportWebVitals.js",
+    "package.json"
+  ]
 }

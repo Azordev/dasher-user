@@ -1,6 +1,6 @@
 {
   "name": "dasher-user",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.4.15",
@@ -28,15 +28,16 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "eject": "react-app-rewired eject",
-    "cspell": "cspell run src/**/*.js",
-    "lint:css": "stylelint --config .stylelintrc.json './**/*.styled.jsx'",
-    "lint": "eslint src --color --cache -f table",
-    "lint:f": "eslint src --fix",
-    "prettier": "prettier src  --write --config ./.prettierrc.js",
-    "test": "jest",
-    "test:c": "jest --coverage --watchAll=false --ci --passWithNoTests",
+    "spelling": "cspell run src/**/*.js",
+    "lint:css": "stylelint --config .stylelintrc.json './**/*.styled.jsx'; echo 'CSS fine! 💅'",
+    "lint:js": "eslint src --color --cache -f table; echo 'JS format fine! 🧪✓'",
+    "lint:js:fix": "eslint src --fix",
+    "prettier": "prettier src  --write --config ./.prettierrc.js; echo 'JS style fine! 📋✓'",
+    "test": "jest --passWithNoTests",
+    "test:c": "jest --coverage --watchAll=false --ci --passWithNoTests; echo 'JS tests fine! 📋✓'",
     "test:cw": "jest --coverage --watchAll",
-    "ci": "npm run lint:css && npm run lint && npm run prettier && npm run test:c"
+    "ci": "npm run lint:css && npm run lint && npm run prettier && npm run test:c",
+    "lefthook": "lefthook run lint"
   },
   "browserslist": {
     "production": [
@@ -52,6 +53,8 @@
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.6",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
