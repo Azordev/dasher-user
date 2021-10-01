@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Error = ({ errorInfo = { errorInfo: undefined} }) => (
+const Error = ({ errorInfo = { componentStack: [ 'error' ] } }) => (
   <div>
     <p>
       There was an error in loading this page.{' '}
@@ -15,7 +15,7 @@ const Error = ({ errorInfo = { errorInfo: undefined} }) => (
     </p>
     <details className="error-details">
       <summary>Click for error details</summary>
-      {errorInfo && errorInfo.componentStack.toString()}
+      {errorInfo && errorInfo?.componentStack.toString()}
     </details>
   </div>
 )
