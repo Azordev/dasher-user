@@ -16,13 +16,13 @@ const Pages = () => (
       <Route path="/check">
         <Check />
       </Route>
-      <Route path="/delivery/:id">
+      <Route path="/delivery/:id?">
         <Delivery />
       </Route>
-      <Route path="/chat/:id">
+      <Route path="/chat/:id?">
         <Chat />
       </Route>
-      <Route path="/confirm/:id">
+      <Route path="/confirm/:id?">
         <Confirm />
       </Route>
       <Route path="/error">
