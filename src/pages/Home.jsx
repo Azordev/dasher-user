@@ -1,7 +1,14 @@
+import styled from "styled-components"
+import { text, bg } from "../styles/mixins"
+
+const Title = styled.h1`
+  ${ [text.test, text['4xl']] }
+  ${ bg.primary }
+`
 
 const Home = () => (
   <div>
-    <h1>Home</h1>
+    <Title>Home</Title>
   </div>
 )
 

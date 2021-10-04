@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom'
 import Pages from './pages'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
+import { Theme } from './styles'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Pages />
+    <Theme>
+      <Pages />
+    </Theme>
   </React.StrictMode>,
   document.getElementById('root'),
 )
