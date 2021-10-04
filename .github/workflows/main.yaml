@@ -48,7 +48,5 @@ jobs:
         run: npm test
       - name: build
         run: npm run build --if-present
-        with:
-          node-version: '14'
       - name: gitleaks-action
         uses: zricethezav/gitleaks-action@master
