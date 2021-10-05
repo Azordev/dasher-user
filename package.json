@@ -74,7 +74,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-standard": "22.0.0",
     "stylelint-processor-styled-components": "1.10.0",
-    "stylelint-webpack-plugin": "3.0.1"
+    "stylelint-webpack-plugin": "2.2.2"
   },
   "watch": {
     "serve": "src/service-worker.js"
