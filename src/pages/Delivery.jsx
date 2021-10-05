@@ -2,7 +2,8 @@ import { useParams, useHistory } from 'react-router-dom';
 import assistant from "../assents/assistant.png";
 import chat from "../assents/chat.png";
 import send from "../assents/send.png";
-import { MdArrowBackIos } from 'react-icons/md';
+import arrow from "../assents/arrow-left.svg";
+import gps from "../assents/gps-icon.svg";
 
 
 const Delivery = () => {
@@ -14,23 +15,19 @@ const Delivery = () => {
   }
 
   return (
-    <section className="delivery-container">
-      <div className="delivery-head">
-        <h1>Delivery</h1>
-        <MdArrowBackIos color={ "#fff" }/>
-        <h2>Recogiendo</h2>
-        <h5>Nuestro Dasher esta recogiendo su envío...</h5>
+    <div>
+      <div className="delivery-header">
+        <img src={arrow} alt="Arrow left"/>
         <img src={chat} alt="Chat"/>
       </div>
-
       <div className="delivery-footer">
+        <img src={gps} alt="Gps icon"/>
         <img src={assistant} alt="Central Dasher"/>
       </div>
-      
-      
-      <img src={send} alt="Send"/>
-      
-    </section>
+      <div className="modal-pick-up">
+        <img src={send} alt="Send"/>
+      </div>
+    </div>
   )
 }
 

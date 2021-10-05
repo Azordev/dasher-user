@@ -1,7 +1,11 @@
 import { useParams, useHistory } from "react-router-dom";
-import deliveryManPurple from "../assents/delivery-chat-purple.png";
-import { FiStar } from "react-icons/fi";
-import { AiOutlineClose } from "react-icons/ai";
+import note from "../assents/note.png";
+import handshake from "../assents/handshake.png";
+import RatingMan from "../assents/man-calification.png"
+import arrow from "../assents/arrow-left.svg";
+import star from "../assents/star.svg";
+import close from "../assents/close-icon.svg";
+
 
 const Confirm = () => {
   const { id } = useParams()
@@ -13,14 +17,19 @@ const Confirm = () => {
 
   return (
     <div>
-      <h1>Confirm</h1>
-      <img src={deliveryManPurple} alt="Delivery man icon"/>
-      <FiStar 
-        color={ "#ffcc00" }
-      />
-      <AiOutlineClose
-        color={ "#d5d5d5" }
-      />
+      <div className="confirm-header">
+        <img src={arrow} alt="Arrow left"/>
+        <img src={note} alt="Note icon"/>
+      </div>
+      <div className="calification-modal">
+        <img src={close} alt="Close icon"/>
+        <img src={RatingMan} alt="Delivery man"/>
+        <img src={star} alt="Stars rating"/>
+      </div>
+      <div className="thanks-modal">
+        <img src={close} alt="Close icon"/>
+        <img src={handshake} alt="Handshake"/>
+      </div>
     </div>
   )
 }

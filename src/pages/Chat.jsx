@@ -1,6 +1,7 @@
 import { useParams, useHistory } from "react-router-dom";
 import deliveryManWhite from "../assents/delivery-chat-white.png";
-import deliveryManPurple from "../assents/delivery-chat-purple.png";
+import assistant from "../assents/asistant-chat.png";
+import sendButton from "../assents/send-chat.png";
 import userIcon from "../assents/user-icon.png";
 
 const Chat = () => {
@@ -15,8 +16,9 @@ const Chat = () => {
     <div>
       <h1>Chat</h1>
       <img src={deliveryManWhite} alt="Delivery man icon"/>
-      <img src={deliveryManPurple} alt="Delivery man icon"/>
+      <img src={assistant} alt="Asistant icon"/>
       <img src={userIcon} alt="User icon"/>
+      <img src={sendButton} alt="Send button"/>
     </div>
   )
 }

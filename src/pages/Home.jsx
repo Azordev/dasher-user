@@ -9,9 +9,7 @@ const Title = styled.h1`
 
 const Home = () => (
   <div>
-    <Title>Home</Title>
-    <h1>Hola!</h1>
-    <p>Revisemos como viene tu envío</p>
+    <Title>Hola!</Title>
     <img src={deliveryMan} alt="Delivery man"/>
   </div>
 )
