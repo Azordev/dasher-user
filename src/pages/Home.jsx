@@ -9,22 +9,35 @@ const Title = styled.h1`
 `
 
 const LatestCordenates = ({ packageId }) => {
-  const { data, loading } = useSubscription(GET_PACKAGE_INFORMATION_SUBSCRIPTION)
+  console.log(packageId)
+  const { data, error, loading } = useSubscription(GET_PACKAGE_INFORMATION_SUBSCRIPTION, {
+    variables: { package_code: packageId },
+  })
+  console.log(data)
+
+  if (error)
+    return (
+      <pre>
+        Error in GET_PACKAGE_INFORMATION_QUERY
+        {JSON.stringify(error, null, 2)}
+      </pre>
+    )
   return (
     <h4>
       Current cordenates:{' '}
-      {!loading && (
+      {!loading && data.packages[0] ?(
         <pre>
           Lat:{data.packages[0].current_lat}, Lon:{data.packages[0].current_lon}
         </pre>
-      )}
+      ):<span>No data</span>}{' '}
     </h4>
   )
 }
 
 const GetPackageInformationQuery = ({ packageId }) => {
+  console.log(packageId)
   const { loading, error, data } = useQuery(GET_PACKAGE_INFORMATION_QUERY, {
-    variables: { package_id: packageId },
+    variables: { package_code: packageId },
   })
 
   if (loading) return <pre>Loading</pre>
@@ -44,9 +57,11 @@ const GetPackageInformationQuery = ({ packageId }) => {
 const Home = () => (
   <div>
     <Title>Home</Title>
+    {/* cspell:disable-next-line */}
     <GetPackageInformationQuery packageId={'hola'} />
+        {/* cspell:disable-next-line */}
     <LatestCordenates packageId={'hola'} />
-  </div>
+    </div>
 )
 
 GetPackageInformationQuery.propTypes = {
