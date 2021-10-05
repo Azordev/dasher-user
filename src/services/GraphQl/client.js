@@ -10,7 +10,7 @@ const httpLink = new HttpLink({
 });
 
 const wsLink = new WebSocketLink({
-  uri: 'ws://azordev-dasher-db.herokuapp.com/v1/graphql',
+  uri: 'wss://azordev-dasher-db.herokuapp.com/v1/graphql',
   options: {
     reconnect: true,
      reconnectionAttempts: 10
