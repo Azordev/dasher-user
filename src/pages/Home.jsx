@@ -5,6 +5,7 @@ import { GET_PACKAGE_INFORMATION_QUERY, GET_PACKAGE_INFORMATION_SUBSCRIPTION } f
 import PropTypes from 'prop-types'
 import deliveryMan from "../assents/delivery-man.png";
 
+
 const Title = styled.h1`
   ${[text.test, text['4xl']]}
   ${bg.primary}
@@ -59,11 +60,11 @@ const GetPackageInformationQuery = ({ packageId }) => {
 const Home = () => (
   <div>
     <Title>Home</Title>
+    <img src={deliveryMan} alt="Delivery man"/>
     {/* cspell:disable-next-line */}
     <GetPackageInformationQuery packageId={'hola'} />
         {/* cspell:disable-next-line */}
     <LatestCordenates packageId={'hola'} />
-    <img src={deliveryMan} alt="Delivery man"/>
     </div>
 )
 
