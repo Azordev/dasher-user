@@ -3,7 +3,7 @@ import assistant from "../assents/assistant.png";
 import chat from "../assents/chat.png";
 import send from "../assents/send.png";
 import arrow from "../assents/arrow-left.svg";
-import gps from "../assents/gps-icon.svg";
+import gps from "../assents/gps-icon.png";
 
 
 const Delivery = () => {
