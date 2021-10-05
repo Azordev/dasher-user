@@ -12,10 +12,12 @@ const Title = styled.h1`
 `
 
 const LatestCordenates = ({ packageId }) => {
+  // eslint-disable-next-line
   console.log(packageId)
   const { data, error, loading } = useSubscription(GET_PACKAGE_INFORMATION_SUBSCRIPTION, {
     variables: { package_code: packageId },
   })
+  // eslint-disable-next-line
   console.log(data)
 
   if (error)
@@ -38,6 +40,7 @@ const LatestCordenates = ({ packageId }) => {
 }
 
 const GetPackageInformationQuery = ({ packageId }) => {
+  // eslint-disable-next-line
   console.log(packageId)
   const { loading, error, data } = useQuery(GET_PACKAGE_INFORMATION_QUERY, {
     variables: { package_code: packageId },
