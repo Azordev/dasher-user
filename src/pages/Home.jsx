@@ -3,16 +3,21 @@ import { text, bg } from '../styles/mixins'
 import { useQuery, useSubscription } from '@apollo/client'
 import { GET_PACKAGE_INFORMATION_QUERY, GET_PACKAGE_INFORMATION_SUBSCRIPTION } from '../services/GraphQl'
 import PropTypes from 'prop-types'
+import deliveryMan from "../assents/delivery-man.png";
+
+
 const Title = styled.h1`
   ${[text.test, text['4xl']]}
   ${bg.primary}
 `
 
 const LatestCordenates = ({ packageId }) => {
+  // eslint-disable-next-line
   console.log(packageId)
   const { data, error, loading } = useSubscription(GET_PACKAGE_INFORMATION_SUBSCRIPTION, {
     variables: { package_code: packageId },
   })
+  // eslint-disable-next-line
   console.log(data)
 
   if (error)
@@ -35,6 +40,7 @@ const LatestCordenates = ({ packageId }) => {
 }
 
 const GetPackageInformationQuery = ({ packageId }) => {
+  // eslint-disable-next-line
   console.log(packageId)
   const { loading, error, data } = useQuery(GET_PACKAGE_INFORMATION_QUERY, {
     variables: { package_code: packageId },
@@ -57,6 +63,7 @@ const GetPackageInformationQuery = ({ packageId }) => {
 const Home = () => (
   <div>
     <Title>Home</Title>
+    <img src={deliveryMan} alt="Delivery man"/>
     {/* cspell:disable-next-line */}
     <GetPackageInformationQuery packageId={'hola'} />
         {/* cspell:disable-next-line */}

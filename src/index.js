@@ -19,4 +19,5 @@ ReactDOM.render(
 
 serviceWorkerRegistration.unregister()
 
+// eslint-disable-next-line
 reportWebVitals(console.log)
