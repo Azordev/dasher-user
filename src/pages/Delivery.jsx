@@ -1,9 +1,9 @@
 import { useParams, useHistory } from 'react-router-dom';
-import assistant from "../assents/assistant.png";
-import chat from "../assents/chat.png";
-import send from "../assents/send.png";
-import arrow from "../assents/arrow-left.svg";
-import gps from "../assents/gps-icon.png";
+import assistant from "../assets/assistant.png";
+import chat from "../assets/chat.png";
+import send from "../assets/send.png";
+import arrow from "../assets/arrow-left.svg";
+import gps from "../assets/gps-icon.png";
 
 
 const Delivery = () => {

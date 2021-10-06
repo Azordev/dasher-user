@@ -97,6 +97,4 @@ export const bg = {
   `,
 }
 
-export {
-  text,
-}
+export { text }

@@ -1,10 +1,10 @@
 import { useParams, useHistory } from "react-router-dom";
-import note from "../assents/note.png";
-import handshake from "../assents/handshake.png";
-import RatingMan from "../assents/man-calification.png"
-import arrow from "../assents/arrow-left.svg";
-import star from "../assents/star.svg";
-import close from "../assents/close-icon.svg";
+import note from "../assets/note.png";
+import handshake from "../assets/handshake.png";
+import RatingMan from "../assets/man-calification.png"
+import arrow from "../assets/arrow-left.svg";
+import star from "../assets/star.svg";
+import close from "../assets/close-icon.svg";
 
 
 const Confirm = () => {
