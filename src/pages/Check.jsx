@@ -1,5 +1,5 @@
 
-import { Welcome, TextHeader, Label, Hola, Button, TitleModal, TextModal, List, ButtonModal } from '../components/Text/Text';
+import { TitleHeader, TextHeader, Label, Input, Button, TitleModal, TextModal, List, ButtonModal } from '../components/Text/Text';
 import ticket from "../assets/ticket.png";
 import warning from "../assets/warning.png";
 import arrow from "../assets/arrow-left.svg";
@@ -8,11 +8,11 @@ const Check = () => (
   <div>
     <div className="check-ticket">
       <img src={arrow} alt="Arrow left"/>
-      <Welcome>Hola!</Welcome>
+      <TitleHeader>Hola!</TitleHeader>
       <TextHeader>Ingresa tu número de boleta</TextHeader>
       <img src={ticket} alt="Ticket"/>
       <Label>CONFIRMAR N° BOLETA O PEDIDO</Label>
-      <Hola placeholder="Ingresa aquí..."></Hola>
+      <Input placeholder="Ingresa aquí..."></Input>
       <Button>CONFIRMAR</Button>
     </div>
     <div className="pop-up">
