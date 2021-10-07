@@ -1,18 +1,25 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-const Modal = ({ children, modalActualState, modalStateChange }) => {
+const Modal = ({ children, isOpen, toggle }) => {
   return (
     <div>
-      {modalActualState && (
+      {isOpen && (
         <Overlay>
           <ModalContainer>
             <InfoContainer>{children}</InfoContainer>
-            <ModalButton onClick={() => modalStateChange(false)}>Accept</ModalButton>
+            <ModalButton onClick={() => toggle(false)}>Accept</ModalButton>
           </ModalContainer>
         </Overlay>
       )}
     </div>
   )
+}
+
+Modal.propTypes = {
+  children: PropTypes.any,
+  isOpen: PropTypes.bool,
+  toggle: PropTypes.func,
 }
 
 export default Modal

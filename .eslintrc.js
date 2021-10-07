@@ -20,7 +20,6 @@ module.exports = {
   ],
   rules: {
     'no-use-before-define': 'off',
-    'react/prop-types': 'off',
   },
   settings: {
     react: {
