@@ -24,14 +24,8 @@ export const Text = styled.p`
   `}
   
   //Colors
-  ${props => props.purple && css`
-  ${text.primary};
-  `}
-  ${props => props.danger && css`
-    ${text.danger};
-  `}
-  ${props => props.yellow && css`
-  ${text.secondary};
+  ${props => props.color && css`
+  ${text[props.color] || `color: ${props.color}`};
   `}
 
   // Uppercase

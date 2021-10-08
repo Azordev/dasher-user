@@ -56,7 +56,7 @@ const GetPackageInformationQuery = ({ packageId }) => {
 
 const Home = () => (
   <div>
-    <Text as="h1" yellow large>Hola!</Text>
+    <Text as="h1" color="secondary" large>Hola!</Text>
     <Text small>Revisemos como viene tu envío</Text>
     <img src={deliveryMan} alt="Delivery man"/>
     <Text as="button" bold uppercase>Aceptar</Text>

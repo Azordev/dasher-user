@@ -20,10 +20,10 @@ const Confirm = () => {
     <div>
       <div className="confirm-header">
         <img src={arrow} alt="Arrow left"/>
-        <Text as="h1" yellow medium>Hemos terminado</Text>
+        <Text as="h1" color="secondary"medium>Hemos terminado</Text>
         <Text small>Inserta tus datos para finalizar</Text>
         <img src={note} alt="Note icon"/>
-        <Text bold uppercase yellow>Confirma recepción</Text>
+        <Text color="secondary" bold uppercase>Confirma recepción</Text>
         <Text as="input" placeholder="Nombre"/> 
         <Text as="input" placeholder="RUT"/>  
         <Text as="input" placeholder="Celular"/>  
@@ -31,9 +31,9 @@ const Confirm = () => {
       </div>
       <div className="calification-modal">
         <img src={close} alt="Close icon"/>
-        <Text as="h1" small purple>¿Qué tal tu experiencia?</Text>
-        <Text danger small>La propina esta en tus manos</Text>
-        <Text danger>Si deseas, puedes compartirla.</Text>
+        <Text as="h1" color="primary" small>¿Qué tal tu experiencia?</Text>
+        <Text color="danger" small>La propina esta en tus manos</Text>
+        <Text color="danger">Si deseas, puedes compartirla.</Text>
         <Text as="button" bold uppercase>Aceptar</Text>
         <img src={RatingMan} alt="Delivery man"/>
         <img src={star} alt="Stars rating"/>
@@ -41,7 +41,7 @@ const Confirm = () => {
       <div className="thanks-modal">
         <img src={close} alt="Close icon"/>
         <img src={handshake} alt="Handshake"/>
-        <Text as="h1" small purple>¡Gracias por confiar en nosotros!</Text>
+        <Text as="h1" color="primary" small>¡Gracias por confiar en nosotros!</Text>
         <Text as="button" bold uppercase>Aceptar</Text>
       </div>
     </div>

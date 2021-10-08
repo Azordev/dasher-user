@@ -19,21 +19,21 @@ const Delivery = () => {
     <div>
       <div className="delivery-header">
         <img src={arrow} alt="Arrow left"/>
-        <Text as="h1" yellow medium>Recogiendo</Text>
+        <Text as="h1" color="secondary" medium>Recogiendo</Text>
         <Text>Nuestro Dasher esta recogiendo su envío...</Text>
         <img src={chat} alt="Chat"/>
       </div>
       <div className="delivery-footer">
         <img src={gps} alt="Gps icon"/>
         <Text></Text>
-        <Text bold uppercase yellow>1 hora</Text>
+        <Text color="secondary" bold uppercase>1 hora</Text>
         <Text>Tiempo estimado de llegada</Text>
         <img src={assistant} alt="Central Dasher"/>
         <Text>Central Dasher</Text>
       </div>
       <div className="modal-pick-up">
-        <Text as="h1" small purple>El Dasher ha llegado</Text>
-        <Text small danger>Recoja su envío</Text>
+        <Text as="h1" color="primary" small>El Dasher ha llegado</Text>
+        <Text small color="danger">Recoja su envío</Text>
         <img src={send} alt="Send"/>
         <Text as="button" bold uppercase>Aceptar</Text>
       </div>
