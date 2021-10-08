@@ -1,1 +1,2 @@
-export * from './package'
+export * from './package.mutations'
+export * from "./errors.mutations"
