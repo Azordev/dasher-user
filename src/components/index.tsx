@@ -1,4 +1,4 @@
 export * from './Marker';
 export * from './Texts';
-export * from './CenterContainer';
+export * from './Container';
 export * from './ImageControl';

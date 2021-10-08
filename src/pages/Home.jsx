@@ -56,7 +56,7 @@ const GetPackageInformationQuery = ({ packageId }) => {
 };
 
 const Home = () => (
-  <div>
+  <>
     <Text as="h1" color="secondary" large>
       Hola!
     </Text>
@@ -69,7 +69,7 @@ const Home = () => (
     <GetPackageInformationQuery packageId={'hola'} />
     {/* cspell:disable-next-line */}
     <LatestCordenates packageId={'hola'} />
-  </div>
+  </>
 );
 
 GetPackageInformationQuery.propTypes = {

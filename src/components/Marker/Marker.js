@@ -73,4 +73,4 @@ Marker.propTypes = {
   }).isRequired,
 };
 
-export default Marker;
+export { Marker };

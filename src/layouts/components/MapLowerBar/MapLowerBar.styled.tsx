@@ -11,9 +11,9 @@ export const MapLowerBarStyle = styled.div`
   height: 25%;
   padding: 2rem;
 
-  position: fixed;
+  position: relative;
   bottom: 0;
-  right: 50%;
+
   transform: translateX(50%);
 
   border-radius: 30px 30px 0px 0px;
@@ -22,7 +22,9 @@ export const MapLowerBarStyle = styled.div`
     height: 35%;
     width: 105%;
     padding: 0.5rem;
-    right: 48%;
+
+    right: 50%;
+    transform: translateX(48%);
     bottom: -30px;
 
     border-radius: 40px 40px 0px 0px;

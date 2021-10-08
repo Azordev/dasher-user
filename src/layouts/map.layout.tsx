@@ -15,7 +15,7 @@ export const MapLayout = ({ children }: IChildrenType) => {
   return (
     <>
       <MapUpperBar {...defaultProps} />
-      <div>{children}</div>
+      <div style={{ maxWidth: '100%', minHeight: '70vh' }}>{children}</div>
       <MapLowerBar />
     </>
   );

@@ -1,18 +1,8 @@
 {
   "version": "0.2",
   "language": "en,es",
-  "words": [
-    "Apurímac",
-    "configurated",
-    "lefthook",
-    "noopener",
-    "noreferrer",
-    "quickstart",
-    "stylelint"
-  ],
-  "flagWords": [
-    "hte"
-  ],
+  "words": ["configurated", "lefthook", "noopener", "noreferrer", "quickstart", "stylelint"],
+  "flagWords": ["hte"],
   "ignorePaths": [
     "node_modules/**",
     "public/**",

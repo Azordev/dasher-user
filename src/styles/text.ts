@@ -83,5 +83,4 @@ export const text = {
   danger: css`
     color: var(--dasher-danger);
   `,
-  test: 'color: red;',
 };
