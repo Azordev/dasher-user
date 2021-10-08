@@ -1,7 +1,6 @@
 import { useMutation } from '@apollo/client'
 import { INSERT_ERRORS_MUTATION } from '../services/GraphQl/mutations/errors'
 
-
 export function InsertErrors() {
   const [insertErrors, { loading, error, data }] = useMutation(INSERT_ERRORS_MUTATION)
   if (error) {
