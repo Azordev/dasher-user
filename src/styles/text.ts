@@ -69,18 +69,18 @@ export const text = {
     font-weight: 800;
   `,
   primary: css`
-    color: var(--dasher-primary);
+    color: var(--primary);
   `,
   secondary: css`
-    color: var(--dasher-primary);
+    color: var(--secondary);
   `,
   black: css`
-    color: var(--dasher-black);
+    color: var(--black);
   `,
   white: css`
-    color: var(--dasher-white);
+    color: var(--white);
   `,
   danger: css`
-    color: var(--dasher-danger);
+    color: var(--danger);
   `,
 };
