@@ -7,7 +7,6 @@ import { INSERT_ERRORS_MUTATION } from '../services/GraphQl'
  * @param location
  *  to use => insertErrors({"type": type, "location": location})
  */
-
 export function InsertErrors() {
   const [insertErrors, { loading, error, data }] = useMutation(INSERT_ERRORS_MUTATION)
   if (error) {
