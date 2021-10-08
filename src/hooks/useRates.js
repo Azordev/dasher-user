@@ -6,7 +6,7 @@ export function InsertClientRate() {
   if (error) {
     console.error(error)
   }
-  // to use => insertClientRate({"client_rating": client_rating})
+  // to use => insertClientRate({"package_code": package_code,"client_rating": client_rating})
   return { insertClientRate, loading, error, data }
 }
 
@@ -15,6 +15,6 @@ export function InsertDasherRate() {
   if (error) {
     console.error(error)
   }
-  // to use => insertDasherRate({"dasher_rate": dasher_rate})
+  // to use => insertDasherRate({"package_code": package_code, "dasher_rate": dasher_rate})}
   return { insertDasherRate, loading, error, data }
 }
