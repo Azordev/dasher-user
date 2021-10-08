@@ -1,30 +1,32 @@
 
-import { TitleHeader, TextHeader, Label, Input, Button, TitleModal, TextModal, List, ButtonModal } from '../components/Text/Text';
+import { Text } from '../components/Text/Text';
 import ticket from "../assets/ticket.png";
 import warning from "../assets/warning.png";
 import arrow from "../assets/arrow-left.svg";
 
 const Check = () => (
   <div>
-    <div className="check-ticket">
+    <div className="header-ticket">
       <img src={arrow} alt="Arrow left"/>
-      <TitleHeader>Hola!</TitleHeader>
-      <TextHeader>Ingresa tu número de boleta</TextHeader>
+      <Text title>Hola!</Text>
+      <Text as="p" white>Ingresa tu número de boleta</Text>
       <img src={ticket} alt="Ticket"/>
-      <Label>CONFIRMAR N° BOLETA O PEDIDO</Label>
-      <Input placeholder="Ingresa aquí..."></Input>
-      <Button>CONFIRMAR</Button>
+    </div>
+    <div className="check-ticket">
+      <Text as="p" text>Confirmar n° boleta o pedido</Text>
+      <Text as="input" input placeholder="Ingresa aquí..."/>
+      <Text as="button" button>Confirmar</Text>
     </div>
     <div className="pop-up">
       <img src={warning} alt="Warning"/>
-      <TitleModal>Antes de recibir...</TitleModal>
-      <TextModal>No olvides confirmar la recepción<br/>de este envío al final de este<br/>proceso ingresando:</TextModal>
-      <List>
-        <li type="none">*Nombre</li>
-        <li type="none">*RUT</li>
-        <li type="none">*Celular</li>
-      </List>
-      <ButtonModal>ENTENDIDO</ButtonModal>
+      <Text titleModal>Antes de recibir...</Text>
+      <Text as="p" danger>No olvides confirmar la recepción<br/>de este envío al final de este<br/>proceso ingresando:</Text>
+      <Text as="ul" primary>
+        <li>Nombre</li>
+        <li>RUT</li>
+        <li>Celular</li>
+      </Text>
+      <Text as="button" button>Entendido</Text>
     </div>
   </div>
 )

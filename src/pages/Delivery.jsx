@@ -1,5 +1,5 @@
 import { useParams, useHistory } from 'react-router-dom';
-import { TitleDelivery, SubtitleDelivery, TextUbication, TextTime, SubtitleTime, TitleModal, TextModal, ButtonModal } from '../components/Text/Text';
+import { Text } from '../components/Text/Text';
 import assistant from "../assets/assistant.png";
 import chat from "../assets/chat.png";
 import send from "../assets/send.png";
@@ -19,23 +19,23 @@ const Delivery = () => {
     <div>
       <div className="delivery-header">
         <img src={arrow} alt="Arrow left"/>
-        <TitleDelivery>Recogiendo</TitleDelivery>
-        <SubtitleDelivery>Nuestro Dasher esta recogiendo su envío...</SubtitleDelivery>
+        <Text title>Recogiendo</Text>
+        <Text as="p" small>Nuestro Dasher esta recogiendo su envío...</Text>
         <img src={chat} alt="Chat"/>
       </div>
       <div className="delivery-footer">
         <img src={gps} alt="Gps icon"/>
-        <TextUbication></TextUbication>
-        <TextTime></TextTime>
-        <SubtitleTime>Tiempo estimado de llegada</SubtitleTime>
+        <Text></Text>
+        <Text text>1 hora</Text>
+        <Text as="p" small>Tiempo estimado de llegada</Text>
         <img src={assistant} alt="Central Dasher"/>
-        <SubtitleDelivery>Central Dasher</SubtitleDelivery>
+        <Text as="p" small>Central Dasher</Text>
       </div>
       <div className="modal-pick-up">
-        <TitleModal>El Dasher ha llegado</TitleModal>
-        <TextModal>Recoja su envío</TextModal>
+        <Text titleModal>El Dasher ha llegado</Text>
+        <Text as="p" danger>Recoja su envío</Text>
         <img src={send} alt="Send"/>
-        <ButtonModal>ACEPTAR</ButtonModal>
+        <Text as="button" button>Aceptar</Text>
       </div>
     </div>
   )

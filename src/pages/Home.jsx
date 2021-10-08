@@ -1,4 +1,4 @@
-import { Title, Subtitle, Button } from '../components/Text/Text';
+import { Text } from '../components/Text/Text';
 import { useQuery, useSubscription } from '@apollo/client'
 import { GET_PACKAGE_INFORMATION_QUERY, GET_PACKAGE_INFORMATION_SUBSCRIPTION } from '../services/GraphQl'
 import PropTypes from 'prop-types'
@@ -56,10 +56,10 @@ const GetPackageInformationQuery = ({ packageId }) => {
 
 const Home = () => (
   <div>
-    <Title>Hola!</Title>
-    <Subtitle>Revisemos como viene tu envío</Subtitle>
+    <Text secondary>Hola!</Text>
+    <Text as="p" white>Revisemos como viene tu envío</Text>
     <img src={deliveryMan} alt="Delivery man"/>
-    <Button>ACEPTAR</Button>
+    <Text as="button" button>Aceptar</Text>
     {/* cspell:disable-next-line */}
     <GetPackageInformationQuery packageId={'hola'} />
         {/* cspell:disable-next-line */}
