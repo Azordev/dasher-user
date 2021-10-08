@@ -36,7 +36,7 @@ const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(51, 119, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,6 +44,7 @@ const Overlay = styled.div`
 
 const ModalContainer = styled.div`
   width: 310px;
+  max-width: 460px;
   height: 360px;
   background: var(--white);
   position: relative;
@@ -53,6 +54,10 @@ const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (min-width: 680px) {
+    width: 460px;
+    height: 45vh;
+  }
 `
 const InfoContainer = styled.div`
   border-radius: 15px;
