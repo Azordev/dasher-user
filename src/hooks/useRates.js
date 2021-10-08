@@ -14,6 +14,7 @@ export function InsertClientRate() {
   }
   return { insertClientRate, loading, error, data }
 }
+
 /**
  * @callback insertDasherRate receive two params 
  * @param package_code 
