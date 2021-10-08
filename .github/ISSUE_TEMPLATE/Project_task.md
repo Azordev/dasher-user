@@ -1,5 +1,5 @@
 ---
-name: ":white_check_mark: Project task"
+name: "\U0001F5F9 Project task"
 about: It is a necessary task to do in Dasher
 
 ---
