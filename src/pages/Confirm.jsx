@@ -20,29 +20,29 @@ const Confirm = () => {
     <div>
       <div className="confirm-header">
         <img src={arrow} alt="Arrow left"/>
-        <Text title>Hemos terminado</Text>
-        <Text as="p" white>Inserta tus datos para finalizar</Text>
+        <Text as="h1" yellow medium>Hemos terminado</Text>
+        <Text small>Inserta tus datos para finalizar</Text>
         <img src={note} alt="Note icon"/>
-        <Text as="p" text>Confirmar n° boleta o pedido</Text>
-        <Text as="input" input placeholder="Nombre"/> 
-        <Text as="input" input placeholder="RUT"/>  
-        <Text as="input" input placeholder="Celular"/>  
-        <Text as="button" button>Confrmar</Text>
+        <Text bold uppercase yellow>Confirma recepción</Text>
+        <Text as="input" placeholder="Nombre"/> 
+        <Text as="input" placeholder="RUT"/>  
+        <Text as="input" placeholder="Celular"/>  
+        <Text as="button" bold uppercase>Confirmar</Text>
       </div>
       <div className="calification-modal">
         <img src={close} alt="Close icon"/>
-        <Text titleModal>¿Qué tal tu experiencia?</Text>
-        <Text as="p" danger>La propina esta en tus manos</Text>
-        <Text as="p" danger>Si deseas, puedes compartirla.</Text>
-        <Text as="button" button>Aceptar</Text>
+        <Text as="h1" small purple>¿Qué tal tu experiencia?</Text>
+        <Text danger small>La propina esta en tus manos</Text>
+        <Text danger>Si deseas, puedes compartirla.</Text>
+        <Text as="button" bold uppercase>Aceptar</Text>
         <img src={RatingMan} alt="Delivery man"/>
         <img src={star} alt="Stars rating"/>
       </div>
       <div className="thanks-modal">
         <img src={close} alt="Close icon"/>
         <img src={handshake} alt="Handshake"/>
-        <Text titleModal>¡Gracias por confiar en nosotros!</Text>
-        <Text as="button" button>Aceptar</Text>
+        <Text as="h1" small purple>¡Gracias por confiar en nosotros!</Text>
+        <Text as="button" bold uppercase>Aceptar</Text>
       </div>
     </div>
   )

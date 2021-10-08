@@ -8,25 +8,25 @@ const Check = () => (
   <div>
     <div className="header-ticket">
       <img src={arrow} alt="Arrow left"/>
-      <Text title>Hola!</Text>
-      <Text as="p" white>Ingresa tu número de boleta</Text>
+      <Text as="h1" yellow medium>Hola!</Text>
+      <Text small>Ingresa tu número de boleta</Text>
       <img src={ticket} alt="Ticket"/>
     </div>
     <div className="check-ticket">
-      <Text as="p" text>Confirmar n° boleta o pedido</Text>
-      <Text as="input" input placeholder="Ingresa aquí..."/>
-      <Text as="button" button>Confirmar</Text>
+      <Text bold uppercase yellow>Confirmar n° boleta o pedido</Text>
+      <Text as="input" placeholder="Ingresa aquí..."/>
+      <Text as="button" bold uppercase>Confirmar</Text>
     </div>
     <div className="pop-up">
       <img src={warning} alt="Warning"/>
-      <Text titleModal>Antes de recibir...</Text>
-      <Text as="p" danger>No olvides confirmar la recepción<br/>de este envío al final de este<br/>proceso ingresando:</Text>
-      <Text as="ul" primary>
+      <Text as="h1" small purple>Antes de recibir...</Text>
+      <Text danger>No olvides confirmar la recepción<br/>de este envío al final de este<br/>proceso ingresando:</Text>
+      <Text as="ul" bold purple>
         <li>Nombre</li>
         <li>RUT</li>
         <li>Celular</li>
       </Text>
-      <Text as="button" button>Entendido</Text>
+      <Text as="button" bold uppercase>Entendido</Text>
     </div>
   </div>
 )

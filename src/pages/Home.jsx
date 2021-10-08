@@ -56,10 +56,10 @@ const GetPackageInformationQuery = ({ packageId }) => {
 
 const Home = () => (
   <div>
-    <Text secondary>Hola!</Text>
-    <Text as="p" white>Revisemos como viene tu envío</Text>
+    <Text as="h1" yellow large>Hola!</Text>
+    <Text small>Revisemos como viene tu envío</Text>
     <img src={deliveryMan} alt="Delivery man"/>
-    <Text as="button" button>Aceptar</Text>
+    <Text as="button" bold uppercase>Aceptar</Text>
     {/* cspell:disable-next-line */}
     <GetPackageInformationQuery packageId={'hola'} />
         {/* cspell:disable-next-line */}
