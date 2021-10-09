@@ -1,18 +1,10 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const Input = ({ name, type, placeholder, onChange, value, setValue }) => {
+const Input = ({ name, type, placeholder, value, setValue }) => {
   return (
     <InputWrapper>
-      <InputData
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        onChnage={onChange}
-        value={value}
-        setValue={setValue}
-      />
+      <InputData id={name} name={name} type={type} placeholder={placeholder} onChange={setValue} value={value} />
     </InputWrapper>
   )
 }
