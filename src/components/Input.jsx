@@ -1,13 +1,29 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-const Input = () => {
+const Input = ({ name, type, placeholder, onChange, value, setValue }) => {
   return (
-    <div>
-      <InputWrapper>
-        <InputData></InputData>
-      </InputWrapper>
-    </div>
+    <InputWrapper>
+      <InputData
+        id={name}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        onChnage={onChange}
+        value={value}
+        setValue={setValue}
+      />
+    </InputWrapper>
   )
+}
+
+Input.propTypes = {
+  name: PropTypes.any,
+  type: PropTypes.any,
+  placeholder: PropTypes.any,
+  onChange: PropTypes.any,
+  value: PropTypes.any,
+  setValue: PropTypes.any,
 }
 
 export default Input
@@ -26,8 +42,4 @@ const InputData = styled.input`
   border: none;
   box-shadow: 2px 5px 6px rgb(0 0 0 / 0.3);
   padding: 0 25px;
-
-  @media (min-width: 640px) {
-    box-shadow: 0 0 0 0;
-  }
 `
