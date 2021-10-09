@@ -1,1 +1,1 @@
-export * from './map.layout'
+export * from './Map.layout';

@@ -6,6 +6,8 @@ import send from '../assets/send.png';
 import arrow from '../assets/arrow-left.svg';
 import gps from '../assets/gps-icon.png';
 
+import { MapLayout } from '../layouts';
+
 const Delivery = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -15,7 +17,7 @@ const Delivery = () => {
   }
 
   return (
-    <div>
+    <MapLayout>
       <div className="delivery-header">
         <img src={arrow} alt="Arrow left" />
         <Text as="h1" color="secondary" medium>
@@ -46,7 +48,7 @@ const Delivery = () => {
           Aceptar
         </Text>
       </div>
-    </div>
+    </MapLayout>
   );
 };
 
