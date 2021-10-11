@@ -5,7 +5,10 @@ import { Text } from '../components/Text/Text'
 import ticket from '../assets/ticket.png'
 import warning from '../assets/warning.png'
 import arrow from '../assets/arrow-left.svg'
+<<<<<<< HEAD
 import { useHistory } from 'react-router'
+=======
+>>>>>>> fix: set images path
 
 const Check = () => {
   const [isModalOpen, changeIsModalOpen] = useState(true)
