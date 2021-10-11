@@ -2,7 +2,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { Text } from '../components/Text/Text';
 import note from "../assets/note.png";
 import handshake from "../assets/handshake.png";
-import RatingMan from "../assets/man-calification.png"
+import RatingMan from "../assets/man-rate.png"
 import arrow from "../assets/arrow-left.svg";
 import star from "../assets/star.svg";
 import close from "../assets/close-icon.svg";
@@ -29,7 +29,7 @@ const Confirm = () => {
         <Text as="input" placeholder="Celular"/>  
         <Text as="button" bold uppercase>Confirmar</Text>
       </div>
-      <div className="calification-modal">
+      <div className="rate-modal">
         <img src={close} alt="Close icon"/>
         <Text as="h1" color="primary" small>¿Qué tal tu experiencia?</Text>
         <Text color="danger" small>La propina esta en tus manos</Text>
