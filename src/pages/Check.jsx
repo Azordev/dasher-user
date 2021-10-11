@@ -3,9 +3,9 @@ import { Modal } from '../components'
 import { useHistory } from 'react-router'
 
 import { Text } from '../components/Text/Text'
-import ticket from '../assents/ticket.png'
-import warning from '../assents/warning.png'
-import arrow from '../assents/arrow-left.svg'
+import ticket from '../assets/ticket.png'
+import warning from '../assets/warning.png'
+import arrow from '../assets/arrow-left.svg'
 
 const Check = () => {
   const [isModalOpen, changeIsModalOpen] = useState(true)
