@@ -19,11 +19,12 @@ export const ModalContainer = styled.div`
   background: var(--white);
   position: relative;
   border-radius: 20px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media (min-width: 680px) {
     width: 460px;
     height: 45vh;
@@ -35,16 +36,19 @@ export const InfoContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+
   h1 {
     font-size: 20px;
     color: blue;
   }
+
   p {
     font-size: 16px;
     color: gray;
     padding-left: 16px;
     padding-right: 16px;
   }
+
   ul {
     align-self: start;
     color: blue;
