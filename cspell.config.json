@@ -2,13 +2,15 @@
   "version": "0.2",
   "language": "en,es",
   "words": [
-    "stylelint",
-    "quickstart",
-    "linkedin",
-    "lefthook",
     "configurated",
+    "gitleaks",
+    "lefthook",
+    "linkedin",
     "noopener",
-    "noreferrer"
+    "noreferrer",
+    "quickstart",
+    "stylelint",
+    "zricethezav"
   ],
   "flagWords": [
     "hte"
