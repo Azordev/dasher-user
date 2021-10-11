@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6, p, span, b, strong, em, i, a {
 
 const theme = {
   colors,
-  breakpoints
+  breakpoints,
 }
 
 const Theme = ({ children }) => (

@@ -1,15 +1,9 @@
-import styled from 'styled-components'
-import { text, bg } from '../styles/mixins'
+import { Text } from '../components/Text/Text';
 import { useQuery, useSubscription } from '@apollo/client'
 import { GET_PACKAGE_INFORMATION_QUERY, GET_PACKAGE_INFORMATION_SUBSCRIPTION } from '../services/GraphQl'
 import PropTypes from 'prop-types'
-import deliveryMan from "../assents/delivery-man.png";
+import deliveryMan from "../assets/delivery-man.png";
 
-
-const Title = styled.h1`
-  ${[text.test, text['4xl']]}
-  ${bg.primary}
-`
 
 const LatestCordenates = ({ packageId }) => {
   // eslint-disable-next-line
@@ -62,8 +56,10 @@ const GetPackageInformationQuery = ({ packageId }) => {
 
 const Home = () => (
   <div>
-    <Title>Home</Title>
+    <Text as="h1" color="secondary" large>Hola!</Text>
+    <Text small>Revisemos como viene tu envío</Text>
     <img src={deliveryMan} alt="Delivery man"/>
+    <Text as="button" bold uppercase>Aceptar</Text>
     {/* cspell:disable-next-line */}
     <GetPackageInformationQuery packageId={'hola'} />
         {/* cspell:disable-next-line */}

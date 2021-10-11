@@ -1,8 +1,8 @@
 import { useParams, useHistory } from "react-router-dom";
-import deliveryManWhite from "../assents/delivery-chat-white.png";
-import assistant from "../assents/asistant-chat.png";
-import sendButton from "../assents/send-chat.png";
-import userIcon from "../assents/user-icon.png";
+import deliveryManWhite from "../assets/delivery-chat-white.png";
+import assistant from "../assets/asistant-chat.png";
+import sendButton from "../assets/send-chat.png";
+import userIcon from "../assets/user-icon.png";
 
 const Chat = () => {
   const { id } = useParams();
