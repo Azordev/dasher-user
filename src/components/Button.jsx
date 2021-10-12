@@ -1,15 +1,11 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const Button = ({ children }) => {
-  return (
-    <div>
-      <ButtonWrapper>
-        <MainButton>{children}</MainButton>
-      </ButtonWrapper>
-    </div>
-  )
-}
+const Button = ({ children, ...props }) => (
+  <ButtonWrapper>
+    <MainButton {...props}>{children}</MainButton>
+  </ButtonWrapper>
+)
 
 Button.propTypes = {
   children: PropTypes.any,
