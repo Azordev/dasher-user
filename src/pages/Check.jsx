@@ -1,19 +1,19 @@
 import { useState } from 'react'
-import { Modal } from '../components'
 import { useHistory } from 'react-router'
 
-import { Text } from '../components/Text/Text'
+import { Button, Input, Modal, Text } from '../components'
 import ticket from '../assets/ticket.png'
 import warning from '../assets/warning.png'
 import arrow from '../assets/arrow-left.svg'
 
 const Check = () => {
+  const [packageCode, setPackageCode] = useState('')
   const [isModalOpen, changeIsModalOpen] = useState(true)
-  const history = useHistory();
+  const history = useHistory()
 
-  const toDelivery = (e) => {
+  const toDelivery = e => {
     e.preventDefault()
-    history.push('/delivery/lol')
+    history.push('/delivery/test')
   }
 
   return (
@@ -30,10 +30,8 @@ const Check = () => {
         <Text color="secondary" bold uppercase>
           Confirmar n° boleta o pedido
         </Text>
-        <Text as="input" placeholder="Ingresa aquí..." />
-        <Text as="button" bold uppercase onClick={e=>toDelivery(e)}>
-          Confirmar
-        </Text>
+        <Input placeholder="Ingresa aquí..." value={packageCode} onChange={e => setPackageCode(e.target.value)} />
+        <Button onClick={e => toDelivery(e)}>Confirmar</Button>
       </div>
       <Modal isOpen={isModalOpen} handleClick={() => changeIsModalOpen(false)} actionText="Entendido">
         <img src={warning} alt="Warning" />
@@ -47,7 +45,7 @@ const Check = () => {
           <li>Celular</li>
         </Text>
       </Modal>
-      </div>
+    </div>
   )
 }
 
