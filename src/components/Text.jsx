@@ -56,9 +56,7 @@ const Text = styled.p`
     ${props =>
     props.colorDesk &&
     css`
-    @media screen 
-    and (min-width: 960px)
-    and (max-width: 1220px) {
+    @media (min-width: 960px){
       ${text.primary};
     }
     `}

@@ -6,9 +6,7 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: var(--white);
-  @media screen 
-    and (min-width: 960px)
-    and (max-width: 1220px) {
+  @media (min-width: 960px){
       flex-direction: row;
   }
 `
@@ -18,9 +16,7 @@ const Header = styled.div`
   flex-direction: column;
   background: var(--primary);
   border-radius: 0 0 25px 25px;
-  @media screen 
-    and (min-width: 960px)
-    and (max-width: 1220px) {
+  @media (min-width: 960px){
       width: 50%;
       border-radius: 0000;
       justify-content: start;
@@ -30,9 +26,7 @@ const Header = styled.div`
 const BackButton = styled.img`
   width: 30px;
   margin: 15px 8px;
-  @media screen 
-    and (min-width: 960px)
-    and (max-width: 1220px) {
+  @media (min-width: 960px){
     top: 30px;
     left: 50px;
     position: fixed;
@@ -44,9 +38,7 @@ const TicketImage = styled.img`
   width: 140px;
   align-self: flex-start;
   margin: 0 0 -13px 15px;
-  @media screen 
-    and (min-width: 960px)
-    and (max-width: 1220px) {
+  @media (min-width: 960px){
       width: 40vh;
       bottom: -38px;
       align-self: flex-end;
@@ -60,9 +52,7 @@ const MainSection = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  @media screen 
-    and (min-width: 960px)
-    and (max-width: 1220px) {
+  @media (min-width: 960px){
       background: var(--secondary);
       width: 50%;
       height: 100vh;
