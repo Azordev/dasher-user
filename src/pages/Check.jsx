@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Modal } from '../components'
+import { useHistory } from 'react-router'
 
 import { Text } from '../components/Text/Text'
 import ticket from '../assets/ticket.png'
 import warning from '../assets/warning.png'
 import arrow from '../assets/arrow-left.svg'
-import { useHistory } from 'react-router'
 
 const Check = () => {
   const [isModalOpen, changeIsModalOpen] = useState(true)
@@ -47,7 +47,7 @@ const Check = () => {
           <li>Celular</li>
         </Text>
       </Modal>
-    </div>
+      </div>
   )
 }
 
