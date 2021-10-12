@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   left: 50%;
   width: 18px;
   height: 18px;
-  background-color: ${props => (props.show ? '#2196F3' : '#ccc')};
+  background-color: ${props => (props.center ? '#2196F3' : '#ccc')};
   border: 2px solid #fff;
   border-radius: 100%;
   user-select: none;

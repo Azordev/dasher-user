@@ -5,7 +5,7 @@ import GoogleMapReact from 'google-map-react'
 
 import LOS_ANGELES_CENTER from './const/la_center'
 
-import Marker from './components/Marker'
+import Marker from './components/Marker/Marker'
 
 const Wrapper = styled.main`
   width: 100%;
