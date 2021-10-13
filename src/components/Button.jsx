@@ -11,12 +11,13 @@ const Button = styled.button`
   display: flex;
   font-weight: bold;
   height: 100%;
+  max-height: 40px;
+  min-height: 40px;
   justify-content: center;
   margin: 25px 0;
-  min-height: 40px;
   padding: 0 25px;
   text-transform: uppercase;
-  width: 100%;
+  width: 90%;
 `
 
 export default Button

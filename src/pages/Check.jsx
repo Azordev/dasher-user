@@ -21,15 +21,17 @@ const Check = () => {
     <Container>
       <Header className="header-ticket">
         <BackButton src={arrow} alt="Arrow left" />
-        <Text as="h1" color="secondary" medium>
+        <Text className="heading-text" as="h1" color="secondary" medium>
           Hola!
         </Text>
-        <Text small>Ingresa tu número de boleta</Text>
+        <Text className="heading-subtext" small>
+          Ingresa tu número de boleta
+        </Text>
         <TicketImage src={ticket} alt="Ticket" />
       </Header>
       <MainSection>
         <div className="check-ticket">
-          <Text color="secondary" bold uppercase>
+          <Text className="check-subtext" color="secondary" bold uppercase>
             Confirmar n° boleta o pedido
           </Text>
           <Input placeholder="Ingresa aquí..." value={packageCode} onChange={e => setPackageCode(e.target.value)} />
@@ -40,7 +42,9 @@ const Check = () => {
           <Text as="h1" color="primary" small>
             Antes de recibir...
           </Text>
-          <Text color="danger">No olvides confirmar la recepción de este envío al final de este proceso ingresando:</Text>
+          <Text color="danger">
+            No olvides confirmar la recepción de este envío al final de este proceso ingresando:
+          </Text>
           <Text as="ul" color="primary" bold>
             <li>Nombre</li>
             <li>RUT</li>
@@ -70,6 +74,16 @@ const Header = styled.div`
   flex-direction: column;
   background: blue;
   border-radius: 0 0 25px 25px;
+
+  .heading-text {
+    font-size: 35px;
+    padding: 0 0 0 35px;
+  }
+  .heading-subtext {
+    font-size: 18px;
+    padding: 0 0 0 35px;
+    margin: 0 0 40px 0;
+  }
   @media (min-width: 960px) {
     width: 50%;
     border-radius: 0000;
@@ -77,13 +91,11 @@ const Header = styled.div`
     overflow: hidden;
   }
 `
+
 const BackButton = styled.img`
   width: 30px;
-  margin: 15px 8px;
+  margin: 25px 0 0 30px;
   @media (min-width: 960px) {
-    top: 30px;
-    left: 50px;
-    position: fixed;
     width: 45px;
   }
 `
@@ -91,7 +103,7 @@ const BackButton = styled.img`
 const TicketImage = styled.img`
   width: 140px;
   align-self: flex-start;
-  margin: 0 0 -13px 15px;
+  margin: 0 0 -13px 25px;
   @media (min-width: 960px) {
     width: 40vh;
     bottom: -38px;
@@ -111,5 +123,15 @@ const MainSection = styled.div`
     width: 50%;
     height: 100vh;
     justify-content: center;
+  }
+
+  .check-ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .check-subtext {
+    font-size: 18px;
   }
 `

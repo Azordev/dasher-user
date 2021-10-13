@@ -10,7 +10,7 @@ const Input = styled.input`
   border: none;
   box-shadow: 2px 5px 6px rgb(0 0 0 / 0.3);
   padding: 0 25px;
-  width: 100%;
+  width: 90%;
 
   ::placeholder {
     color: #00000029;
