@@ -53,6 +53,15 @@ const Text = styled.p`
         color: #00000029;
       }
     `}
+    ${props =>
+    props.colorDesk &&
+    css`
+    @media screen 
+    and (min-width: 960px)
+    and (max-width: 1220px) {
+      ${text.primary};
+    }
+    `}
 `
 
 export default Text

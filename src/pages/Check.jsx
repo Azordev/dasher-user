@@ -31,7 +31,7 @@ const Check = () => {
       </Header>
       <MainSection>
         <div className="check-ticket">
-          <Text className="check-subtext" color="secondary" bold uppercase>
+          <Text color="secondary" bold uppercase colorDesk>
             Confirmar n° boleta o pedido
           </Text>
           <Input placeholder="Ingresa aquí..." value={packageCode} onChange={e => setPackageCode(e.target.value)} />
