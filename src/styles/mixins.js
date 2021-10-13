@@ -87,13 +87,13 @@ export const hidden = css`
 
 export const bg = {
   white: css`
-    background-color: var(--dasher-white);
+    background-color: var(--white);
   `,
   primary: css`
-    background-color: var(--dasher-primary);
+    background-color: var(--primary);
   `,
   secondary: css`
-    background-color: var(--dasher-secondary);
+    background-color: var(--secondary);
   `,
 }
 

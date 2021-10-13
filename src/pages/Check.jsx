@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router'
-import styled from 'styled-components'
+import { Container, Header, BackButton, TicketImage, MainSection } from '../layouts/SplittedLayout'
 
 import { Button, Input, Modal, Text } from '../components'
 import ticket from '../assets/ticket.png'
@@ -31,7 +31,7 @@ const Check = () => {
       </Header>
       <MainSection>
         <div className="check-ticket">
-          <Text className="check-subtext" color="secondary" bold uppercase>
+          <Text color="primary" bold uppercase>
             Confirmar n° boleta o pedido
           </Text>
           <Input placeholder="Ingresa aquí..." value={packageCode} onChange={e => setPackageCode(e.target.value)} />
@@ -57,81 +57,3 @@ const Check = () => {
 }
 
 export default Check
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  @media (min-width: 960px) {
-    flex-direction: row;
-  }
-`
-
-const Header = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: blue;
-  border-radius: 0 0 25px 25px;
-
-  .heading-text {
-    font-size: 35px;
-    padding: 0 0 0 35px;
-  }
-  .heading-subtext {
-    font-size: 18px;
-    padding: 0 0 0 35px;
-    margin: 0 0 40px 0;
-  }
-  @media (min-width: 960px) {
-    width: 50%;
-    border-radius: 0000;
-    justify-content: start;
-    overflow: hidden;
-  }
-`
-
-const BackButton = styled.img`
-  width: 30px;
-  margin: 25px 0 0 30px;
-  @media (min-width: 960px) {
-    width: 45px;
-  }
-`
-
-const TicketImage = styled.img`
-  width: 140px;
-  align-self: flex-start;
-  margin: 0 0 -13px 25px;
-  @media (min-width: 960px) {
-    width: 40vh;
-    bottom: -38px;
-    align-self: flex-end;
-    position: fixed;
-    margin-left: -50px;
-  }
-`
-const MainSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  @media (min-width: 960px) {
-    background: yellow;
-    width: 50%;
-    height: 100vh;
-    justify-content: center;
-  }
-
-  .check-ticket {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .check-subtext {
-    font-size: 18px;
-  }
-`
