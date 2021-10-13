@@ -53,13 +53,6 @@ const Text = styled.p`
         color: #00000029;
       }
     `}
-    ${props =>
-    props.colorDesk &&
-    css`
-    @media (min-width: 960px){
-      ${text.primary};
-    }
-    `}
 `
 
 export default Text

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router'
-import { Container, Header, BackButton, TicketImage, MainSection } from '../components/SplittedLayout'
+import { Container, Header, BackButton, TicketImage, MainSection } from '../layouts/SplittedLayout'
 
 import { Button, Input, Modal, Text } from '../components'
 import ticket from '../assets/ticket.png'
@@ -31,7 +31,7 @@ const Check = () => {
       </Header>
       <MainSection>
         <div className="check-ticket">
-          <Text color="secondary" bold uppercase colorDesk>
+          <Text color="primary" bold uppercase>
             Confirmar n° boleta o pedido
           </Text>
           <Input placeholder="Ingresa aquí..." value={packageCode} onChange={e => setPackageCode(e.target.value)} />
