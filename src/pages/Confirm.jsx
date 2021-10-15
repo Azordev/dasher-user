@@ -52,7 +52,7 @@ const Confirm = () => {
         <img src={star} alt="Stars rating" />
       </div>
       <Modal isOpen={isModalOpen} handleClick={() => changeIsModalOpen(false)} actionText="Aceptar">
-        <div style={{verticalAlign:'bottom'}}>
+        <div style={{margin:'auto 0 auto 0'}}>
           <img src={handshake} alt="Handshake Image" />
         <Text as="h1" color="primary" medium center>
           !Gracias por confiar <br /> en nosotros!
