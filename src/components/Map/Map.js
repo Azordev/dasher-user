@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import GoogleMapReact from 'google-map-react'
@@ -24,4 +25,6 @@ Map.propTypes = {
   dasher: PropTypes.arrayOf(PropTypes.number).isRequired,
 }
 
-export default Map
+export default React.memo(Map, (prevProps, nextProps) => {
+  return prevProps.center === nextProps.center || prevProps.dasher === nextProps.dasher
+})

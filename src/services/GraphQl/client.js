@@ -1,4 +1,5 @@
-import { split, HttpLink, ApolloClient, InMemoryCache } from '@apollo/client'
+import { split, HttpLink, ApolloClient, InMemoryCache, from } from '@apollo/client'
+import { RetryLink } from '@apollo/client/link/retry'
 import { getMainDefinition } from '@apollo/client/utilities'
 import { WebSocketLink } from '@apollo/client/link/ws'
 
@@ -28,7 +29,16 @@ const splitLink = split(
   httpLink,
 )
 
+const link = new RetryLink({
+  attempts: (count, operation, error) => {
+    return !!error && operation.operationName !== 'specialCase'
+  },
+  delay: (count, operation, error) => {
+    return count * 1000 * Math.random()
+  },
+})
+
 export const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: splitLink,
+  link: from([link, splitLink]),
 })
