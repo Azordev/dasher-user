@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components'
 import { text } from '../styles/mixins'
 
 const Text = styled.p`
-  // The most common
+  /* Common */
   ${[text.white, text.xs]}
 
-  // Size
+  /* Size */
   ${props =>
     props.small &&
     css`
@@ -24,34 +24,41 @@ const Text = styled.p`
       ${text['4xl']};
     `}
 
-  // Weight
+  /* Weight */
   ${props =>
     props.bold &&
     css`
       ${text['600']};
     `}
   
-  //Colors
+    /* Colors */
   ${props =>
     props.color &&
     css`
       ${text[props.color] || `color: ${props.color}`};
     `}
 
-  // Uppercase
+  /* Uppercase */
   ${props =>
     props.uppercase &&
     css`
       text-transform: uppercase;
     `}
  
-  //Input
+    /* Input */
   ${props =>
     props.input &&
     css`
       ::placeholder {
         color: #00000029;
       }
+    `}
+
+    /* Align */
+  ${props =>
+    props.center &&
+    css`
+      ${text.textCenter};
     `}
 `
 
