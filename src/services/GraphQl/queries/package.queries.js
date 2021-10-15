@@ -21,7 +21,6 @@ export const GET_PACKAGE_INFORMATION_QUERY = gql`
         dasher_phone
         dasher_status
       }
-      
     }
   }
 `

@@ -6,7 +6,7 @@ import send from '../assets/send.png'
 import arrow from '../assets/arrow-left.svg'
 import gps from '../assets/gps-icon.png'
 import Map from '../components/Map/Map'
-import { useGetPackageInformation, useClientLocation, useDasherLatestCordenates } from '../hooks'
+import { useGetPackageInformation, useClientLocation, useDasherLatestCoordinates } from '../hooks'
 
 const Delivery = () => {
   const { id } = useParams()
@@ -17,9 +17,9 @@ const Delivery = () => {
   }
 
   const { packageInformation } = useGetPackageInformation({ packageId: id })
-  const { latestCordenates, error, loading } = useDasherLatestCordenates({ packageId: id })
+  const { latestCoordinates, error, loading } = useDasherLatestCoordinates({ packageId: id })
   const { isLoading, hasError, center, dasher } = useClientLocation({
-    data: latestCordenates,
+    data: latestCoordinates,
     error: error,
     loading: loading,
   })
@@ -43,8 +43,6 @@ const Delivery = () => {
         <img src={chat} alt="Chat" />
       </div>
       {center[0] && <Map center={center} dasher={dasher} />}
-
-      {/* cspell:disable-next-line */}
 
       <div className="delivery-footer">
         <img src={gps} alt="Gps icon" />
