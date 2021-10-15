@@ -1,4 +1,4 @@
-import notFound from '../assets/not-found.svg'
+import  NotFound from '../assets/not-found.svg'
 import styled from 'styled-components'
 import { Text } from '../components'
 
@@ -9,9 +9,9 @@ const NotFoundImg = styled.img`
   height: 70%;
 `
 
-const NotFound = () => (
+const ErrorNotFound = () => (
   <div>
-    <NotFoundImg src={notFound} alt="Image Not-found" />
+    <NotFoundImg src={NotFound} alt="Image Not-found" />
     <Text color="primary" bold center large>
       Oops!<br/>
       <Text color="primary" uppercase>Page not found</Text>
@@ -19,4 +19,4 @@ const NotFound = () => (
   </div>
 )
 
-export default NotFound
+export default ErrorNotFound;
