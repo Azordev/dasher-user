@@ -4,22 +4,26 @@ import { text } from '../styles/mixins'
 const Text = styled.p`
   // The most common
   ${[text.white, text.xs]}
+
   // Size
   ${props =>
     props.small &&
     css`
       ${text.base};
     `}
+
   ${props =>
     props.medium &&
     css`
       ${text['2xl']};
     `}
+
   ${props =>
     props.large &&
     css`
       ${text['4xl']};
     `}
+
   // Weight
   ${props =>
     props.bold &&
@@ -33,6 +37,7 @@ const Text = styled.p`
     css`
       ${text[props.color] || `color: ${props.color}`};
     `}
+
   // Uppercase
   ${props =>
     props.uppercase &&
@@ -48,6 +53,7 @@ const Text = styled.p`
         color: #00000029;
       }
     `}
+
     // Text align
     ${props =>
     props.center &&
