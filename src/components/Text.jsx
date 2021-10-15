@@ -53,6 +53,13 @@ const Text = styled.p`
         color: #00000029;
       }
     `}
+
+    // Text align
+    ${props =>
+    props.center &&
+    css`
+      text-align: center;
+    `}
 `
 
 export default Text
