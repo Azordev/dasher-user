@@ -67,3 +67,6 @@ export const ModalButton = styled.button`
   color: white;
   font-weight: bold;
 `
+export const MiddleAlign = styled.div`
+  margin: auto 0;
+`
