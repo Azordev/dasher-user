@@ -37,6 +37,7 @@ export const InfoContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   h1 {
     font-size: 20px;

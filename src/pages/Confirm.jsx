@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { Text } from '../components'
+import { Modal, Text } from '../components'
 import note from '../assets/note.png'
 import handshake from '../assets/handshake.png'
 import RatingMan from '../assets/man-rate.png'
@@ -10,6 +11,7 @@ import close from '../assets/close-icon.svg'
 const Confirm = () => {
   const { id } = useParams()
   const history = useHistory()
+  const [isModalOpen, changeIsModalOpen] = useState(true)
 
   if (!id) {
     history.push('/check')
@@ -49,16 +51,12 @@ const Confirm = () => {
         <img src={RatingMan} alt="Delivery man" />
         <img src={star} alt="Stars rating" />
       </div>
-      <div className="thanks-modal">
-        <img src={close} alt="Close icon" />
-        <img src={handshake} alt="Handshake" />
-        <Text as="h1" color="primary" small>
-          ¡Gracias por confiar en nosotros!
+      <Modal isOpen={isModalOpen} handleClick={() => changeIsModalOpen(false)} actionText="Aceptar">
+        <img src={handshake} alt="Handshake Image" />
+        <Text as="h1" color="primary" medium center>
+          !Gracias por confiar <br /> en nosotros!
         </Text>
-        <Text as="button" bold uppercase>
-          Aceptar
-        </Text>
-      </div>
+      </Modal>
     </div>
   )
 }

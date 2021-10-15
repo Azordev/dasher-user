@@ -83,6 +83,9 @@ const text = {
   danger: css`
     color: var(--danger);
   `,
+  textCenter: css`
+    text-align: center;
+  `,
 }
 
 export default text
