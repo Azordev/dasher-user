@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { Modal, Text } from '../components'
-import { MiddleAlign } from '../components/Modal/Modal.styled'
 import note from '../assets/note.png'
 import handshake from '../assets/handshake.png'
 import RatingMan from '../assets/man-rate.png'
@@ -53,12 +52,10 @@ const Confirm = () => {
         <img src={star} alt="Stars rating" />
       </div>
       <Modal isOpen={isModalOpen} handleClick={() => changeIsModalOpen(false)} actionText="Aceptar">
-        <MiddleAlign>
-          <img src={handshake} alt="Handshake Image" />
+        <img src={handshake} alt="Handshake Image" />
         <Text as="h1" color="primary" medium center>
           !Gracias por confiar <br /> en nosotros!
         </Text>
-        </MiddleAlign>        
       </Modal>
     </div>
   )
