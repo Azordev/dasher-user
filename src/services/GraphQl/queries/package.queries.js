@@ -10,6 +10,8 @@ export const GET_PACKAGE_INFORMATION_QUERY = gql`
       current_lat
       current_lon
       order_status
+      package_code
+      estimated_arrival
       package_company {
         company_address
         company_name
@@ -19,7 +21,7 @@ export const GET_PACKAGE_INFORMATION_QUERY = gql`
         dasher_phone
         dasher_status
       }
-      package_code
+      
     }
   }
 `
