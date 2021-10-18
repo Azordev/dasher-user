@@ -19,6 +19,8 @@
   - [The Project](#the-project)
     - [Features](#features)
     - [Built With](#built-with)
+  - [Create a .env file](#create-a-env-file)
+  - [Advantages Of Styled-Components](#advantages-of-styled-components)
   - [Using the App](#using-the-app)
   - [How to run this project](#how-to-run-this-project)
     - [Prerequisites](#prerequisites)
@@ -62,6 +64,20 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 - `vscode` with _ESLint_ extension
 - Linux/GNU, macOS, Windows
 - Love and Passion for code
+
+
+## Create a .env file
+- Create a .env file.
+- Put correct key.
+  
+## Advantages Of Styled-Components
+- Easier management of CSS: With every bit of styling tied to a specific component, it is easier to know which CSS is applied This makes it easy to delete unused component styles.
+- Using styled components if we change a variable value then it can change all the value.
+- We can reuse same style component where we need and also we can use it conditionaly.
+- Simple and dynamic styling: Through props and global themes supported in styled-components, styling is simple without manually managing dozens of classes.
+
+
+
 
 ## Using the App
 
