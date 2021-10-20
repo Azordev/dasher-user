@@ -21,6 +21,9 @@ const BackTxt = styled.p`
   color: white;
   font-size: 1em;
   margin: auto 0;
+  :before {
+    content: '${props => props.txt}';
+  }
   @media (min-width: 960px) {
     font-size: 1.5em;
   }
@@ -40,13 +43,15 @@ const HeaderText = styled.div`
   }
 `
 
-const ChatBtnContainer = styled.div`
+const ChatBtnContainer = styled.a`
   width: 33.33%;
   display: flex;
   justify-content: flex-end;
+  cursor: default;
 `
 
 const ChatBtn = styled.img`
+  cursor: pointer;
   @media (max-width: 960px) {
     width: 50px;
     height: 50px;
@@ -57,6 +62,9 @@ const HeaderTitle = styled.div`
   display: flex;
   text-align: left;
   margin: 0 auto;
+  :before {
+    content: '${props => props.title}';
+  }
 `
 
 const HeaderSubTitle = styled.div`
@@ -65,6 +73,9 @@ const HeaderSubTitle = styled.div`
   font-size: 0.55em;
   color: white;
   margin: 0 auto;
+  :before {
+    content: '${props => props.subtitle}';
+  }
 `
 
 const FooterMap = styled.div`
@@ -85,10 +96,24 @@ const FooterMap = styled.div`
 `
 
 const FooterMapAddress = styled.div`
-  flex:${props => props.cols};
+  flex: ${props => props.cols};
   text-align: center;
   padding: 5% 0;
   color: #f8d24c;
+  :before {
+    content: '${props => props.txt}';
+  }
 `
 
-export { HeaderMap, BackBtn, BackTxt, HeaderText, ChatBtnContainer, ChatBtn, HeaderTitle, HeaderSubTitle, FooterMap, FooterMapAddress }
+export {
+  HeaderMap,
+  BackBtn,
+  BackTxt,
+  HeaderText,
+  ChatBtnContainer,
+  ChatBtn,
+  HeaderTitle,
+  HeaderSubTitle,
+  FooterMap,
+  FooterMapAddress,
+}
