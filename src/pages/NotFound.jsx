@@ -10,12 +10,10 @@ const Container = styled.div`
   padding: 20px;
   height: 100vh;
 `
-
 const NotFoundImg = styled.img`
   width: 80%;
   padding: 0%;
 `
-
 const ErrorNotFound = () => (
   <Container>
     <NotFoundImg src={NotFound} alt="Image Not-found" />
@@ -27,6 +25,5 @@ const ErrorNotFound = () => (
       </Text>
     </Text>
   </Container>
-)
-
+);
 export default ErrorNotFound
