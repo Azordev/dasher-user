@@ -3,12 +3,7 @@ import PropTypes from 'prop-types'
 
 function FormInput(props) {
   const { label, type = 'text', name, value, onChange } = props
-  return (
-    <FormWrapper>
-      <FormLabel></FormLabel>
-      <FormInputField placeholder={label} type={type} name={name} value={value} onChange={onChange} />
-    </FormWrapper>
-  )
+  return <FormInputField placeholder={label} type={type} name={name} value={value} onChange={onChange} />
 }
 
 FormInput.propTypes = {
@@ -21,12 +16,7 @@ FormInput.propTypes = {
 
 export default FormInput
 
-export const FormWrapper = styled.form`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-`
+export const FormWrapper = styled.div``
 
 export const FormLabel = styled.label``
 export const FormInputField = styled.input`
