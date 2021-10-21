@@ -31,7 +31,7 @@
     "build": "react-app-rewired build",
     "eject": "react-app-rewired eject",
     "spelling": "cspell run src/**/*.js",
-    "lint:css": "stylelint --config .stylelintrc.json './**/*.styled.jsx'; echo 'CSS fine! 💅'",
+    "lint:css": "stylelint --config .stylelintrc.json './**/*.styled.jsx'",
     "lint:js": "eslint src --color --cache -f table; echo 'JS format fine! 🧪✓'",
     "lint:js:fix": "eslint src --fix",
     "prettier": "prettier src  --write --config ./.prettierrc.js; echo 'JS style fine! 📋✓'",
