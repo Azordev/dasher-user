@@ -7,12 +7,15 @@ const HeaderMap = styled.div`
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   padding: 1.5%;
+  height: 15vh;
 `
 
 const BackBtn = styled.img`
-  width: 30px;
-  @media (min-width: 960px) {
-    width: 50px;
+  @media (max-width: 960px) {
+    height: 100%;
+  }
+  @media (min-width: 961px) {
+    height: 100%;
   }
 `
 
@@ -24,8 +27,14 @@ const BackTxt = styled.p`
   :before {
     content: '${props => props.txt}';
   }
-  @media (min-width: 960px) {
-    font-size: 1.5em;
+  @media (max-width: 960px) {
+    display: none;
+  }
+  @media (min-width: 961px) {
+    font-size: 2.5em;
+  }
+  @media (min-width: 3180px) {
+    font-size: 6em;
   }
 `
 
@@ -41,10 +50,17 @@ const HeaderText = styled.div`
   @media (min-width: 960px) {
     font-size: 2em;
   }
+  @media (min-width: 3180px) {
+    font-size: 6em;
+  }
+  @media (max-width: 960px) {
+    font-size: 1em;
+  }
 `
 
 const ChatBtnContainer = styled.a`
   width: 33.33%;
+  height: auto;
   display: flex;
   justify-content: flex-end;
   cursor: default;
@@ -52,6 +68,11 @@ const ChatBtnContainer = styled.a`
 
 const ChatBtn = styled.img`
   cursor: pointer;
+  margin: auto 0;
+  @media (min-width: 960px) {
+    width: auto;
+    height: 10vh;
+  }
   @media (max-width: 960px) {
     width: 50px;
     height: 50px;
@@ -79,29 +100,49 @@ const HeaderSubTitle = styled.div`
 `
 
 const FooterMap = styled.div`
-  position: absolute;
-  bottom: 0;
+  align-self: flex-end;
   background-color: #486ef5;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   width: 50%;
-  margin: 0 25%;
-  height: 20%;
   display: flex;
   flex-wrap: wrap;
   @media (max-width: 960px) {
     width: 80%;
     margin: 0 10%;
+    height: 20vh;
+  }
+  @media (min-width: 961px) {
+    width: 50%;
+    margin: 0 25%;
+    height: auto;
+  }
+  @media (min-width: 3180px) {
+    width: 70%;
+    margin: 0 15%;
+    height: auto;
   }
 `
 
 const FooterMapAddress = styled.div`
   flex: ${props => props.cols};
   text-align: center;
-  padding: 5% 0;
   color: #f8d24c;
   :before {
     content: '${props => props.txt}';
+  }
+  @media (max-width: 960px) {
+    font-size: 0.7em;
+    padding: 5% 0;
+  }
+  @media (min-width: 960px) {
+    font-size: 1em;
+    padding: 3.78% 0;
+  }
+  @media (min-width: 3180px) {
+    font-size: 3em;
+    height: 50px;
+    padding: 3.02% 0;
   }
 `
 

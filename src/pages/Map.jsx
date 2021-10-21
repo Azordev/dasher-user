@@ -20,13 +20,14 @@ const MapLayout = () => (
       <BackBtn src={arrow} />
       <BackTxt txt={'Atrás'}></BackTxt>
       <HeaderText>
-        <HeaderTitle title={'En camino...'}></HeaderTitle>
-        <HeaderSubTitle subtitle={'Vamos con tu envio...'}></HeaderSubTitle>
+        <HeaderTitle>En camino...</HeaderTitle>
+        <HeaderSubTitle>Vamos con tu envio...</HeaderSubTitle>
       </HeaderText>
       <ChatBtnContainer href="/chat/1">
         <ChatBtn src={chat} />
       </ChatBtnContainer>
     </HeaderMap>
+    <div style={{ display: 'flex', height: '65vh' }}></div>
     <FooterMap>
       <FooterMapAddress cols={'0 0 100%'} txt={'Av, Apurimac 1020, Santiago de Chile'}></FooterMapAddress>
       <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}></FooterMapAddress>
