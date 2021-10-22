@@ -3,8 +3,8 @@ import styled from 'styled-components'
 const ChatLayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: 100vw;
+  min-height: 100vh;
 `
 
 const HeaderChat = styled.div`
@@ -15,7 +15,6 @@ const HeaderChat = styled.div`
   border-bottom-left-radius: 25px;
   padding: 1.5%;
   height: 11vh;
-
   @media (min-width: 960px) {
     height: 12vh;
   }
@@ -62,7 +61,7 @@ const HeaderTitle = styled.div`
 
 const ChatBodyWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 1;
   margin: 30px auto;
 `
@@ -73,7 +72,6 @@ const FooterChat = styled.div`
   display: flex;
   flex-wrap: wrap;
   height: auto;
-  position: absolute;
   bottom: 0;
 `
 
