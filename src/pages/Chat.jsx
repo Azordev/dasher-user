@@ -35,7 +35,7 @@ const Chat = () => {
       </HeaderChat>
       <ChatBodyWrapper>Body</ChatBodyWrapper>
       <FooterChat>
-        <FooterChatInput cols={'0 0 100%'} style={{ flexDirection: 'row' }}>
+        <FooterChatInput cols={'0 0 100%'}>
           Footer
         </FooterChatInput>
       </FooterChat>

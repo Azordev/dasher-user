@@ -14,6 +14,7 @@ const HeaderChat = styled.div`
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   padding: 1.5%;
+  height: 11vh;
 
   @media (min-width: 960px) {
     height: 12vh;
@@ -22,14 +23,10 @@ const HeaderChat = styled.div`
   @media (min-width: 3180px) {
     height: 14vh;
   }
-
-  @media (max-width: 960px) {
-    height: 11vh;
-  }
 `
 
 const BackBtn = styled.img`
- height: 100%;
+  height: 100%;
 `
 
 const HeaderChatImg = styled.img`
@@ -41,12 +38,12 @@ const HeaderText = styled.div`
   width: 33.33%;
   text-align: center;
   color: #f7cd46;
-  font-size: 1em;
   font-weight: bold;
   display: flex;
   flex: 1;
   flex-direction: column;
   margin: auto 0;
+  font-size: 1em;
 
   @media (min-width: 960px) {
     font-size: 2em;
@@ -54,10 +51,6 @@ const HeaderText = styled.div`
 
   @media (min-width: 3180px) {
     font-size: 6em;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 1em;
   }
 `
 
