@@ -60,6 +60,7 @@ const Home = () => (
     </Text>
     <Text small>Revisemos como viene tu envío</Text>
      <ManImage src={deliveryMan} alt="Delivery man" />
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae non, cumque, unde debitis corrupti harum sit suscipit similique dolorem accusantium eum ab quo eaque provident architecto consectetur. Non, maiores illo!</p>
     <Button >
       Aceptar
     </Button>
