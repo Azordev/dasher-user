@@ -29,9 +29,7 @@ const HeaderChat = styled.div`
 `
 
 const BackBtn = styled.img`
-  @media (max-width: 960px) {
-    height: 100%;
-  }
+ height: 100%;
 
   @media (min-width: 961px) {
     height: 100%;
