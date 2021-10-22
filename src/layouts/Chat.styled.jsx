@@ -14,7 +14,27 @@ const HeaderChat = styled.div`
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   padding: 1.5%;
-  height: 15vh;
+  @media (min-width: 960px) {
+    height: 12vh;
+  }
+
+  @media (min-width: 3180px) {
+    height: 14vh;
+  }
+
+  @media (max-width: 960px) {
+    height: 13vh;
+  }
+`
+
+const BackBtn = styled.img`
+  @media (max-width: 960px) {
+    height: 100%;
+  }
+
+  @media (min-width: 961px) {
+    height: 100%;
+  }
 `
 
 const HeaderChatImg = styled.img`
@@ -99,4 +119,5 @@ export {
   HeaderChatImg,
   HeaderTitle,
   HeaderText,
+  BackBtn,
 }

@@ -13,8 +13,8 @@ import {
   FooterChatInput,
   ChatBodyWrapper,
   HeaderChatImg,
+  BackBtn,
 } from '../layouts/Chat.styled'
-import { BackBtn } from '../layouts/Map.styled'
 
 const Chat = () => {
   const { id } = useParams()
