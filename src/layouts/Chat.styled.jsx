@@ -14,6 +14,7 @@ const HeaderChat = styled.div`
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   padding: 1.5%;
+
   @media (min-width: 960px) {
     height: 12vh;
   }
