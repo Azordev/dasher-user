@@ -64,14 +64,14 @@ const Delivery = () => {
         <FooterMap>
           <FooterMapAddress
             cols={'0 0 100%'}
-            txt={packageInformation.packages[0].client_address}
+            txt={packageInformation?.packages[0]?.client_address}
             style={{ flexDirection: 'row' }}
           >
             <img src={gps} alt="Gps icon" />
           </FooterMapAddress>
           <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
             <Text small bold uppercase>
-              {packageInformation.packages[0].estimated_arrival}
+              {packageInformation?.packages[0]?.estimated_arrival}
             </Text>
           </FooterMapAddress>
           <FooterMapAddress cols={'0 0 50%'} txt={'Central Dasher'}>
