@@ -1,12 +1,26 @@
 import { useParams, useHistory } from 'react-router-dom'
 import { Text } from '../components'
+import {
+  MapLayoutContainer,
+  HeaderMap,
+  BackBtn,
+  BackTxt,
+  HeaderText,
+  ChatBtnContainer,
+  ChatBtn,
+  HeaderTitle,
+  HeaderSubTitle,
+  FooterMap,
+  FooterMapAddress,
+} from '../layouts/Map.styled'
 import assistant from '../assets/assistant.png'
 import chat from '../assets/chat.png'
-import send from '../assets/send.png'
+// import send from '../assets/send.png'
 import arrow from '../assets/arrow-left.svg'
 import gps from '../assets/gps-icon.png'
 import Map from '../components/Map/Map'
 import { useGetPackageInformation, useClientLocation, useDasherLatestCoordinates } from '../hooks'
+import { Fragment } from 'react'
 
 const Delivery = () => {
   const { id } = useParams()
@@ -33,28 +47,39 @@ const Delivery = () => {
   }
 
   return (
-    <div>
-      <div className="delivery-header">
-        <img src={arrow} alt="Arrow left" />
-        <Text as="h1" color="secondary" medium>
-          Recogiendo
-        </Text>
-        <Text>Nuestro Dasher esta recogiendo su envío...</Text>
-        <img src={chat} alt="Chat" />
-      </div>
-      {center[0] && <Map center={center} dasher={dasher} />}
-
-      <div className="delivery-footer">
-        <img src={gps} alt="Gps icon" />
-        <Text></Text>
-        <Text bold uppercase>
-          {packageInformation && packageInformation.packages[0].estimated_arrival}
-        </Text>
-        <Text>Tiempo estimado de llegada</Text>
-        <img src={assistant} alt="Central Dasher" />
-        <Text>Central Dasher</Text>
-      </div>
-      <div className="modal-pick-up">
+    <Fragment>
+      <MapLayoutContainer>
+        <HeaderMap>
+          <BackBtn src={arrow} />
+          <BackTxt txt={'Atrás'}></BackTxt>
+          <HeaderText>
+            <HeaderTitle>En camino...</HeaderTitle>
+            <HeaderSubTitle>Vamos con tu envio...</HeaderSubTitle>
+          </HeaderText>
+          <ChatBtnContainer href={`/chat/${id}`}>
+            <ChatBtn src={chat} />
+          </ChatBtnContainer>
+        </HeaderMap>
+        {center[0] && <Map center={center} dasher={dasher} />}
+        <FooterMap>
+          <FooterMapAddress
+            cols={'0 0 100%'}
+            txt={packageInformation.packages[0].client_address}
+            style={{ flexDirection: 'row' }}
+          >
+            <img src={gps} alt="Gps icon" />
+          </FooterMapAddress>
+          <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
+            <Text small bold uppercase>
+              {packageInformation.packages[0].estimated_arrival}
+            </Text>
+          </FooterMapAddress>
+          <FooterMapAddress cols={'0 0 50%'} txt={'Central Dasher'}>
+            <img src={assistant} alt="Central Dasher" />
+          </FooterMapAddress>
+        </FooterMap>
+      </MapLayoutContainer>
+      {/* <div className="modal-pick-up">
         <Text as="h1" color="primary" small>
           El Dasher ha llegado
         </Text>
@@ -65,8 +90,8 @@ const Delivery = () => {
         <Text as="button" bold uppercase>
           Aceptar
         </Text>
-      </div>
-    </div>
+      </div> */}
+    </Fragment>
   )
 }
 

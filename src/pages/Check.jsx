@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router'
-import { Container, Header, BackButton, TicketImage, MainSection } from '../layouts/SplittedLayout'
+import { Container, Header, BackButton, TicketImage, MainSection } from '../layouts/Splitted.styled'
 
 import { Button, Input, Modal, Text } from '../components'
 import ticket from '../assets/ticket.png'
