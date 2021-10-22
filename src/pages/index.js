@@ -6,7 +6,6 @@ import Delivery from './Delivery'
 import Error from './Error'
 import Home from './Home'
 import NotFound from './NotFound'
-import MapLayout from './Map';
 
 const Pages = () => (
   <BrowserRouter>
@@ -25,9 +24,6 @@ const Pages = () => (
       </Route>
       <Route path="/confirm/:id?">
         <Confirm />
-      </Route>
-      <Route path="/map/:id?">
-        <MapLayout />
       </Route>
       <Route path="/error">
         <Error />

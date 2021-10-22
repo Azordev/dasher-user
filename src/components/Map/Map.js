@@ -6,9 +6,13 @@ import GoogleMapReact from 'google-map-react'
 import Marker from '../Marker'
 
 const Wrapper = styled.main`
-  width: 100%;
-  height: 80vh;
   min-height: 356px;
+  max-width: var(--max-width);
+  z-index: var(--z-map);
+  display: flex;
+  height: 65vh;
+  margin: 30px auto;
+  justify-content: center;
 `
 
 const Map = ({ center, dasher }) => (
