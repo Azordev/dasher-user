@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+const MapLayoutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+`
+
 const HeaderMap = styled.div`
   display: flex;
   flex-direction: row;
@@ -112,24 +119,21 @@ const FooterMap = styled.div`
   display: flex;
   flex-wrap: wrap;
   z-index: var(--z-map-item);
-  position: absolute;
+  height: auto;
 
   @media (max-width: 960px) {
     width: 80%;
     margin: 0 10%;
-    height: 20vh;
   }
 
   @media (min-width: 961px) {
     width: 50%;
     margin: 0 25%;
-    height: auto;
   }
 
   @media (min-width: 3180px) {
     width: 70%;
     margin: 0 15%;
-    height: auto;
   }
 `
 
@@ -164,6 +168,7 @@ const FooterMapAddress = styled.div`
 `
 
 export {
+  MapLayoutContainer,
   HeaderMap,
   BackBtn,
   BackTxt,

@@ -1,6 +1,7 @@
 import { useParams, useHistory } from 'react-router-dom'
 import { Text } from '../components'
 import {
+  MapLayoutContainer,
   HeaderMap,
   BackBtn,
   BackTxt,
@@ -47,35 +48,37 @@ const Delivery = () => {
 
   return (
     <Fragment>
-      <HeaderMap>
-        <BackBtn src={arrow} />
-        <BackTxt txt={'Atrás'}></BackTxt>
-        <HeaderText>
-          <HeaderTitle>En camino...</HeaderTitle>
-          <HeaderSubTitle>Vamos con tu envio...</HeaderSubTitle>
-        </HeaderText>
-        <ChatBtnContainer href={`/chat/${id}`}>
-          <ChatBtn src={chat} />
-        </ChatBtnContainer>
-      </HeaderMap>
-      {center[0] && <Map center={center} dasher={dasher} />}
-      <FooterMap>
-        <FooterMapAddress
-          cols={'0 0 100%'}
-          txt={packageInformation.packages[0].client_address}
-          style={{ flexDirection: 'row' }}
-        >
-          <img src={gps} alt="Gps icon" />
-        </FooterMapAddress>
-        <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
-          <Text bold uppercase>
-            {packageInformation.packages[0].estimated_arrival}
-          </Text>
-        </FooterMapAddress>
-        <FooterMapAddress cols={'0 0 50%'} txt={'Central Dasher'}>
-          <img src={assistant} alt="Central Dasher" />
-        </FooterMapAddress>
-      </FooterMap>
+      <MapLayoutContainer>
+        <HeaderMap>
+          <BackBtn src={arrow} />
+          <BackTxt txt={'Atrás'}></BackTxt>
+          <HeaderText>
+            <HeaderTitle>En camino...</HeaderTitle>
+            <HeaderSubTitle>Vamos con tu envio...</HeaderSubTitle>
+          </HeaderText>
+          <ChatBtnContainer href={`/chat/${id}`}>
+            <ChatBtn src={chat} />
+          </ChatBtnContainer>
+        </HeaderMap>
+        {center[0] && <Map center={center} dasher={dasher} />}
+        <FooterMap>
+          <FooterMapAddress
+            cols={'0 0 100%'}
+            txt={packageInformation.packages[0].client_address}
+            style={{ flexDirection: 'row' }}
+          >
+            <img src={gps} alt="Gps icon" />
+          </FooterMapAddress>
+          <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
+            <Text small bold uppercase>
+              {packageInformation.packages[0].estimated_arrival}
+            </Text>
+          </FooterMapAddress>
+          <FooterMapAddress cols={'0 0 50%'} txt={'Central Dasher'}>
+            <img src={assistant} alt="Central Dasher" />
+          </FooterMapAddress>
+        </FooterMap>
+      </MapLayoutContainer>
       {/* <div className="modal-pick-up">
         <Text as="h1" color="primary" small>
           El Dasher ha llegado

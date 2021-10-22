@@ -7,12 +7,26 @@ import Marker from '../Marker'
 
 const Wrapper = styled.main`
   min-height: 356px;
+  max-height: auto,
   max-width: var(--max-width);
   z-index: var(--z-map);
   display: flex;
-  height: 65vh;
+  flex-direction: row;
+  flex: 1;
   margin: 30px auto;
   justify-content: center;
+
+  @media (min-width: 960px) {
+    width: 70vw;
+  }
+
+  @media (min-width: 3180px) {
+    width: 80vw;
+  }
+
+  @media (max-width: 960px) {
+    width: 90vw;
+  }
 `
 
 const Map = ({ center, dasher }) => (
