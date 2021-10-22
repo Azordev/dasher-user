@@ -23,7 +23,7 @@ const HeaderChat = styled.div`
   }
 
   @media (max-width: 960px) {
-    height: 13vh;
+    height: 11vh;
   }
 `
 
