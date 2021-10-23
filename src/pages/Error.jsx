@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Error = ({ errorInfo = { componentStack: ['error'] } }) => (
+const Error = ({ errorInfo = { componentStack: ['error'] },errorId }) => (
   <div>
     <p>
       There was an error in loading this page.{' '}
@@ -15,7 +15,8 @@ const Error = ({ errorInfo = { componentStack: ['error'] } }) => (
     </p>
     <details className="error-details">
       <summary>Click for error details</summary>
-      {errorInfo && errorInfo?.componentStack.toString()}
+      Info:{errorInfo && errorInfo?.componentStack.toString()}
+      ErrorId:{errorId && errorId}
     </details>
   </div>
 )
@@ -24,6 +25,7 @@ Error.propTypes = {
   errorInfo: PropTypes.shape({
     componentStack: PropTypes.object.isRequired,
   }),
+  errorId:PropTypes.string
 }
 
 export default Error

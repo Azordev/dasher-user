@@ -1,10 +1,11 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import Error from '../pages/Error';
+import Error from '../pages/Error'
+import { logError } from '../helpers'
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       error: '',
       errorInfo: '',
@@ -12,14 +13,21 @@ export default class ErrorBoundary extends Component {
     }
   }
 
+   static getDerivedStateFromError(_error) {
+    return { hasError: true };
+  }
+
   componentDidCatch(error, errorInfo) {
-    this.setState({ errorInfo, error })
+    this.setState({ errorInfo, error})
   }
 
   render() {
-    const { hasError, errorInfo } = this.state
+    const { hasError, errorInfo, error } = this.state
 
-    if (hasError) return <Error errorInfo={errorInfo} />
+    if (hasError) {
+      const errorId = logError({ error: error, codeLocation: 'codeLocation', type: 'crash' })
+      return <Error errorInfo={errorInfo} errorId={errorId} />
+    }
 
     return this.props.children
   }
