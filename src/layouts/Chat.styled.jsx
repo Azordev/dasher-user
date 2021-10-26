@@ -93,6 +93,47 @@ const FooterChatInput = styled.div`
   }
 `
 
+const MessageRow = styled.div`
+  margin: 10px 0;
+  display: block;
+  &:after {
+    clear: both;
+    display: table;
+  }
+  & img {
+    float: ${({ type }) => (type === 'client' ? `left` : `right`)};
+  }
+`
+
+const MessageBox = styled.div`
+  display: inline-block;
+  padding: 10px;
+  background: #e1e1e1;
+  border-radius: 15px;
+  color: #646464;
+  font-size: 1rem;
+  min-height: 52px;
+  margin: 0 1vw;
+  line-height: 30px;
+  width: 40vw;
+  @media (max-width: 960px) {
+    width: 80vw;
+  }
+  @media (min-width: 3180px) {
+    line-height: 3.5vw;
+    font-size: 3rem;
+  }
+`
+
+const Avatar = styled.img`
+  display: inline-block;
+  width: 14vw;
+  margin: auto 0;
+  @media (min-width: 960px) {
+    width: 4vw;
+  }
+`
+
 export {
   ChatLayoutContainer,
   HeaderChat,
@@ -103,4 +144,7 @@ export {
   HeaderTitle,
   HeaderText,
   BackBtn,
+  MessageRow,
+  MessageBox,
+  Avatar,
 }

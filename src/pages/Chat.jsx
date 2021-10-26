@@ -1,7 +1,5 @@
 import { useParams, useHistory } from 'react-router-dom'
 import deliveryManWhite from '../assets/delivery-chat-white.png'
-/* import assistant from '../assets/asistant-chat.png'
-import sendButton from '../assets/send-chat.png' */
 import userIcon from '../assets/user-icon.png'
 import arrow from '../assets/arrow-left.svg'
 import {
@@ -14,10 +12,10 @@ import {
   ChatBodyWrapper,
   HeaderChatImg,
   BackBtn,
+  MessageBox,
+  Avatar,
+  MessageRow,
 } from '../layouts/Chat.styled'
-import MessageBox from '../components/Chat/MessageBox'
-import Avatar from '../components/Chat/Avatar'
-import MessageRow from '../components/Chat/MessageRow'
 
 const Chat = () => {
   const { id } = useParams()
