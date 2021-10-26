@@ -1,8 +1,6 @@
 import { useParams, useHistory } from 'react-router-dom'
 import deliveryManWhite from '../assets/delivery-chat-white.png'
-/* import assistant from '../assets/asistant-chat.png'
-import sendButton from '../assets/send-chat.png'
-import userIcon from '../assets/user-icon.png' */
+import userIcon from '../assets/user-icon.png'
 import arrow from '../assets/arrow-left.svg'
 import {
   ChatLayoutContainer,
@@ -14,6 +12,9 @@ import {
   ChatBodyWrapper,
   HeaderChatImg,
   BackBtn,
+  MessageBox,
+  Avatar,
+  MessageRow,
 } from '../layouts/Chat.styled'
 
 const Chat = () => {
@@ -33,11 +34,18 @@ const Chat = () => {
           <HeaderTitle>Repartidor Dasher</HeaderTitle>
         </HeaderText>
       </HeaderChat>
-      <ChatBodyWrapper>Body</ChatBodyWrapper>
+      <ChatBodyWrapper>
+        <MessageRow type={'client'}>
+          <Avatar src={userIcon} />
+          <MessageBox>Hi!</MessageBox>
+        </MessageRow>
+        <MessageRow type={'dasher'}>
+          <Avatar src={deliveryManWhite} />
+          <MessageBox>Hello!</MessageBox>
+        </MessageRow>
+      </ChatBodyWrapper>
       <FooterChat>
-        <FooterChatInput cols={'0 0 100%'}>
-          Footer
-        </FooterChatInput>
+        <FooterChatInput cols={'0 0 100%'}>Footer</FooterChatInput>
       </FooterChat>
     </ChatLayoutContainer>
   )
