@@ -6,13 +6,17 @@ import reportWebVitals from './reportWebVitals'
 import { Theme } from './styles'
 import { ApolloProvider } from '@apollo/client'
 import { client } from './services/GraphQl'
+import ErrorBoundary from './layouts/ErrorBoundary'
+
 ReactDOM.render(
   <React.StrictMode>
-    <Theme>
-      <ApolloProvider client={client}>
-        <Pages />
-      </ApolloProvider>
-    </Theme>
+    <ErrorBoundary>
+      <Theme>
+        <ApolloProvider client={client}>
+          <Pages />
+        </ApolloProvider>
+      </Theme>
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root'),
 )
