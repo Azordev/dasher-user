@@ -25,15 +25,12 @@ import { Fragment, useState } from 'react'
 const Delivery = () => {
   const { id } = useParams()
   const history = useHistory()
-  const [isModalOpen, changeIsModalOpen] = useState(true)
-  const [checkRedirect, setCheckRedirect] = useState(false)
+  const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)
 
   if (!id || id !== 'test') {
     history.push('/check')
   }
-  if (checkRedirect === true) {
-    history.push('/check/' + id)
-  }
+  const toCheck = () => history.push(`/check/{id}`)
 
   const { packageInformation } = useGetPackageInformation({ packageId: id })
   const { latestCoordinates, error, loading } = useDasherLatestCoordinates({ packageId: id })
@@ -85,10 +82,10 @@ const Delivery = () => {
         </FooterMap>
       </MapLayoutContainer>
       <Modal
-        isOpen={isModalOpen}
+        isOpen={openDeliveryConfirmedModal}
         handleClick={() => {
-          changeIsModalOpen(false)
-          setCheckRedirect(true)
+          toggleDeliveryConfirmedModal(false)
+          toCheck()
         }}
         actionText="Aceptar"
       >
