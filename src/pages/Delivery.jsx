@@ -1,5 +1,5 @@
 import { useParams, useHistory } from 'react-router-dom'
-import { Text } from '../components'
+import { Text, Modal } from '../components'
 import {
   MapLayoutContainer,
   HeaderMap,
@@ -15,19 +15,24 @@ import {
 } from '../layouts/Map.styled'
 import assistant from '../assets/assistant.png'
 import chat from '../assets/chat.png'
-// import send from '../assets/send.png'
+import send from '../assets/send.png'
 import arrow from '../assets/arrow-left.svg'
 import gps from '../assets/gps-icon.png'
 import Map from '../components/Map/Map'
 import { useGetPackageInformation, useClientLocation, useDasherLatestCoordinates } from '../hooks'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 
 const Delivery = () => {
   const { id } = useParams()
   const history = useHistory()
+  const [isModalOpen, changeIsModalOpen] = useState(true)
+  const [checkRedirect, setCheckRedirect] = useState(false)
 
   if (!id || id !== 'test') {
     history.push('/check')
+  }
+  if (checkRedirect === true) {
+    history.push('/check/' + id)
   }
 
   const { packageInformation } = useGetPackageInformation({ packageId: id })
@@ -79,18 +84,22 @@ const Delivery = () => {
           </FooterMapAddress>
         </FooterMap>
       </MapLayoutContainer>
-      {/* <div className="modal-pick-up">
-        <Text as="h1" color="primary" small>
+      <Modal
+        isOpen={isModalOpen}
+        handleClick={() => {
+          changeIsModalOpen(false)
+          setCheckRedirect(true)
+        }}
+        actionText="Aceptar"
+      >
+        <Text as="h1" color="primary" medium center>
           El Dasher ha llegado
         </Text>
-        <Text small color="danger">
-          Recoja su envío
+        <Text as="h4" color="gray" small center>
+          Recoja su env&iacute;o
         </Text>
-        <img src={send} alt="Send" />
-        <Text as="button" bold uppercase>
-          Aceptar
-        </Text>
-      </div> */}
+        <img src={send} alt="Dasher has arrived image" />
+      </Modal>
     </Fragment>
   )
 }
