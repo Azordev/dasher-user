@@ -118,7 +118,6 @@ const FooterMap = styled.div`
   width: 50%;
   display: flex;
   flex-wrap: wrap;
-  z-index: var(--z-map-item);
   height: auto;
 
   @media (max-width: 960px) {

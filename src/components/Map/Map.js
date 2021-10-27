@@ -9,7 +9,6 @@ const Wrapper = styled.main`
   min-height: 356px;
   max-height: auto,
   max-width: var(--max-width);
-  z-index: var(--z-map);
   display: flex;
   flex-direction: row;
   flex: 1;
