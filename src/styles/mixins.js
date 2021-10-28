@@ -95,6 +95,9 @@ export const bg = {
   secondary: css`
     background-color: var(--secondary);
   `,
+  gray: css`
+    background-color: var(--light-gray);
+  `,
 }
 
 export { text }

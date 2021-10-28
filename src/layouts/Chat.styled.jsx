@@ -1,20 +1,17 @@
 import styled from 'styled-components'
+import { bg, m, p, rounded, size, text } from '../styles/mixins'
 
-const ChatLayoutContainer = styled.div`
+export const ChatLayoutContainer = styled.div`
+  ${size({ width: '100vw', minHeight: '100vh' })}
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  min-height: 100vh;
 `
 
-const HeaderChat = styled.div`
+export const HeaderChat = styled.div`
+  ${[rounded({ bl: '25px', br: '25px' }), p({ all: '1.5%' }), size({ height: '11vh' }), bg.primary]}
   display: flex;
   flex-direction: row;
-  background: var(--primary);
-  border-bottom-right-radius: 25px;
-  border-bottom-left-radius: 25px;
-  padding: 1.5%;
-  height: 11vh;
+
   @media (min-width: 960px) {
     height: 12vh;
   }
@@ -24,25 +21,20 @@ const HeaderChat = styled.div`
   }
 `
 
-const BackBtn = styled.img`
+export const BackBtn = styled.img`
   height: 100%;
 `
 
-const HeaderChatImg = styled.img`
+export const HeaderChatImg = styled.img`
   height: 90%;
   margin: auto 0;
 `
 
-const HeaderText = styled.div`
-  width: 33.33%;
-  text-align: center;
-  color: #f7cd46;
-  font-weight: bold;
+export const HeaderText = styled.div`
+  ${[m({ x: '0', y: 'auto' }), size({ width: '33.33%' }), text.base, text[700], text.secondary, text.textCenter]}
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: auto 0;
-  font-size: 1em;
 
   @media (min-width: 960px) {
     font-size: 2em;
@@ -53,20 +45,20 @@ const HeaderText = styled.div`
   }
 `
 
-const HeaderTitle = styled.div`
+export const HeaderTitle = styled.div`
   display: flex;
   text-align: left;
   margin: 0 auto;
 `
 
-const ChatBodyWrapper = styled.div`
+export const ChatBodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   margin: 30px auto;
 `
 
-const FooterChat = styled.div`
+export const FooterChat = styled.div`
   align-self: flex-end;
   width: 100%;
   display: flex;
@@ -75,14 +67,13 @@ const FooterChat = styled.div`
   bottom: 0;
 `
 
-const FooterChatInput = styled.div`
+export const FooterChatInput = styled.div`
+  ${[p({ x: '0', y: '5%' }), text.textCenter]}
   flex: ${props => props.cols};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 5% 0;
 
   @media (min-width: 960px) {
     padding: 3.78% 0;
@@ -93,58 +84,48 @@ const FooterChatInput = styled.div`
   }
 `
 
-const MessageRow = styled.div`
+export const MessageRow = styled.div`
   margin: 10px 0;
   display: block;
-  &:after {
+
+  &::after {
     clear: both;
     display: table;
   }
+
   & img {
     float: ${({ type }) => (type === 'client' ? `left` : `right`)};
   }
 `
 
-const MessageBox = styled.div`
+export const MessageBox = styled.div`
+  ${[
+    m({ x: '1vw', y: '0' }),
+    p({ all: '10px' }),
+    rounded({ all: '15px' }),
+    size({ width: '40vw' }),
+    text.base,
+    text.gray09,
+    bg.gray,
+  ]}
   display: inline-block;
-  padding: 10px;
-  background: #e1e1e1;
-  border-radius: 15px;
-  color: #646464;
-  font-size: 1rem;
-  min-height: 52px;
-  margin: 0 1vw;
-  line-height: 30px;
-  width: 40vw;
+
   @media (max-width: 960px) {
     width: 80vw;
   }
+
   @media (min-width: 3180px) {
     line-height: 3.5vw;
     font-size: 3rem;
   }
 `
 
-const Avatar = styled.img`
+export const Avatar = styled.img`
   display: inline-block;
   width: 14vw;
   margin: auto 0;
+
   @media (min-width: 960px) {
     width: 4vw;
   }
 `
-
-export {
-  ChatLayoutContainer,
-  HeaderChat,
-  FooterChat,
-  FooterChatInput,
-  ChatBodyWrapper,
-  HeaderChatImg,
-  HeaderTitle,
-  HeaderText,
-  BackBtn,
-  MessageRow,
-  MessageBox,
-  Avatar,
-}

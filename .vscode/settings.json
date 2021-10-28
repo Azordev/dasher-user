@@ -2,7 +2,6 @@
   "cSpell.language": "en,es",
   "diffEditor.ignoreTrimWhitespace": false,
   "liveshare.languages.allowGuestCommandControl": true,
-  "telemetry.enableCrashReporter": false,
   "emmet.excludeLanguages": [],
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {

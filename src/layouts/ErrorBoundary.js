@@ -13,12 +13,12 @@ export default class ErrorBoundary extends Component {
     }
   }
 
-   static getDerivedStateFromError(_error) {
-    return { hasError: true };
+  static getDerivedStateFromError(_error) {
+    return { hasError: true }
   }
 
   componentDidCatch(error, errorInfo) {
-    this.setState({ errorInfo, error})
+    this.setState({ errorInfo, error })
   }
 
   render() {
