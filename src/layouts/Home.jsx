@@ -2,8 +2,7 @@ import deliveryMan from '../assets/delivery-man.png'
 import logo from '../assets/logo.svg'
 import PropTypes from 'prop-types'
 
-import { Text } from '../components'
-import { Button, Header, Logo, ManImage } from './Home.styled'
+import { Button, Header, Logo, ManImage, Text } from './Home.styled'
 
 /**
  * Home Layout

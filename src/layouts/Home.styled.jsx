@@ -1,5 +1,14 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { Text as OriginalText } from '../components'
+
+export const Text = styled(OriginalText)`
+  text-align: center;
+
+  @media (min-width: 960px) {
+    padding-left: 20%;
+  }
+`
 
 export const Header = styled.div`
   position: fixed;
@@ -23,7 +32,8 @@ export const ManImage = styled.img`
   height: 65vh;
 
   @media (min-width: 960px) {
-    margin-left: -100%;
+    margin-left: -90%;
+    margin-top: -8%;
   }
 `
 
@@ -45,8 +55,9 @@ export const Button = styled(Link)`
   line-height: 40px;
 
   @media (min-width: 960px) {
-    margin-top: -40%;
+    margin-top: -35%;
     background-color: var(--secondary);
+    width: 45%;
   }
 `
 
@@ -54,7 +65,7 @@ export const Logo = styled.img`
   display: none;
 
   @media (min-width: 960px) {
-    margin-left: -100%;
+    margin-left: -94%;
     display: block;
     margin-top: 10%;
   }
