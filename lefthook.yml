@@ -42,7 +42,7 @@ lint:
       glob: '*.{js,jsx}'
       run: npm run lint:js:fix {staged_files}
     stylelint:
-      glob: '*.{js,jsx, css}' # For CSS-in-JS
+      glob: './**/*.styled.jsx' # For CSS-in-JS
       run: npm run lint:css {staged_files}
     spelling:
       glob: '*.{js,jsx,md}'
