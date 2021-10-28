@@ -1,1 +1,1 @@
-export * from "./logError"
+export * from './logError'

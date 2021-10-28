@@ -25,5 +25,5 @@ const ErrorNotFound = () => (
       </Text>
     </Text>
   </Container>
-);
+)
 export default ErrorNotFound
