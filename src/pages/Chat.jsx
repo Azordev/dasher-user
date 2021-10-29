@@ -17,7 +17,9 @@ import {
   MessageRow,
 } from '../layouts/Chat.styled'
 import { useLatestMessages, InsertClientMessage } from '../hooks'
-import { Button } from '../components'
+import { Input } from '../components'
+import sendChat from '../assets/send-chat.png'
+import { useState } from 'react'
 const Chat = () => {
   const { id } = useParams()
   const history = useHistory()
@@ -27,6 +29,7 @@ const Chat = () => {
   }
   const { LatestMessages = [] } = useLatestMessages({ packageId: id })
   const { loading, insertClientMessage } = InsertClientMessage()
+  const [message, setMessage] = useState('')
 
   const Messages =
     LatestMessages.chats &&
@@ -48,6 +51,20 @@ const Chat = () => {
       }
     })
 
+  const handleSubmit = () => {
+    if(message.length > 0) {
+    insertClientMessage({
+      variables: {
+        last_client_message: message,
+        last_client_update: new Date(Date.now()).toISOString(),
+        package_id: id,
+        user_type: 'client',
+      },
+    })
+    setMessage('')
+  }
+  }
+
   return (
     <ChatLayoutContainer>
       <HeaderChat>
@@ -59,32 +76,18 @@ const Chat = () => {
       </HeaderChat>
 
       <ChatBodyWrapper>
-        {loading ? (
+        {Messages}
+        {loading && (
           <MessageRow type={'client'}>
             <Avatar src={userIcon} />
-            <MessageBox>Chatea ahora</MessageBox>
+            <MessageBox>Loading..</MessageBox>
           </MessageRow>
-        ) : (
-          Messages
         )}
       </ChatBodyWrapper>
       <FooterChat>
         <FooterChatInput cols={'0 0 100%'}>
-          {' '}
-          <Button
-            onClick={() =>
-              insertClientMessage({
-                variables: {
-                  last_client_message: 'nuevo mensaje',
-                  last_client_update: new Date(Date.now()).toISOString(),
-                  package_id: '902b7f07-da34-4ab5-9a8c-d9db03ba55b5',
-                  user_type: 'client',
-                },
-              })
-            }
-          >
-            Send
-          </Button>
+          <Input placeholder="Escribe aqui..." value={message} onChange={e => setMessage(e.target.value)} />
+          <img src={sendChat} alt="send Chat" onClick={() => handleSubmit()} />
         </FooterChatInput>
       </FooterChat>
     </ChatLayoutContainer>

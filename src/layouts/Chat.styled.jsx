@@ -55,7 +55,8 @@ export const ChatBodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin: 30px auto;
+  margin: 1rem auto;
+  margin-bottom: 7rem;
 `
 
 export const FooterChat = styled.div`
@@ -65,23 +66,23 @@ export const FooterChat = styled.div`
   flex-wrap: wrap;
   height: auto;
   bottom: 0;
+  position: fixed;
 `
 
 export const FooterChatInput = styled.div`
   ${[p({ x: '0', y: '5%' }), text.textCenter]}
   flex: ${props => props.cols};
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  @media (min-width: 960px) {
-    padding: 3.78% 0;
+  background-color: #ffd119;
+  padding: .5rem;
+  & img {
+    width: 3rem;
+    margin: 1rem;
+    cursor: pointer;
   }
 
-  @media (min-width: 3180px) {
-    padding: 3.02% 0;
-  }
 `
 
 export const MessageRow = styled.div`

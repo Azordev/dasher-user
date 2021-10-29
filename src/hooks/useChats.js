@@ -5,6 +5,7 @@ import {
   INSERT_CLIENT_CHATS_MUTATION,
   INSERT_DASHER_CHATS_MUTATION,
 } from '../services/GraphQl'
+import { logError } from '../helpers'
 
 export const useLatestMessages = ({ packageId }) => {
   const [LatestMessages, setLatestMessages] = useState([])
@@ -28,7 +29,7 @@ export const useLatestMessages = ({ packageId }) => {
 export function InsertClientMessage() {
   const [insertClientMessage, { loading, error, data }] = useMutation(INSERT_CLIENT_CHATS_MUTATION)
   if (error) {
-    console.error(error)
+    logError({ error: error, codeLocation: 'InsertClientMessage', type: 'client' })
   }
   return { insertClientMessage, loading, error, data }
 }
@@ -36,7 +37,7 @@ export function InsertClientMessage() {
 export function InsertDasherMessage() {
   const [insertDasherMessage, { loading, error, data }] = useMutation(INSERT_DASHER_CHATS_MUTATION)
   if (error) {
-    console.error(error)
+    logError({ error: error, codeLocation: 'insertDasherMessage', type: 'client' })
   }
   return { insertDasherMessage, loading, error, data }
 }
