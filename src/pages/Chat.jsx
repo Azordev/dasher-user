@@ -16,7 +16,8 @@ import {
   Avatar,
   MessageRow,
 } from '../layouts/Chat.styled'
-
+import { useLatestMessages, InsertClientMessage } from '../hooks'
+import { Button } from '../components'
 const Chat = () => {
   const { id } = useParams()
   const history = useHistory()
@@ -24,6 +25,28 @@ const Chat = () => {
   if (!id) {
     history.push('/check')
   }
+  const { LatestMessages = [] } = useLatestMessages({ packageId: id })
+  const { loading, insertClientMessage } = InsertClientMessage()
+
+  const Messages =
+    LatestMessages.chats &&
+    LatestMessages.chats.map(message => {
+      if (message.user_type === 'client') {
+        return (
+          <MessageRow type={'client'}>
+            <Avatar src={userIcon} />
+            <MessageBox>{message.last_client_message}</MessageBox>
+          </MessageRow>
+        )
+      } else {
+        return (
+          <MessageRow type={'dasher'}>
+            <Avatar src={deliveryManWhite} />
+            <MessageBox>{message.last_dasher_message}</MessageBox>
+          </MessageRow>
+        )
+      }
+    })
 
   return (
     <ChatLayoutContainer>
@@ -34,18 +57,35 @@ const Chat = () => {
           <HeaderTitle>Repartidor Dasher</HeaderTitle>
         </HeaderText>
       </HeaderChat>
+
       <ChatBodyWrapper>
-        <MessageRow type={'client'}>
-          <Avatar src={userIcon} />
-          <MessageBox>Hi!</MessageBox>
-        </MessageRow>
-        <MessageRow type={'dasher'}>
-          <Avatar src={deliveryManWhite} />
-          <MessageBox>Hello!</MessageBox>
-        </MessageRow>
+        {loading ? (
+          <MessageRow type={'client'}>
+            <Avatar src={userIcon} />
+            <MessageBox>Chatea ahora</MessageBox>
+          </MessageRow>
+        ) : (
+          Messages
+        )}
       </ChatBodyWrapper>
       <FooterChat>
-        <FooterChatInput cols={'0 0 100%'}>Footer</FooterChatInput>
+        <FooterChatInput cols={'0 0 100%'}>
+          {' '}
+          <Button
+            onClick={() =>
+              insertClientMessage({
+                variables: {
+                  last_client_message: 'nuevo mensaje',
+                  last_client_update: new Date(Date.now()).toISOString(),
+                  package_id: '902b7f07-da34-4ab5-9a8c-d9db03ba55b5',
+                  user_type: 'client',
+                },
+              })
+            }
+          >
+            Send
+          </Button>
+        </FooterChatInput>
       </FooterChat>
     </ChatLayoutContainer>
   )

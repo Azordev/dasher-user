@@ -22,9 +22,7 @@ const Error = ({ errorInfo = { componentStack: ['error'] }, errorId }) => (
 )
 
 Error.propTypes = {
-  errorInfo: PropTypes.shape({
-    componentStack: PropTypes.object.isRequired,
-  }),
+  errorInfo: PropTypes.string,
   errorId: PropTypes.string,
 }
 

@@ -1,6 +1,7 @@
 import { useQuery, useSubscription } from '@apollo/client'
 import { useState, useEffect } from 'react'
 import { GET_PACKAGE_INFORMATION_QUERY, GET_PACKAGE_INFORMATION_SUBSCRIPTION } from '../services/GraphQl'
+
 export const useDasherLatestCoordinates = ({ packageId }) => {
   const [latestCoordinates, setLatestCoordinates] = useState([])
   const { data, error, loading } = useSubscription(GET_PACKAGE_INFORMATION_SUBSCRIPTION, {
