@@ -20,9 +20,7 @@ const Check = () => {
       history.push(`/delivery/${packageCode}`)
     }
 
-    if ((await packages.length) === 0) {
-      alert('el packcode no existe')
-    }
+    alert('el packcode no existe')
   }
 
   return (
