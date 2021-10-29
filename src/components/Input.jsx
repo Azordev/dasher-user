@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Input = styled.input`
   display: flex;
@@ -11,6 +11,15 @@ const Input = styled.input`
   box-shadow: 2px 5px 6px rgb(0 0 0 / 0.3);
   padding: 0 25px;
   width: 90%;
+
+  ${props =>
+    props.bgColor === 'gray'
+      && css`
+      background-color: var(--light-gray);
+          text-color: var(--black);
+          
+        `
+     }
 
   ::placeholder {
     color: #00000029;

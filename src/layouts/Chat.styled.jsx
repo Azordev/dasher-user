@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { bg, m, p, rounded, size, text } from '../styles/mixins'
 
 export const ChatLayoutContainer = styled.div`
-  ${size({ width: '100vw', minHeight: '100vh' })}
+  ${[size({ width: '100vw', minHeight: '100vh' }), bg.white]}
   display: flex;
   flex-direction: column;
 `
@@ -11,6 +11,8 @@ export const HeaderChat = styled.div`
   ${[rounded({ bl: '25px', br: '25px' }), p({ all: '1.5%' }), size({ height: '11vh' }), bg.primary]}
   display: flex;
   flex-direction: row;
+  position: fixed;
+  width: 100%;
 
   @media (min-width: 960px) {
     height: 12vh;
@@ -55,8 +57,12 @@ export const ChatBodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin: 1rem auto;
+  margin: 6rem auto;
   margin-bottom: 7rem;
+
+  @media (min-width: 960px) {
+    margin: 10rem auto;
+  }
 `
 
 export const FooterChat = styled.div`
@@ -70,19 +76,17 @@ export const FooterChat = styled.div`
 `
 
 export const FooterChatInput = styled.div`
-  ${[p({ x: '0', y: '5%' }), text.textCenter]}
+  ${[p({ x: '0', y: '5%' }), text.textCenter, bg.white]}
   flex: ${props => props.cols};
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffd119;
-  padding: .5rem;
+  padding: 0.5rem;
   & img {
     width: 3rem;
     margin: 1rem;
     cursor: pointer;
   }
-
 `
 
 export const MessageRow = styled.div`
@@ -96,6 +100,7 @@ export const MessageRow = styled.div`
 
   & img {
     float: ${({ type }) => (type === 'client' ? `left` : `right`)};
+    width: 3rem;
   }
 `
 

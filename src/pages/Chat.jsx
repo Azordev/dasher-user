@@ -86,7 +86,7 @@ const Chat = () => {
       </ChatBodyWrapper>
       <FooterChat>
         <FooterChatInput cols={'0 0 100%'}>
-          <Input placeholder="Escribe aqui..." value={message} onChange={e => setMessage(e.target.value)} />
+          <Input bgColor="gray" placeholder="Escribe aqui..." value={message} onChange={e => setMessage(e.target.value)} />
           <img src={sendChat} alt="send Chat" onClick={() => handleSubmit()} />
         </FooterChatInput>
       </FooterChat>
