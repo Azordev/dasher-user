@@ -1,13 +1,11 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { Text as OriginalText } from '../components'
+import text from '../styles/text'
 
 export const Text = styled(OriginalText)`
-  text-align: center;
-
-  @media (min-width: 960px) {
-    padding-left: 20%;
-  }
+  ${[text.textCenter]}
+  ${props => props.title && text['7xl']}
 `
 
 export const Header = styled.div`
@@ -33,7 +31,7 @@ export const ManImage = styled.img`
 
   @media (min-width: 960px) {
     margin-left: -90%;
-    margin-top: -8%;
+    margin-top: -23%;
   }
 `
 
