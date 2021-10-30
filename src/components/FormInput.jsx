@@ -1,23 +1,6 @@
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 
-function FormInput(props) {
-  const { label, type = 'text', name, value, onChange } = props
-  return <FormInputField placeholder={label} type={type} name={name} value={value} onChange={onChange} />
-}
-
-FormInput.propTypes = {
-  label: PropTypes.string,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-}
-
-export default FormInput
-
-export const FormLabel = styled.label``
-export const FormInputField = styled.input`
+export const FormInput = styled.input`
   width: 320px;
   height: 40px;
   border-radius: 20px;
@@ -34,3 +17,5 @@ export const FormInputField = styled.input`
     outline: none;
   }
 `
+
+export default FormInput

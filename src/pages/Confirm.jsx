@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { Form, FormContext, Modal, Text } from '../components'
+import { Form, Modal, Text } from '../components'
 import note from '../assets/note.png'
 import handshake from '../assets/handshake.png'
 import RatingMan from '../assets/man-rate.png'
@@ -32,15 +32,13 @@ const Confirm = () => {
           Confirma recepción
         </Text>
         <Form onSubmit={() => changeIsModalOpen(true)}>
-          <FormContext.Consumer>
-            {({ handleFormChange, value }) => (
-              <>
-                <FormInput label="Nombre" name="clientName" value={value} onChange={handleFormChange} />
-                <FormInput label="RUT" name="rutNumber" value={value} onChange={handleFormChange} />
-                <FormInput label="Celular" name="cellPhone" value={value} onChange={handleFormChange} />
-              </>
-            )}
-          </FormContext.Consumer>
+          {({ handleFormChange, value }) => (
+            <>
+              <FormInput placeholder="Nombre" name="clientName" value={value} onChange={handleFormChange} />
+              <FormInput placeholder="RUT" name="rutNumber" value={value} onChange={handleFormChange} />
+              <FormInput placeholder="Celular" name="cellPhone" value={value} onChange={handleFormChange} />
+            </>
+          )}
         </Form>
       </div>
       <div className="rate-modal">

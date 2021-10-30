@@ -1,3 +1,3 @@
-import Form, { FormContext } from './Form'
+import Form from './Form'
 
-export { Form, FormContext }
+export { Form }

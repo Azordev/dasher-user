@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FormButton, FormContainer } from './Form.styled'
 
-export const FormContext = React.createContext({
+const FormContext = React.createContext({
   form: {},
   handleFormChange: () => {},
 })
@@ -17,15 +17,20 @@ const Form = ({ children, onSubmit }) => {
     setForm(updatedForm)
   }
 
+  const handleSubmit = event => {
+    event.preventDefault()
+    onSubmit(form)
+  }
+
   return (
-    <FormContainer onSubmit={onSubmit}>
+    <FormContainer onSubmit={handleSubmit}>
       <FormContext.Provider
         value={{
           form,
           handleFormChange,
         }}
       >
-        {children}
+        <FormContext.Consumer>{children}</FormContext.Consumer>
       </FormContext.Provider>
       <FormButton type="submit">Confirmar</FormButton>
     </FormContainer>
@@ -33,7 +38,7 @@ const Form = ({ children, onSubmit }) => {
 }
 
 Form.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.any,
   onSubmit: PropTypes.func,
 }
 
