@@ -6,15 +6,21 @@ import { Button, Input, Modal, Text } from '../components'
 import ticket from '../assets/ticket.png'
 import warning from '../assets/warning.png'
 import arrow from '../assets/arrow-left.svg'
-
+import { useGetPackageInformation } from '../hooks'
 const Check = () => {
   const [packageCode, setPackageCode] = useState('')
   const [isModalOpen, changeIsModalOpen] = useState(true)
   const history = useHistory()
+  const { packageInformation } = useGetPackageInformation({ packageId: packageCode })
 
-  const toDelivery = e => {
+  const toDelivery = async e => {
     e.preventDefault()
-    history.push('/delivery/test')
+    const { packages } = await packageInformation
+    if ((await packages.length) > 0) {
+      history.push(`/delivery/${packageCode}`)
+    }
+
+    alert('el packcode no existe')
   }
 
   return (
