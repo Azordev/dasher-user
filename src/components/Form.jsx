@@ -1,8 +1,17 @@
 import styled from 'styled-components'
-import { useState } from 'react'
-import FormInput from '../components/FormInput'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
-const Form = () => {
+export const FormContext = React.createContext({
+  form: {},
+  handleFormChange: () => {},
+})
+
+const Form = props => {
+  const { children } = props
+
+  const [form, setForm] = useState({})
+
   const handleFormChange = event => {
     const updatedForm = { ...form }
     updatedForm[event.target.name] = event.target.value
@@ -14,20 +23,24 @@ const Form = () => {
     e.preventDefault()
     console.log('Confirmation Values:', form)
   }
-
-  const [form, setForm] = useState({
-    clientName: '',
-    rutNumber: '',
-    cellPhone: '',
-  })
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <FormInput label="Nombre" name="clientName" value={form.clientName} onChange={handleFormChange} />
-      <FormInput label="RUT" name="rutNumber" value={form.rutNumber} onChange={handleFormChange} />
-      <FormInput label="Celular" name="cellPhone" value={form.cellPhone} onChange={handleFormChange} />
+      <FormContext.Provider
+        value={{
+          form,
+          handleFormChange,
+        }}
+      >
+        {children}
+      </FormContext.Provider>
+
       <FormButton onclick={handleSubmit}>Confirmar</FormButton>
     </FormContainer>
   )
+}
+
+Form.propTypes = {
+  children: PropTypes.any,
 }
 
 export default Form

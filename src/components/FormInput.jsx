@@ -16,8 +16,6 @@ FormInput.propTypes = {
 
 export default FormInput
 
-export const FormWrapper = styled.div``
-
 export const FormLabel = styled.label``
 export const FormInputField = styled.input`
   width: 320px;
@@ -26,5 +24,7 @@ export const FormInputField = styled.input`
   padding-left: 20px;
   margin: 10px;
   border: none;
+  outline: none;
   box-shadow: 2px 5px 6px rgb(0 0 0 / 0.3);
+  display: block;
 `
