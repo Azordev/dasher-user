@@ -27,4 +27,10 @@ export const FormInputField = styled.input`
   outline: none;
   box-shadow: 2px 5px 6px rgb(0 0 0 / 0.3);
   display: block;
+
+  &:focus {
+    border: solid 1px var(--dark, #000);
+    box-shadow: 2px 5px 6px rgb(0 0 0 / 0.3);
+    outline: none;
+  }
 `
