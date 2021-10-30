@@ -14,12 +14,14 @@ const HeaderMap = styled.div`
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   padding: 1.5%;
-  height: 15vh;
+  min-height: 10vh;
 `
 
 const BackBtn = styled.img`
   @media (max-width: 960px) {
     height: 100%;
+    width: 33.33vw;
+    padding-right: 15vw;
   }
 
   @media (min-width: 961px) {
@@ -51,16 +53,15 @@ const BackTxt = styled.p`
 `
 
 const HeaderText = styled.div`
-  width: 33.33%;
+  width: 33.33vw;
   text-align: center;
   color: #f7cd46;
-  font-size: 1em;
+  font-size: 1.7em;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   margin: auto 0;
-
-  @media (min-width: 960px) {
+  height: auto @media (min-width: 960px) {
     font-size: 2em;
   }
 
@@ -74,7 +75,7 @@ const HeaderText = styled.div`
 `
 
 const ChatBtnContainer = styled.a`
-  width: 33.33%;
+  width: 33.33vw;
   height: auto;
   display: flex;
   justify-content: flex-end;
@@ -156,7 +157,7 @@ const FooterMapAddress = styled.div`
 
   @media (min-width: 960px) {
     font-size: 1em;
-    padding: 3.78% 0;
+    padding: 2% 0;
   }
 
   @media (min-width: 3180px) {
