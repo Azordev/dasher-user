@@ -7,7 +7,13 @@ import { Button, Header, Logo, ManImage } from './Home.styled'
 
 /**
  * Home Layout
- * @augments { Component<Props> }
+ * 
+ * Example use.
+ * 
+ * ```js
+ * <Layout title='Test' subtitle='Example' buttonText='Accept' />
+ * ```
+ * @augments { React.Component<{ title, subtitle, buttonText }, {}> }
  */
 const Home = ({ title, subtitle, buttonText }) => (
   <Header>
@@ -22,8 +28,11 @@ const Home = ({ title, subtitle, buttonText }) => (
 )
 
 Home.propTypes = {
+  /** Main text to display */
   title: PropTypes.string,
+  /** Explain the main text */
   subtitle: PropTypes.string,
+  /** Text to display on the button */
   buttonText: PropTypes.string,
 }
 
