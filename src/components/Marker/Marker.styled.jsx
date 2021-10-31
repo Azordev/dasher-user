@@ -1,14 +1,14 @@
 import styled from 'styled-components'
+import dasherMarker from '../../assets/dasher-marker.svg'
 
 export const Wrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 18px;
+  width: ${props => (props.center ? '18px' : '25px')};
   height: 18px;
-  background-color: ${props => (props.center ? '#2196F3' : '#ccc')};
-  border: 2px solid #fff;
-  border-radius: 100%;
+  background: ${props => (props.center ? '#F82548' : `url(${dasherMarker})`)};
+  border-radius: ${props => (props.center ? '100%' : 'unset')};
   user-select: none;
   transform: translate(-50%, -50%);
   cursor: ${props => (props.onClick ? 'pointer' : 'default')};
