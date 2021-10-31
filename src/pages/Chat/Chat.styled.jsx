@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { bg, m, p, rounded, size, text } from '../styles/mixins'
+import { bg, m, p, rounded, size, text } from '../../styles/mixins'
 
 export const ChatLayoutContainer = styled.div`
   ${[size({ width: '100vw', minHeight: '100vh' }), bg.white]}
@@ -82,6 +82,7 @@ export const FooterChatInput = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
+
   & img {
     width: 3rem;
     margin: 1rem;

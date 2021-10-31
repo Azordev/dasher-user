@@ -3,6 +3,7 @@ import gql from 'graphql-tag'
 export const GET_PACKAGE_INFORMATION_QUERY = gql`
   query getPackageInformation($package_code: String!) {
     packages(where: { package_code: { _eq: $package_code } }) {
+      id
       client_address
       client_identification_document
       client_name

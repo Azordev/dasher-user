@@ -1,14 +1,14 @@
-import deliveryMan from '../assets/delivery-man.png'
-import logo from '../assets/logo.svg'
+import deliveryMan from '../../assets/delivery-man.png'
+import logo from '../../assets/logo.svg'
 import PropTypes from 'prop-types'
 
 import { Button, Header, Logo, ManImage, Text } from './Home.styled'
 
 /**
  * Home Layout
- * 
+ *
  * Example use.
- * 
+ *
  * ```js
  * <Layout title='Test' subtitle='Example' buttonText='Accept' />
  * ```

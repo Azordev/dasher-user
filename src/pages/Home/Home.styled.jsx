@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Text as OriginalText } from '../components'
-import text from '../styles/text'
+import { Text as OriginalText } from '../../components'
+import text from '../../styles/text'
 
 export const Text = styled(OriginalText)`
   ${[text.textCenter]}

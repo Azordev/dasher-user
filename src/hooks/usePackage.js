@@ -26,5 +26,3 @@ export const useGetPackageInformation = ({ packageId }) => {
 
   return { loading, error, packageInformation }
 }
-
-

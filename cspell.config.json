@@ -2,22 +2,23 @@
   "version": "0.2",
   "language": "en,es",
   "words": [
+    "Aceptar",
+    "azordev",
     "configurated",
+    "envío",
     "gitleaks",
+    "herokuapp",
+    "Hola",
     "lefthook",
     "linkedin",
     "noopener",
     "noreferrer",
     "quickstart",
-    "stylelint",
-    "zricethezav",
-    "azordev",
-    "herokuapp",
-    "Hola",
     "Revisemos",
+    "Splitted",
+    "stylelint",
     "viene",
-    "envío",
-    "Aceptar"
+    "zricethezav"
   ],
   "flagWords": [
     "hte"

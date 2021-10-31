@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router'
-import { Container, Header, BackButton, TicketImage, MainSection } from '../layouts/Splitted.styled'
 
-import { Button, Input, Modal, Text } from '../components'
-import ticket from '../assets/ticket.png'
-import warning from '../assets/warning.png'
-import arrow from '../assets/arrow-left.svg'
-import { useGetPackageInformation } from '../hooks'
+import { Button, Input, Modal, Text } from '../../components'
+import warning from '../../assets/warning.png'
+import { useGetPackageInformation } from '../../hooks'
+
+import Layout from './Check.layout'
+
 const Check = () => {
   const [packageCode, setPackageCode] = useState('')
   const [isModalOpen, changeIsModalOpen] = useState(true)
@@ -24,25 +24,10 @@ const Check = () => {
   }
 
   return (
-    <Container>
-      <Header className="header-ticket">
-        <BackButton src={arrow} alt="Arrow left" />
-        <Text className="heading-text" as="h1" color="secondary" medium>
-          Hola!
-        </Text>
-        <Text className="heading-subtext" small>
-          Ingresa tu número de boleta
-        </Text>
-        <TicketImage src={ticket} alt="Ticket" />
-      </Header>
-      <MainSection>
-        <div className="check-ticket">
-          <Text color="primary" bold uppercase>
-            Confirmar n° boleta o pedido
-          </Text>
-          <Input placeholder="Ingresa aquí..." value={packageCode} onChange={e => setPackageCode(e.target.value)} />
-          <Button onClick={e => toDelivery(e)}>Confirmar</Button>
-        </div>
+    <Layout
+      headerTitle="Hola!"
+      headerSubtitle="Ingresa tu número de boleta"
+      DontForgetModal={
         <Modal isOpen={isModalOpen} handleClick={() => changeIsModalOpen(false)} actionText="Entendido">
           <img src={warning} alt="Warning" />
           <Text as="h1" color="primary" small>
@@ -57,8 +42,16 @@ const Check = () => {
             <li>Celular</li>
           </Text>
         </Modal>
-      </MainSection>
-    </Container>
+      }
+    >
+      <div className="check-ticket">
+        <Text color="primary" bold uppercase>
+          Confirmar n° boleta o pedido
+        </Text>
+        <Input placeholder="Ingresa aquí..." value={packageCode} onChange={e => setPackageCode(e.target.value)} />
+        <Button onClick={e => toDelivery(e)}>Confirmar</Button>
+      </div>
+    </Layout>
   )
 }
 
