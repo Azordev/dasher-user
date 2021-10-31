@@ -13,13 +13,11 @@ const Input = styled.input`
   width: 90%;
 
   ${props =>
-    props.bgColor === 'gray'
-      && css`
+    props.bgColor === 'gray' &&
+    css`
       background-color: var(--light-gray);
-          text-color: var(--black);
-          
-        `
-     }
+      text-color: var(--black);
+    `}
 
   ::placeholder {
     color: #00000029;

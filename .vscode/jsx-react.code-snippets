@@ -1,4 +1,11 @@
 {
+  "Auto close tag": {
+		"prefix": "tag",
+		"body": [
+			"<$1>",
+			"</$1>"
+		]
+	},
   "ES6 React Import": {
     "prefix": "r-import",
     "body": "import React from 'react'\n"

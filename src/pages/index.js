@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Chat from './Chat'
-import Check from './Check'
-import Confirm from './Confirm'
-import Delivery from './Delivery'
+import Chat from './Chat/Chat'
+import Check from './Check/Check'
+import Confirm from './Confirm/Confirm.layout'
+import Delivery from './Delivery/Delivery'
 import Error from './Error'
-import Home from './Home'
-import NotFound from './NotFound'
+import Home from './Home/Home'
+import NotFound from './NotFound/NotFound'
 
 const Pages = () => (
   <BrowserRouter>
