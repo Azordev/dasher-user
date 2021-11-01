@@ -35,7 +35,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Lint Code Base
-        uses: github/super-linter@v4.8.0
+        uses: github/super-linter@v4.8.1
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
