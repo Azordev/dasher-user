@@ -14,9 +14,12 @@ const Confirm = () => {
   const { id } = useParams()
   const history = useHistory()
   const [isModalOpen, changeIsModalOpen] = useState(false)
-
   if (!id) {
     history.push('/check')
+  }
+  const handleFormSubmit = e => {
+    changeIsModalOpen(true)
+    console.log(e)
   }
 
   return (
@@ -31,7 +34,7 @@ const Confirm = () => {
         <Text color="secondary" bold uppercase>
           Confirma recepción
         </Text>
-        <Form onSubmit={() => changeIsModalOpen(true)}>
+        <Form onSubmit={e => handleFormSubmit(e)}>
           {({ handleFormChange, value }) => (
             <>
               <FormInput placeholder="Nombre" name="clientName" value={value} onChange={handleFormChange} />
