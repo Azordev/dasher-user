@@ -10,13 +10,12 @@ const Check = () => {
   const [packageCode, setPackageCode] = useState('')
   const [isModalOpen, changeIsModalOpen] = useState(true)
   const history = useHistory()
-  const { packageInformation } = useGetPackageInformation({ packageId: packageCode.packageCode })
+  const { packageInformation, loading, error } = useGetPackageInformation({ packageId: packageCode.packageCode })
 
   const toDelivery = async e => {
-    if (e?.packageCode) {
+    if (e?.packageCode && !error && !loading) {
       const { packages } = await packageInformation
       if ((await packages.length) > 0) {
-        console.log(packages)
         history.push(`/delivery/${e?.packageCode}`)
       } else {
         alert('el packcode no existe')
