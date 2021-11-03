@@ -4,12 +4,15 @@ import styled from 'styled-components'
   display: flex;
   cursor: pointer;
 
+
+
 `
 const BackBtn = styled.img`
   @media (max-width: 960px) {
     height: 100%;
     width: 33.33vw;
     padding-right: 15vw;
+    max-width: 13rem;
   }
 
   @media (min-width: 961px) {
