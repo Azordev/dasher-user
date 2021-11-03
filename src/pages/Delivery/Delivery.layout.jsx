@@ -24,7 +24,7 @@ import BackButton from '../../components/BackButton'
  * @augments { React.Component<{ packageId, headerTitle, headerSubtitle, clientAddress, estimatedArrival, isLoading, hasError, DeliveryConfirmedModal, children }, {}> }
  */
 const Delivery = ({
-  packageId,
+  packageCode,
   headerTitle,
   headerSubtitle,
   clientAddress,
@@ -52,7 +52,7 @@ const Delivery = ({
             <HeaderTitle>{headerTitle}</HeaderTitle>
             <HeaderSubTitle>{headerSubtitle}</HeaderSubTitle>
           </HeaderText>
-          <ChatBtnContainer onClick={()=>history.push(`/chat/${packageId}`)}>
+          <ChatBtnContainer onClick={()=>history.push(`/chat/${packageCode}`)}>
             <ChatBtn src={chat} />
           </ChatBtnContainer>
         </HeaderMap>
@@ -77,7 +77,7 @@ const Delivery = ({
 }
 
 Delivery.propTypes = {
-  packageId: PropTypes.string.isRequired,
+  packageCode: PropTypes.string.isRequired,
   headerTitle: PropTypes.string.isRequired,
   headerSubtitle: PropTypes.string.isRequired,
   clientAddress: PropTypes.string.isRequired,
