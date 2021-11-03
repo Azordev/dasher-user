@@ -10,13 +10,15 @@ import ErrorBoundary from './layouts/ErrorBoundary'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ErrorBoundary>
+
       <Theme>
         <ApolloProvider client={client}>
+        <ErrorBoundary>
           <Pages />
+          </ErrorBoundary>
         </ApolloProvider>
       </Theme>
-    </ErrorBoundary>
+
   </React.StrictMode>,
   document.getElementById('root'),
 )

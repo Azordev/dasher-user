@@ -17,18 +17,6 @@ export function useClientLocation({ data, error, loading }) {
   useEffect(() => {
     setLoading(true)
 
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        position => setCenter([Number(position.coords.latitude), Number(position.coords.longitude)]),
-        e => setCenter([Number(data.packages[0]?.current_lat), Number(data.packages[0]?.current_lon)]),
-        {
-          enableHighAccuracy: false,
-          timeout: 15000,
-          maximumAge: 0,
-        },
-      )
-    }
-
     if (!loading) {
       if (error) {
         console.error(JSON.stringify(error, null, 2))
@@ -36,12 +24,22 @@ export function useClientLocation({ data, error, loading }) {
         setLoading(false)
       }
       if (data) {
+        if ('geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition(
+            position => setCenter([Number(position.coords.latitude), Number(position.coords.longitude)]),
+            e => setCenter([Number(data.packages[0]?.current_lat), Number(data.packages[0]?.current_lon)]),
+            {
+              enableHighAccuracy: false,
+              timeout: 15000,
+              maximumAge: 0,
+            },
+          )
+        }
         setDasher([Number(data.packages[0]?.current_lat), Number(data.packages[0]?.current_lon)])
         setLoading(false)
       }
     }
   }, [data])
-
   return { isLoading, hasError, center, dasher }
 }
 /* cspell:disable-next-line */
