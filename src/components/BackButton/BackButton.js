@@ -18,7 +18,7 @@ const BackButton = () => {
   }
 
   return (
-    <BackBtnContainer onClick={() => handleClick()} test-id="Components/Modal">
+    <BackBtnContainer onClick={() => handleClick()}>
       <BackBtn src={arrow} />
       <BackTxt txt={'Atrás'}></BackTxt>
     </BackBtnContainer>
