@@ -24,7 +24,9 @@ const Wrapper = styled.main`
   }
 
   @media (max-width: 960px) {
-    width: 90vw;
+    width: 100vw;
+    margin: 0;
+    z-index: -1;
   }
 `
 
