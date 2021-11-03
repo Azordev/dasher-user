@@ -59,11 +59,11 @@ const Delivery = ({
         </HeaderMap>
         {children}
         <FooterMap>
-          <FooterMapAddress cols={'0 0 100%'} txt={clientAddress} style={{ flexDirection: 'row' }}>
+          <FooterMapAddress cols={'0 0 100%'} txt={clientAddress}>
             <img src={gps} alt="Gps icon" />
           </FooterMapAddress>
           <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
-            <Text small bold uppercase>
+            <Text color={'var(--secondary)'} small bold uppercase>
               {estimatedArrival}
             </Text>
           </FooterMapAddress>
