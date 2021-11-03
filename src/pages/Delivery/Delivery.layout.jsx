@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
 import { Text } from '../../components'
+import {  useHistory } from 'react-router-dom'
 import {
   MapLayoutContainer,
   HeaderMap,
-  BackBtn,
-  BackTxt,
   HeaderText,
   ChatBtnContainer,
   ChatBtn,
@@ -15,9 +14,9 @@ import {
 } from './Delivery.styled'
 import assistant from '../../assets/assistant.png'
 import chat from '../../assets/chat.png'
-import arrow from '../../assets/arrow-left.svg'
 import gps from '../../assets/gps-icon.png'
 import { Fragment } from 'react'
+import BackButton from '../../components/BackButton'
 
 /**
  * Delivery Layout
@@ -35,6 +34,7 @@ const Delivery = ({
   DeliveryConfirmedModal,
   children,
 }) => {
+  const history = useHistory()
   if (isLoading) {
     return <pre>Loading...</pre>
   }
@@ -47,13 +47,12 @@ const Delivery = ({
     <Fragment>
       <MapLayoutContainer>
         <HeaderMap>
-          <BackBtn src={arrow} />
-          <BackTxt txt={'Atrás'}></BackTxt>
+          <BackButton />
           <HeaderText>
             <HeaderTitle>{headerTitle}</HeaderTitle>
             <HeaderSubTitle>{headerSubtitle}</HeaderSubTitle>
           </HeaderText>
-          <ChatBtnContainer href={`/chat/${packageId}`}>
+          <ChatBtnContainer onClick={()=>history.push(`/chat/${packageId}`)}>
             <ChatBtn src={chat} />
           </ChatBtnContainer>
         </HeaderMap>

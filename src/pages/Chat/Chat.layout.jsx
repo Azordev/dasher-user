@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import deliveryManWhite from '../../assets/delivery-chat-white.png'
-import arrow from '../../assets/arrow-left.svg'
+import BackButton from '../../components/BackButton'
 import {
   ChatLayoutContainer,
   HeaderChat,
@@ -9,13 +9,12 @@ import {
   FooterChat,
   ChatBodyWrapper,
   HeaderChatImg,
-  BackBtn,
 } from './Chat.styled'
 
 const Chat = ({ children, SendForm }) => (
   <ChatLayoutContainer>
     <HeaderChat>
-      <BackBtn src={arrow} />
+      <BackButton />
       <HeaderChatImg src={deliveryManWhite} />
       <HeaderText>
         <HeaderTitle>Repartidor Dasher</HeaderTitle>
