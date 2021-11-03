@@ -18,6 +18,7 @@ const HeaderMap = styled.div`
   @media (max-width: 960px) {
     width: inherit;
     position: absolute;
+    z-index: 1;
   }
 `
 
