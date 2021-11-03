@@ -17,41 +17,6 @@ const HeaderMap = styled.div`
   min-height: 10vh;
 `
 
-const BackBtn = styled.img`
-  @media (max-width: 960px) {
-    height: 100%;
-    width: 33.33vw;
-    padding-right: 15vw;
-  }
-
-  @media (min-width: 961px) {
-    height: 100%;
-  }
-`
-
-const BackTxt = styled.p`
-  flex: 1;
-  color: white;
-  font-size: 1em;
-  margin: auto 0;
-
-  ::before {
-    content: '${props => props.txt}';
-  }
-
-  @media (max-width: 960px) {
-    display: none;
-  }
-
-  @media (min-width: 961px) {
-    font-size: 2.5em;
-  }
-
-  @media (min-width: 3180px) {
-    font-size: 6em;
-  }
-`
-
 const HeaderText = styled.div`
   width: 33.33vw;
   text-align: center;
@@ -75,8 +40,8 @@ const HeaderText = styled.div`
   }
 `
 
-const ChatBtnContainer = styled.a`
-  width: 33.33vw;
+const ChatBtnContainer = styled.div`
+  width: 28.33vw;
   height: auto;
   display: flex;
   justify-content: flex-end;
@@ -165,8 +130,6 @@ const FooterMapAddress = styled.div`
 export {
   MapLayoutContainer,
   HeaderMap,
-  BackBtn,
-  BackTxt,
   HeaderText,
   ChatBtnContainer,
   ChatBtn,
