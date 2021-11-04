@@ -38,8 +38,8 @@ const Form = ({ children, onSubmit, formData, FormButtonTitle = 'Confirmar' }) =
 }
 
 Form.propTypes = {
-  children: PropTypes.node.required,
-  onSubmit: PropTypes.func.required,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  onSubmit: PropTypes.func,
   formData: PropTypes.func,
   FormButtonTitle: PropTypes.string,
 }

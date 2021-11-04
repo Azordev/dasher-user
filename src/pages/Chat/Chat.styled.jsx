@@ -23,7 +23,6 @@ export const HeaderChat = styled.div`
   }
 `
 
-
 export const HeaderChatImg = styled.img`
   height: 90%;
   margin: auto 10px;
@@ -31,7 +30,6 @@ export const HeaderChatImg = styled.img`
   @media (max-width: 960px) {
     margin: auto 0;
   }
-
 `
 
 export const HeaderText = styled.div`

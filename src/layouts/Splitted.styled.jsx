@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -12,7 +12,7 @@ const Container = styled.div`
   }
 `
 
-const Header = styled.div`
+export const Header = styled.div`
   display: flex;
   flex-direction: column;
   background: var(--primary);
@@ -26,7 +26,7 @@ const Header = styled.div`
   }
 `
 
-const TicketImage = styled.img`
+export const TicketImage = styled.img`
   width: 140px;
   align-self: flex-start;
   margin: 0 0 -13px 15px;
@@ -39,7 +39,7 @@ const TicketImage = styled.img`
     margin-left: -50px;
   }
 `
-const MainSection = styled.div`
+export const MainSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,5 +53,3 @@ const MainSection = styled.div`
     justify-content: center;
   }
 `
-
-export { Container, Header,  TicketImage, MainSection }

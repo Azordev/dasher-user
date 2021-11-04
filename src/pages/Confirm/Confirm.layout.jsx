@@ -4,8 +4,7 @@ import note from '../../assets/note.png'
 import arrow from '../../assets/arrow-left.svg'
 import { Container, Header, MainSection } from '../../layouts/Splitted.styled'
 
-const Confirm = ({ headerTitle, children, RatingModal, FinalModal }) => {
-  return (
+const Confirm = ({ headerTitle, children, RatingModal, FinalModal }) => (
   <Container>
     <Header>
       <img src={arrow} alt="Arrow left" />
@@ -19,7 +18,6 @@ const Confirm = ({ headerTitle, children, RatingModal, FinalModal }) => {
     {FinalModal}
   </Container>
 )
-}
 
 Confirm.propTypes = {
   headerTitle: PropTypes.string,

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Container, Header,  TicketImage, MainSection } from '../../layouts/Splitted.styled'
+import { Container, Header, TicketImage, MainSection } from '../../layouts/Splitted.styled'
 
 import { Text } from '../../components'
 import ticket from '../../assets/ticket.png'
@@ -9,7 +9,7 @@ import BackButton from '../../components/BackButton'
 const Check = ({ headerTitle, headerSubtitle, children, DontForgetModal }) => (
   <Container>
     <Header className="header-ticket">
-    <BackButton />
+      <BackButton />
       <Text className="heading-text" as="h1" color="secondary" medium>
         {headerTitle}
       </Text>
