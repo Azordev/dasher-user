@@ -25,7 +25,7 @@ const Delivery = () => {
     loading: loading,
   })
 
-  if (isLoading) {
+  if (isLoading || !packageInformation?.packages[0]?.package_code) {
     return <pre>Loading...</pre>
   }
 
