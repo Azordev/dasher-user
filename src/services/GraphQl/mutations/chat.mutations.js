@@ -5,7 +5,7 @@ export const INSERT_CLIENT_CHATS_MUTATION = gql`
     $last_client_message: String!
     $last_client_update: timestamptz!
     $user_type: String!
-    $package_id: uuid!
+    $package_id: String!
   ) {
     insert_chats(
       objects: {
@@ -23,7 +23,7 @@ export const INSERT_CLIENT_CHATS_MUTATION = gql`
 export const INSERT_DASHER_CHATS_MUTATION = gql`
   mutation insert_dasher_chats(
     $user_type: String!
-    $package_id: uuid!
+    $package_id: String!
     $last_dasher_message: String!
     $last_dasher_update: timestamptz!
   ) {

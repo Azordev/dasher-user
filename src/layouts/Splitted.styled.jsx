@@ -25,17 +25,6 @@ const Header = styled.div`
     overflow: hidden;
   }
 `
-const BackButton = styled.img`
-  width: 30px;
-  margin: 15px 8px;
-
-  @media (min-width: 960px) {
-    top: 30px;
-    left: 50px;
-    position: fixed;
-    width: 45px;
-  }
-`
 
 const TicketImage = styled.img`
   width: 140px;
@@ -65,4 +54,4 @@ const MainSection = styled.div`
   }
 `
 
-export { Container, Header, BackButton, TicketImage, MainSection }
+export { Container, Header,  TicketImage, MainSection }

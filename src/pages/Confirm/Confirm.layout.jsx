@@ -5,7 +5,6 @@ import arrow from '../../assets/arrow-left.svg'
 import { Container, Header, MainSection } from '../../layouts/Splitted.styled'
 
 const Confirm = ({ headerTitle, children, RatingModal, FinalModal }) => {
-  console.log(headerTitle)
   return (
   <Container>
     <Header>

@@ -1,26 +1,26 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router'
-
-import { Button, Input, Modal, Text } from '../../components'
+import { Form, Modal, Text } from '../../components'
 import warning from '../../assets/warning.png'
 import { useGetPackageInformation } from '../../hooks'
-
 import Layout from './Check.layout'
+import FormInput from '../../components/FormInput'
 
 const Check = () => {
   const [packageCode, setPackageCode] = useState('')
   const [isModalOpen, changeIsModalOpen] = useState(true)
   const history = useHistory()
-  const { packageInformation } = useGetPackageInformation({ packageId: packageCode })
+  const { packageInformation, loading, error } = useGetPackageInformation({ packageId: packageCode.packageCode })
 
   const toDelivery = async e => {
-    e.preventDefault()
-    const { packages } = await packageInformation
-    if ((await packages.length) > 0) {
-      history.push(`/delivery/${packageCode}`)
+    if (e?.packageCode && !error && !loading) {
+      const { packages } = await packageInformation
+      if ((await packages.length) > 0) {
+        history.push(`/delivery/${e?.packageCode}`)
+      } else {
+        alert('el packcode no existe')
+      }
     }
-
-    alert('el packcode no existe')
   }
 
   return (
@@ -48,8 +48,13 @@ const Check = () => {
         <Text color="primary" bold uppercase>
           Confirmar n° boleta o pedido
         </Text>
-        <Input placeholder="Ingresa aquí..." value={packageCode} onChange={e => setPackageCode(e.target.value)} />
-        <Button onClick={e => toDelivery(e)}>Confirmar</Button>
+        <Form formData={setPackageCode} onSubmit={e => toDelivery(e)}>
+          {({ handleFormChange, value }) => (
+            <>
+              <FormInput placeholder="Ingresa aquí..." name="packageCode" value={value} onChange={handleFormChange} />
+            </>
+          )}
+        </Form>
       </div>
     </Layout>
   )

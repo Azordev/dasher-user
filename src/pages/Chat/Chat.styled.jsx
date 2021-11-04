@@ -23,13 +23,15 @@ export const HeaderChat = styled.div`
   }
 `
 
-export const BackBtn = styled.img`
-  height: 100%;
-`
 
 export const HeaderChatImg = styled.img`
   height: 90%;
-  margin: auto 0;
+  margin: auto 10px;
+
+  @media (max-width: 960px) {
+    margin: auto 0;
+  }
+
 `
 
 export const HeaderText = styled.div`

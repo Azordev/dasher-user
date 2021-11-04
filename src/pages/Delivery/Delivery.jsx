@@ -35,7 +35,7 @@ const Delivery = () => {
 
   return (
     <Layout
-      packageId={packageInformation?.packages[0]?.id}
+      packageCode={packageInformation?.packages[0]?.package_code}
       headerTitle="En camino..."
       headerSubtitle="Vamos con tu envio..."
       clientAddress={packageInformation?.packages[0]?.client_address}
