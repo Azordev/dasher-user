@@ -8,6 +8,7 @@ const StarBtn = styled.img`
   height: auto;
   margin: 5px;
   content: url(${star});
+
   &:hover {
     content: url(${selectedStar});
     width: 32px;

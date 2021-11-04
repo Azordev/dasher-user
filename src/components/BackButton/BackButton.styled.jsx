@@ -1,11 +1,8 @@
 import styled from 'styled-components'
 
- const BackBtnContainer = styled.div`
+const BackBtnContainer = styled.div`
   display: flex;
   cursor: pointer;
-
-
-
 `
 const BackBtn = styled.img`
   @media (max-width: 960px) {
@@ -43,4 +40,4 @@ const BackTxt = styled.p`
   }
 `
 
-export  {BackTxt, BackBtn,BackBtnContainer}
+export { BackTxt, BackBtn, BackBtnContainer }

@@ -4,21 +4,23 @@ import note from '../../assets/note.png'
 import arrow from '../../assets/arrow-left.svg'
 import { Container, Header, MainSection } from '../../layouts/Splitted.styled'
 
-const Confirm = ({ headerTitle, children, RatingModal, FinalModal }) => {
+const Confirm = props => {
+  const { headerTitle, children, RatingModal, FinalModal } = props
+  console.log(props)
   return (
-  <Container>
-    <Header>
-      <img src={arrow} alt="Arrow left" />
-      <Text as="h1" color="secondary" medium>
-        {headerTitle}
-      </Text>
-      <img src={note} alt="Note icon" />
-    </Header>
-    <MainSection>{children}</MainSection>
-    {RatingModal}
-    {FinalModal}
-  </Container>
-)
+    <Container>
+      <Header>
+        <img src={arrow} alt="Arrow left" />
+        <Text as="h1" color="secondary" medium>
+          {headerTitle}
+        </Text>
+        <img src={note} alt="Note icon" />
+      </Header>
+      <MainSection>{children}</MainSection>
+      {RatingModal}
+      {FinalModal}
+    </Container>
+  )
 }
 
 Confirm.propTypes = {

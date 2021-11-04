@@ -54,4 +54,4 @@ const MainSection = styled.div`
   }
 `
 
-export { Container, Header,  TicketImage, MainSection }
+export { Container, Header, TicketImage, MainSection }

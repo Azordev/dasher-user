@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { Text } from '../../components'
-import {  useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import {
   MapLayoutContainer,
   HeaderMap,
@@ -52,7 +52,7 @@ const Delivery = ({
             <HeaderTitle>{headerTitle}</HeaderTitle>
             <HeaderSubTitle>{headerSubtitle}</HeaderSubTitle>
           </HeaderText>
-          <ChatBtnContainer onClick={()=>history.push(`/chat/${packageCode}`)}>
+          <ChatBtnContainer onClick={() => history.push(`/chat/${packageCode}`)}>
             <ChatBtn src={chat} />
           </ChatBtnContainer>
         </HeaderMap>
