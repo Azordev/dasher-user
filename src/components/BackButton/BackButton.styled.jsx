@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-const BackBtnContainer = styled.div`
+export const BackBtnContainer = styled.div`
   display: flex;
   cursor: pointer;
 `
-const BackBtn = styled.img`
+export const BackBtn = styled.img`
   @media (max-width: 960px) {
     height: 100%;
     width: 33.33vw;
@@ -17,7 +17,7 @@ const BackBtn = styled.img`
   }
 `
 
-const BackTxt = styled.p`
+export const BackTxt = styled.p`
   flex: 1;
   color: white;
   font-size: 1em;
@@ -39,5 +39,3 @@ const BackTxt = styled.p`
     font-size: 5em;
   }
 `
-
-export { BackTxt, BackBtn, BackBtnContainer }

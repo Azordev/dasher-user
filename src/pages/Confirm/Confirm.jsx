@@ -34,7 +34,7 @@ const Confirm = () => {
 
   return (
     <Layout
-      headerTitle={'Hemos terminado'}
+      headerTitle="Hemos terminado"
       RatingModal={
         <Modal isOpen={isRatingModalOpen} handleClick={submitRating} actionText="Aceptar">
           <img width="15px" src={close} alt="Close icon" />
