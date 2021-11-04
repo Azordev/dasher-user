@@ -15,11 +15,6 @@ const HeaderMap = styled.div`
   border-bottom-left-radius: 25px;
   padding: 5px;
   min-height: 10vh;
-  @media (max-width: 960px) {
-    width: inherit;
-    position: absolute;
-    z-index: 1;
-  }
 `
 
 const HeaderText = styled.div`
