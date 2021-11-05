@@ -3,17 +3,17 @@ import { useParams, useHistory } from 'react-router-dom'
 import { Modal, Text } from '../../components'
 import handshake from '../../assets/handshake.png'
 import RatingMan from '../../assets/man-rate.png'
-import close from '../../assets/close-icon.svg'
 
 import Rating from '../../components/Rating'
 
 import Layout from './Confirm.layout'
+import { RatingImg } from './Confirm.styled'
 
 const Confirm = () => {
   const { id } = useParams()
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
-  const [isRatingModalOpen, toggleRatingModal] = useState(false)
+  const [isRatingModalOpen, toggleRatingModal] = useState(true)
 
   if (!id) {
     history.push('/check')
@@ -37,18 +37,12 @@ const Confirm = () => {
       headerTitle="Hemos terminado"
       RatingModal={
         <Modal isOpen={isRatingModalOpen} handleClick={submitRating} actionText="Aceptar">
-          <img width="15px" src={close} alt="Close icon" />
-          <Text as="h1" color="primary" small>
+          <Text as="h1" color="primary">
             ¿Qué tal tu experiencia?
           </Text>
-          <Text color="danger" small>
-            La propina esta en tus manos
-          </Text>
-          <Text color="danger">Si deseas, puedes compartirla.</Text>
-          <Text as="button" bold uppercase>
-            Aceptar
-          </Text>
-          <img src={RatingMan} alt="Delivery man" />
+          <Text>La propina esta en tus manos</Text>
+          <Text>Si deseas, puedes compartirla.</Text>
+          <RatingImg src={RatingMan} alt="Delivery man" />
           <Rating />
         </Modal>
       }
