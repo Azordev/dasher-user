@@ -15,6 +15,7 @@ const HeaderMap = styled.div`
   border-bottom-left-radius: 25px;
   padding: 5px;
   min-height: 10vh;
+  place-content: space-between;
 
   @media (max-width: 960px) {
     width: inherit;
@@ -33,7 +34,9 @@ const HeaderText = styled.div`
   margin: auto 0;
   height: auto;
 
-  @media (min-width: 960px) {
+
+
+  @media (min-width: 900px) {
     font-size: 2em;
   }
 
@@ -41,7 +44,7 @@ const HeaderText = styled.div`
     font-size: 6em;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 889px) {
     font-size: 1em;
   }
 `

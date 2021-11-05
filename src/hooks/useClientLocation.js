@@ -13,6 +13,7 @@ export function useClientLocation({ data, error, loading }) {
   const [hasError, setError] = useState(false)
   const [center, setCenter] = useState([undefined, undefined])
   const [dasher, setDasher] = useState([0, 0])
+  const [currentStatus, setCurrentStatus] = useState('')
 
   useEffect(() => {
     setLoading(true)
@@ -35,12 +36,13 @@ export function useClientLocation({ data, error, loading }) {
             },
           )
         }
+        setCurrentStatus(data.packages[0]?.order_status)
         setDasher([Number(data.packages[0]?.current_lat), Number(data.packages[0]?.current_lon)])
         setLoading(false)
       }
     }
   }, [data])
-  return { isLoading, hasError, center, dasher }
+  return { isLoading, hasError, center, dasher, currentStatus }
 }
 /* cspell:disable-next-line */
 export function useDasherliveLocation({ data }) {
