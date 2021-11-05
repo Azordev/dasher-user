@@ -10,20 +10,32 @@ import ErrorBoundary from './layouts/ErrorBoundary'
 
 ReactDOM.render(
   <React.StrictMode>
-
-      <Theme>
-        <ApolloProvider client={client}>
+    <Theme>
+      <ApolloProvider client={client}>
         <ErrorBoundary>
           <Pages />
-          </ErrorBoundary>
-        </ApolloProvider>
-      </Theme>
-
+        </ErrorBoundary>
+      </ApolloProvider>
+    </Theme>
   </React.StrictMode>,
   document.getElementById('root'),
 )
 
 serviceWorkerRegistration.unregister()
 
-// eslint-disable-next-line
-reportWebVitals(console.log)
+function logDelta({ name, value, id, delta }) {
+  if (name === 'FCP') {
+    if (value >= 0 && value <= 2000) {
+      console.log(`${name} value ${value} is in range and the speed is fast.`)
+    } else if (value > 2000 && value <= 4000) {
+      console.warn(`${name} value ${value} is in a bit out of range and the speed is moderate.`)
+    }
+    if (value > 4000) {
+      console.error(`${name} value ${value} is completly out of range and the speed is slow.`)
+    }
+  } else {
+    // eslint-disable-next-line
+    console.log(`${name} matching ID ${id} changed by ${delta}`)
+  }
+}
+reportWebVitals(logDelta)

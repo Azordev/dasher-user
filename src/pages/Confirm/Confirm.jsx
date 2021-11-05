@@ -3,27 +3,41 @@ import { useParams, useHistory } from 'react-router-dom'
 import { Modal, Text } from '../../components'
 import handshake from '../../assets/handshake.png'
 import RatingMan from '../../assets/man-rate.png'
-import star from '../../assets/star.svg'
 import close from '../../assets/close-icon.svg'
+
+import Rating from '../../components/Rating'
 
 import Layout from './Confirm.layout'
 
 const Confirm = () => {
   const { id } = useParams()
   const history = useHistory()
-  const [isFinalModalOpen, changeFinalModalOpen] = useState(false)
-  const [isRatingModalOpen, changeRatingModalOpen] = useState(false)
+  const [isFinalModalOpen, toggleFinalModal] = useState(false)
+  const [isRatingModalOpen, toggleRatingModal] = useState(false)
 
   if (!id) {
     history.push('/check')
+  }
+
+  const submitConfirmation = event => {
+    event.preventDefault()
+    // SUbmit confirmation here
+    toggleRatingModal(true)
+  }
+
+  const submitRating = event => {
+    event.preventDefault()
+    // Submit rating here
+    toggleRatingModal(false)
+    toggleFinalModal(true)
   }
 
   return (
     <Layout
       headerTitle="Hemos terminado"
       RatingModal={
-        <Modal isOpen={isRatingModalOpen} handleClick={() => changeFinalModalOpen(true)} actionText="Aceptar">
-          <img src={close} alt="Close icon" />
+        <Modal isOpen={isRatingModalOpen} handleClick={submitRating} actionText="Aceptar">
+          <img width="15px" src={close} alt="Close icon" />
           <Text as="h1" color="primary" small>
             ¿Qué tal tu experiencia?
           </Text>
@@ -35,7 +49,7 @@ const Confirm = () => {
             Aceptar
           </Text>
           <img src={RatingMan} alt="Delivery man" />
-          <img src={star} alt="Stars rating" />
+          <Rating />
         </Modal>
       }
       FinalModal={
@@ -55,7 +69,7 @@ const Confirm = () => {
         <Text as="input" placeholder="Nombre" />
         <Text as="input" placeholder="RUT" />
         <Text as="input" placeholder="Celular" />
-        <Text as="button" bold uppercase onClick={() => changeRatingModalOpen(open)}>
+        <Text as="button" bold uppercase onClick={submitConfirmation}>
           Confirmar
         </Text>
       </>

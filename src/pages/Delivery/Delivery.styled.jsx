@@ -15,6 +15,12 @@ const HeaderMap = styled.div`
   border-bottom-left-radius: 25px;
   padding: 5px;
   min-height: 10vh;
+
+  @media (max-width: 960px) {
+    width: inherit;
+    position: absolute;
+    z-index: 1;
+  }
 `
 
 const HeaderText = styled.div`
@@ -26,6 +32,7 @@ const HeaderText = styled.div`
   flex-direction: column;
   margin: auto 0;
   height: auto;
+
   @media (min-width: 960px) {
     font-size: 2em;
   }
@@ -87,6 +94,7 @@ const FooterMap = styled.div`
   flex-wrap: wrap;
   height: auto;
   margin: 0 auto;
+
   @media (max-width: 960px) {
     width: 100vw;
     position: absolute;

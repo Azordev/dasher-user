@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { Text } from '../../components'
-import {  useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import {
   MapLayoutContainer,
   HeaderMap,
@@ -52,7 +52,7 @@ const Delivery = ({
             <HeaderTitle>{headerTitle}</HeaderTitle>
             <HeaderSubTitle>{headerSubtitle}</HeaderSubTitle>
           </HeaderText>
-          <ChatBtnContainer onClick={()=>history.push(`/chat/${packageCode}`)}>
+          <ChatBtnContainer onClick={() => history.push(`/chat/${packageCode}`)}>
             <ChatBtn src={chat} />
           </ChatBtnContainer>
         </HeaderMap>
@@ -62,7 +62,7 @@ const Delivery = ({
             <img src={gps} alt="Gps icon" />
           </FooterMapAddress>
           <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
-            <Text color={'var(--secondary)'} small bold uppercase>
+            <Text color="secondary" small bold uppercase>
               {estimatedArrival}
             </Text>
           </FooterMapAddress>
@@ -80,8 +80,8 @@ Delivery.propTypes = {
   packageCode: PropTypes.string.isRequired,
   headerTitle: PropTypes.string.isRequired,
   headerSubtitle: PropTypes.string.isRequired,
-  clientAddress: PropTypes.string.isRequired,
-  estimatedArrival: PropTypes.string.isRequired,
+  clientAddress: PropTypes.string,
+  estimatedArrival: PropTypes.string,
   isLoading: PropTypes.bool.isRequired,
   hasError: PropTypes.bool.isRequired,
   DeliveryConfirmedModal: PropTypes.element.isRequired,

@@ -22,17 +22,17 @@ const Chat = () => {
 
   const Messages =
     LatestMessages.chats &&
-    LatestMessages.chats.map(message => {
+    LatestMessages.chats.map((message, id) => {
       if (message.user_type === 'client') {
         return (
-          <MessageRow type={'client'}>
+          <MessageRow type={'client'} key={`chat-message-${id}`}>
             <Avatar src={userIcon} />
             <MessageBox>{message.last_client_message}</MessageBox>
           </MessageRow>
         )
       } else {
         return (
-          <MessageRow type={'dasher'}>
+          <MessageRow type={'dasher'} key={`chat-message-${id}`}>
             <Avatar src={deliveryManWhite} />
             <MessageBox>{message.last_dasher_message}</MessageBox>
           </MessageRow>
