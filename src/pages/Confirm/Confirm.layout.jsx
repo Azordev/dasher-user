@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
-import { Text } from '../../components'
+import { Text, BackButton } from '../../components'
 import note from '../../assets/note.png'
 import { Container, Header, MainSection } from '../../layouts/Splitted.styled'
-import BackButton from '../../components/BackButton'
 const Confirm = ({ headerTitle, children, RatingModal, FinalModal }) => (
   <Container>
     <Header>

@@ -28,13 +28,11 @@ const HeaderText = styled.div`
   width: 33.33vw;
   text-align: center;
   color: #f7cd46;
-  font-size: 1.7em;
+  font-size: 1em;
   display: flex;
   flex-direction: column;
   margin: auto 0;
   height: auto;
-
-
 
   @media (min-width: 900px) {
     font-size: 2em;
@@ -42,10 +40,6 @@ const HeaderText = styled.div`
 
   @media (min-width: 3180px) {
     font-size: 6em;
-  }
-
-  @media (max-width: 889px) {
-    font-size: 1em;
   }
 `
 

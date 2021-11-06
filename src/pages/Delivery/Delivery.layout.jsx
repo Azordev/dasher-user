@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import { Text } from '../../components'
-import {  useHistory } from 'react-router-dom'
+import { Text, BackButton } from '../../components'
+import { useHistory } from 'react-router-dom'
 import {
   MapLayoutContainer,
   HeaderMap,
@@ -16,7 +16,6 @@ import assistant from '../../assets/assistant.png'
 import chat from '../../assets/chat.png'
 import gps from '../../assets/gps-icon.png'
 import { Fragment } from 'react'
-import BackButton from '../../components/BackButton'
 
 /**
  * Delivery Layout
@@ -52,8 +51,8 @@ const Delivery = ({
             <HeaderTitle>{headerTitle}</HeaderTitle>
             <HeaderSubTitle>{headerSubtitle}</HeaderSubTitle>
           </HeaderText>
-          <ChatBtnContainer >
-            <ChatBtn onClick={()=>history.push(`/chat/${packageCode}`)} src={chat} />
+          <ChatBtnContainer>
+            <ChatBtn onClick={() => history.push(`/chat/${packageCode}`)} src={chat} />
           </ChatBtnContainer>
         </HeaderMap>
         {children}

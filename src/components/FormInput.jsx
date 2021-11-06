@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FormInput = styled.input`
+const FormInput = styled.input`
   width: 320px;
   height: 40px;
   border-radius: 20px;

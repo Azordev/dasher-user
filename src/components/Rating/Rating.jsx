@@ -1,7 +1,7 @@
 import { StarBtn, SelectedStarBtn } from './Rating.styled'
 import { useState } from 'react'
 
-const Rating = () => {
+const Rating = (z) => {
   const stars = [...Array(5).keys()]
   const [activeStarsArray, setActiveStarsArray] = useState([])
   function manageRating(event, idx) {
