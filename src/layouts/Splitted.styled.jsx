@@ -39,12 +39,27 @@ export const TicketImage = styled.img`
     margin-left: -50px;
   }
 `
+
+export const ConfirmImage = styled.img`
+  width: 140px;
+  align-self: flex-start;
+  margin: 0 0 -13px 15px;
+
+  @media (min-width: 960px) {
+    width: 40vh;
+    bottom: -38px;
+    align-self: flex-end;
+    position: fixed;
+    margin-left: -50px;
+  }
+`
 export const MainSection = styled.div`
-  display: flex;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
   height: 100%;
+  display: grid;
+  align-content: center;
 
   @media (min-width: 960px) {
     background: var(--secondary);

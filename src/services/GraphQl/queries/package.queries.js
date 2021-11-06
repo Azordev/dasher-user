@@ -25,3 +25,18 @@ export const GET_PACKAGE_INFORMATION_QUERY = gql`
     }
   }
 `
+export const CONFIRM_PACKAGE_QUERY = gql`
+  query confirmPackage($package_code: String!, $client_name: String!, $rut: String!, $client_phone: String!) {
+    packages(
+      distinct_on: id
+      where: {
+        package_code: { _eq: $package_code }
+        client_name: { _eq: $client_name }
+        client_identification_document: { _eq: $rut }
+        client_phone: { _eq: $client_phone }
+      }
+    ) {
+      id
+    }
+  }
+`

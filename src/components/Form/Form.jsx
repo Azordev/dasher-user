@@ -7,7 +7,7 @@ const FormContext = React.createContext({
   handleFormChange: () => {},
 })
 
-const Form = ({ children, onSubmit, formData, FormButtonTitle = 'Confirmar' }) => {
+const Form = ({ children, onSubmit, formData = e => e, FormButtonTitle = 'Confirmar' }) => {
   const [form, setForm] = useState({})
 
   const handleFormChange = event => {

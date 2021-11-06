@@ -1,11 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { Modal, Text } from '../../components'
+import { Modal, Text, Rating, Form, FormInput } from '../../components'
 import handshake from '../../assets/handshake.png'
 import RatingMan from '../../assets/man-rate.png'
-
-import Rating from '../../components/Rating'
-
+import { InsertClientRate, useConfirmPackage } from '../../hooks'
 import Layout from './Confirm.layout'
 import { RatingImg } from './Confirm.styled'
 
@@ -13,37 +11,52 @@ const Confirm = () => {
   const { id } = useParams()
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
-  const [isRatingModalOpen, toggleRatingModal] = useState(true)
-
+  const [isRatingModalOpen, toggleRatingModal] = useState(false)
+  const [rating, setRating] = useState(0)
+  const { insertClientRate } = InsertClientRate()
+  const { confirmPackage, packageInformation } = useConfirmPackage()
   if (!id) {
     history.push('/check')
   }
 
-  const submitConfirmation = event => {
-    event.preventDefault()
-    // SUbmit confirmation here
-    toggleRatingModal(true)
-  }
+  useEffect(() => {
+    if (packageInformation.length > 0) {
+      toggleRatingModal(true)
+    }
+  }, [packageInformation])
 
   const submitRating = event => {
     event.preventDefault()
     // Submit rating here
-    toggleRatingModal(false)
-    toggleFinalModal(true)
+    if (rating) {
+      insertClientRate({ variables: { package_code: id, client_rating: rating } })
+      toggleRatingModal(false)
+      toggleFinalModal(true)
+    }
+  }
+
+  const submitConfirmation = async event => {
+    // Submit form here
+    if (event.name && event.RUT && event.phone) {
+      confirmPackage(event, id)
+    } else {
+      alert('Por favor complete los campos')
+    }
   }
 
   return (
     <Layout
       headerTitle="Hemos terminado"
+      headerSubTitle="Inserta tus datos para finalizar Confirma recepción"
       RatingModal={
         <Modal isOpen={isRatingModalOpen} handleClick={submitRating} actionText="Aceptar">
           <Text as="h1" color="primary">
             ¿Qué tal tu experiencia?
           </Text>
-          <Text>La propina esta en tus manos</Text>
+          <Text small>La propina esta en tus manos</Text>
           <Text>Si deseas, puedes compartirla.</Text>
           <RatingImg src={RatingMan} alt="Delivery man" />
-          <Rating />
+          <Rating setRating={setRating} />
         </Modal>
       }
       FinalModal={
@@ -56,16 +69,18 @@ const Confirm = () => {
       }
     >
       <>
-        <Text small>Inserta tus datos para finalizar</Text>
-        <Text color="secondary" bold uppercase>
+        <Text color="primary" bold uppercase>
           Confirma recepción
         </Text>
-        <Text as="input" placeholder="Nombre" />
-        <Text as="input" placeholder="RUT" />
-        <Text as="input" placeholder="Celular" />
-        <Text as="button" bold uppercase onClick={submitConfirmation}>
-          Confirmar
-        </Text>
+        <Form onSubmit={e => submitConfirmation(e)}>
+          {({ handleFormChange, value }) => (
+            <>
+              <FormInput placeholder="Nombre" name="name" value={value} onChange={handleFormChange} />
+              <FormInput placeholder="RUT" name="RUT" value={value} onChange={handleFormChange} />
+              <FormInput placeholder="Celular" name="phone" value={value} onChange={handleFormChange} />
+            </>
+          )}
+        </Form>
       </>
     </Layout>
   )
