@@ -8,6 +8,7 @@ import {
   HeaderText,
   FooterChat,
   ChatBodyWrapper,
+  HeaderChatImgContainer,
   HeaderChatImg,
 } from './Chat.styled'
 
@@ -15,10 +16,12 @@ const Chat = ({ children, SendForm }) => (
   <ChatLayoutContainer>
     <HeaderChat>
       <BackButton />
-      <HeaderChatImg src={deliveryManWhite} />
       <HeaderText>
         <HeaderTitle>Repartidor Dasher</HeaderTitle>
       </HeaderText>
+      <HeaderChatImgContainer>
+      <HeaderChatImg src={deliveryManWhite} />
+      </HeaderChatImgContainer >
     </HeaderChat>
     <ChatBodyWrapper>{children}</ChatBodyWrapper>
     <FooterChat>{SendForm}</FooterChat>

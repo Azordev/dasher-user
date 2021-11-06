@@ -22,7 +22,10 @@ export const HeaderChat = styled.div`
     height: 14vh;
   }
 `
-
+export const HeaderChatImgContainer = styled.div`
+  width: 33.33vw;
+  text-align: right;
+`
 export const HeaderChatImg = styled.img`
   height: 90%;
   margin: auto 10px;

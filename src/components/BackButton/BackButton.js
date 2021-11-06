@@ -6,7 +6,9 @@ const BackButton = () => {
   const { id } = useParams()
   const history = useHistory()
   const handleClick = () => {
-    if (history.length > 1) {
+    if (history.location.pathname === '/check') {
+      history.push('/')
+    } else if (history.length > 1) {
       history.goBack()
     } else {
       if (id) {
@@ -18,9 +20,9 @@ const BackButton = () => {
   }
 
   return (
-    <BackBtnContainer onClick={() => handleClick()}>
-      <BackBtn src={arrow} />
-      <BackTxt txt={'Atrás'}></BackTxt>
+    <BackBtnContainer>
+      <BackBtn onClick={() => handleClick()} src={arrow} />
+      <BackTxt onClick={() => handleClick()} txt={'Atrás'}></BackTxt>
     </BackBtnContainer>
   )
 }

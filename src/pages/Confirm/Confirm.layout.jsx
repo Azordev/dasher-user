@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types'
-import { Text } from '../../components'
+import { Text, BackButton } from '../../components'
 import note from '../../assets/note.png'
-import arrow from '../../assets/arrow-left.svg'
 import { Container, Header, MainSection } from '../../layouts/Splitted.styled'
-
 const Confirm = ({ headerTitle, children, RatingModal, FinalModal }) => (
   <Container>
     <Header>
-      <img src={arrow} alt="Arrow left" />
+      <BackButton />
       <Text as="h1" color="secondary" medium>
         {headerTitle}
       </Text>

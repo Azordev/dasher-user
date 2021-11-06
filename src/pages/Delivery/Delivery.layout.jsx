@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Text } from '../../components'
+import { Text, BackButton } from '../../components'
 import { useHistory } from 'react-router-dom'
 import {
   MapLayoutContainer,
@@ -16,7 +16,6 @@ import assistant from '../../assets/assistant.png'
 import chat from '../../assets/chat.png'
 import gps from '../../assets/gps-icon.png'
 import { Fragment } from 'react'
-import BackButton from '../../components/BackButton'
 
 /**
  * Delivery Layout
@@ -52,17 +51,17 @@ const Delivery = ({
             <HeaderTitle>{headerTitle}</HeaderTitle>
             <HeaderSubTitle>{headerSubtitle}</HeaderSubTitle>
           </HeaderText>
-          <ChatBtnContainer onClick={() => history.push(`/chat/${packageCode}`)}>
-            <ChatBtn src={chat} />
+          <ChatBtnContainer>
+            <ChatBtn onClick={() => history.push(`/chat/${packageCode}`)} src={chat} />
           </ChatBtnContainer>
         </HeaderMap>
         {children}
         <FooterMap>
-          <FooterMapAddress cols={'0 0 100%'} txt={clientAddress}>
+          <FooterMapAddress cols={'0 0 100%'} txt={clientAddress} style={{ flexDirection: 'row' }}>
             <img src={gps} alt="Gps icon" />
           </FooterMapAddress>
           <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
-            <Text color="secondary" small bold uppercase>
+            <Text small bold uppercase>
               {estimatedArrival}
             </Text>
           </FooterMapAddress>
@@ -80,8 +79,8 @@ Delivery.propTypes = {
   packageCode: PropTypes.string.isRequired,
   headerTitle: PropTypes.string.isRequired,
   headerSubtitle: PropTypes.string.isRequired,
-  clientAddress: PropTypes.string,
-  estimatedArrival: PropTypes.string,
+  clientAddress: PropTypes.string.isRequired,
+  estimatedArrival: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
   hasError: PropTypes.bool.isRequired,
   DeliveryConfirmedModal: PropTypes.element.isRequired,

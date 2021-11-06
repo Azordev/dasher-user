@@ -15,15 +15,16 @@ const Delivery = () => {
   if (!id || id !== 'test') {
     history.push('/check')
   }
-  const toCheck = () => history.push(`/check/${id}`)
+  const toConfirm = () => history.push(`/confirm/${id}`)
 
   const { packageInformation } = useGetPackageInformation({ packageId: id })
   const { latestCoordinates, error, loading } = useDasherLatestCoordinates({ packageId: id })
-  const { isLoading, hasError, center, dasher } = useClientLocation({
+  const { isLoading, hasError, center, dasher,currentStatus } = useClientLocation({
     data: latestCoordinates,
     error: error,
     loading: loading,
   })
+
 
   if (isLoading || !packageInformation?.packages[0]?.package_code) {
     return <pre>Loading...</pre>
@@ -44,10 +45,10 @@ const Delivery = () => {
       hasError={hasError}
       DeliveryConfirmedModal={
         <Modal
-          isOpen={openDeliveryConfirmedModal}
+          isOpen={currentStatus === 'destination_reached' && !openDeliveryConfirmedModal}
           handleClick={() => {
-            toggleDeliveryConfirmedModal(false)
-            toCheck()
+            toggleDeliveryConfirmedModal(!openDeliveryConfirmedModal)
+            toConfirm()
           }}
           actionText="Aceptar"
         >
