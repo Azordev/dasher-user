@@ -54,7 +54,6 @@ export const ConfirmImage = styled.img`
   }
 `
 export const MainSection = styled.div`
-
   align-items: center;
   justify-content: center;
   height: 100%;

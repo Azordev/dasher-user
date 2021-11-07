@@ -10,21 +10,22 @@ import Layout from './Delivery.layout'
 const Delivery = () => {
   const { id } = useParams()
   const history = useHistory()
-  const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(false)
-
-  if (!id || id !== 'test') {
-    history.push('/check')
-  }
-  const toConfirm = () => history.push(`/confirm/${id}`)
-
-  const { packageInformation } = useGetPackageInformation({ packageId: id })
-  const { latestCoordinates, error, loading } = useDasherLatestCoordinates({ packageId: id })
-  const { isLoading, hasError, center, dasher,currentStatus } = useClientLocation({
+  const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)
+  const { packageInformation } = useGetPackageInformation(id)
+  const { latestCoordinates, error, loading } = useDasherLatestCoordinates(id)
+  const { isLoading, hasError, center, dasher, currentStatus } = useClientLocation({
     data: latestCoordinates,
     error: error,
     loading: loading,
   })
 
+  if (!id) {
+    history.push('/check')
+  }
+
+  const toConfirm = () => history.push(`/confirm/${id}`)
+
+  const toChat = () => history.push(`/chat/${id}`)
 
   if (isLoading || !packageInformation?.packages[0]?.package_code) {
     return <pre>Loading...</pre>
@@ -36,16 +37,17 @@ const Delivery = () => {
 
   return (
     <Layout
-      packageCode={packageInformation?.packages[0]?.package_code}
+      packageId={id}
       headerTitle="En camino..."
       headerSubtitle="Vamos con tu envio..."
       clientAddress={packageInformation?.packages[0]?.client_address}
       estimatedArrival={packageInformation?.packages[0]?.estimated_arrival}
       isLoading={isLoading}
       hasError={hasError}
+      toChat={toChat}
       DeliveryConfirmedModal={
         <Modal
-          isOpen={currentStatus === 'destination_reached' && !openDeliveryConfirmedModal}
+          isOpen={currentStatus === 'destination_reached' && openDeliveryConfirmedModal}
           handleClick={() => {
             toggleDeliveryConfirmedModal(!openDeliveryConfirmedModal)
             toConfirm()

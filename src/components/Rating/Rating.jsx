@@ -1,12 +1,12 @@
+// @ts-check
 import { StarBtn, SelectedStarBtn } from './Rating.styled'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-// @ts-check
-// eslint-disable-next-line react/prop-types
+
 const Rating = ({ setRating }) => {
   const stars = [...Array(5).keys()]
   const [activeStarsArray, setActiveStarsArray] = useState([])
-  function manageRating(event, idx) {
+  function manageRating(idx = 0) {
     const activeStars = stars.filter(item => {
       return item < idx
     })
@@ -19,15 +19,15 @@ const Rating = ({ setRating }) => {
         return activeStarsArray.includes(x) ? (
           <SelectedStarBtn
             key={x++}
-            onClick={e => {
-              manageRating(e, x)
+            onClick={_ => {
+              manageRating(x)
             }}
           />
         ) : (
           <StarBtn
             key={x++}
-            onClick={e => {
-              manageRating(e, x)
+            onClick={_ => {
+              manageRating(x)
             }}
           />
         )
@@ -36,8 +36,8 @@ const Rating = ({ setRating }) => {
   )
 }
 
-Rating.prototype = {
-  setRating: PropTypes.func.isRequired,
+Rating.propTypes = {
+  setRating: PropTypes.func,
 }
 
 export default Rating

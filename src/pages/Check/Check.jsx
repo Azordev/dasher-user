@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useHistory } from 'react-router'
 import { Form, Modal, Text } from '../../components'
 import warning from '../../assets/warning.png'
-import { useGetPackageInformation } from '../../hooks'
+import { useGetPackagesIdByCode } from '../../hooks'
 import Layout from './Check.layout'
 import FormInput from '../../components/FormInput'
 
@@ -10,13 +10,14 @@ const Check = () => {
   const [packageCode, setPackageCode] = useState('')
   const [isModalOpen, changeIsModalOpen] = useState(true)
   const history = useHistory()
-  const { packageInformation, loading, error } = useGetPackageInformation({ packageId: packageCode.packageCode })
+  const { packages, loading, error } = useGetPackagesIdByCode(packageCode?.packageCode)
 
   const toDelivery = async e => {
     if (e?.packageCode && !error && !loading) {
-      const { packages } = await packageInformation
-      if ((await packages.length) > 0) {
-        history.push(`/delivery/${e?.packageCode}`)
+      const foundPackage = (await packages.length) > 0
+      if (foundPackage) {
+        const { id } = await packages[0]
+        history.push(`/delivery/${id}`)
       } else {
         alert('el packcode no existe')
       }

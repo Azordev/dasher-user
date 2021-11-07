@@ -6,4 +6,5 @@ import BackButton from './BackButton'
 import { Form } from './Form'
 import FormInput from './FormInput'
 import Rating from './Rating'
-export {BackButton, Button, Input, Modal, Text, Form, Rating, FormInput }
+
+export { BackButton, Button, Input, Modal, Text, Form, Rating, FormInput }

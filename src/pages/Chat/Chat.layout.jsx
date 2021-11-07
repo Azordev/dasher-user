@@ -20,8 +20,8 @@ const Chat = ({ children, SendForm }) => (
         <HeaderTitle>Repartidor Dasher</HeaderTitle>
       </HeaderText>
       <HeaderChatImgContainer>
-      <HeaderChatImg src={deliveryManWhite} />
-      </HeaderChatImgContainer >
+        <HeaderChatImg src={deliveryManWhite} />
+      </HeaderChatImgContainer>
     </HeaderChat>
     <ChatBodyWrapper>{children}</ChatBodyWrapper>
     <FooterChat>{SendForm}</FooterChat>

@@ -6,7 +6,6 @@ export const RatingImg = styled.img`
   margin: auto;
 `
 
-
 export const confirmImg = styled.img`
   max-width: 100px;
   height: auto;
