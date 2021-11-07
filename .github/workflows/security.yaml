@@ -1,4 +1,5 @@
 name: Security
+on:
   push:
     branches: [main]
   pull_request:
