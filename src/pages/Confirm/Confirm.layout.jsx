@@ -8,8 +8,8 @@ import BackButton from '../../components/BackButton'
 const Confirm = ({ headerTitle, headerSubTitle, children, RatingModal, FinalModal }) => (
   <Container>
     <Header>
+      <BackButton />
       <HeaderContainer>
-        <BackButton />
         <Text as="h1" color="secondary" xlarge>
           {headerTitle}
         </Text>

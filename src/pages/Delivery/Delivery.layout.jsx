@@ -60,7 +60,7 @@ const Delivery = ({
             <img src={gps} alt="Gps icon" />
           </FooterMapAddress>
           <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
-            <Text small bold uppercase>
+            <Text small bold uppercase margin="8" color="secondary">
               {estimatedArrival}
             </Text>
           </FooterMapAddress>
