@@ -1,0 +1,11 @@
+name: Security
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main, dev]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: gitleaks-action
+        uses: zricethezav/gitleaks-action@master

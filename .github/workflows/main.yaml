@@ -2,9 +2,9 @@
 name: Lint Code Base
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main, dev ]
+    branches: [main, dev]
 
   workflow_dispatch:
 
@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.17
+          cache: npm
 
       - name: Cache dependencies
         id: cache
@@ -48,5 +49,3 @@ jobs:
         run: npm test
       - name: build
         run: npm run build --if-present
-      - name: gitleaks-action
-        uses: zricethezav/gitleaks-action@master
