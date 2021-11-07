@@ -6,6 +6,7 @@ export const BackBtnContainer = styled.div`
 `
 export const BackBtn = styled.img`
   cursor: pointer;
+
   @media (max-width: 960px) {
     height: 100%;
     width: 33.33vw;
@@ -25,6 +26,7 @@ export const BackTxt = styled.p`
   font-size: 1em;
   margin: auto 0;
   max-width: 10rem;
+
   ::before {
     content: '${props => props.txt}';
   }

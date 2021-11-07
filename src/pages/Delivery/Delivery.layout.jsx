@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import { Text, BackButton } from '../../components'
-import { useHistory } from 'react-router-dom'
 import {
   MapLayoutContainer,
   HeaderMap,
@@ -23,7 +22,7 @@ import { Fragment } from 'react'
  * @augments { React.Component<{ packageId, headerTitle, headerSubtitle, clientAddress, estimatedArrival, isLoading, hasError, DeliveryConfirmedModal, children }, {}> }
  */
 const Delivery = ({
-  packageCode,
+  packageId,
   headerTitle,
   headerSubtitle,
   clientAddress,
@@ -32,8 +31,8 @@ const Delivery = ({
   hasError,
   DeliveryConfirmedModal,
   children,
+  toChat,
 }) => {
-  const history = useHistory()
   if (isLoading) {
     return <pre>Loading...</pre>
   }
@@ -52,7 +51,7 @@ const Delivery = ({
             <HeaderSubTitle>{headerSubtitle}</HeaderSubTitle>
           </HeaderText>
           <ChatBtnContainer>
-            <ChatBtn onClick={() => history.push(`/chat/${packageCode}`)} src={chat} />
+            <ChatBtn onClick={toChat} src={chat} />
           </ChatBtnContainer>
         </HeaderMap>
         {children}
@@ -76,7 +75,7 @@ const Delivery = ({
 }
 
 Delivery.propTypes = {
-  packageCode: PropTypes.string.isRequired,
+  packageId: PropTypes.string,
   headerTitle: PropTypes.string.isRequired,
   headerSubtitle: PropTypes.string.isRequired,
   clientAddress: PropTypes.string.isRequired,
@@ -85,6 +84,7 @@ Delivery.propTypes = {
   hasError: PropTypes.bool.isRequired,
   DeliveryConfirmedModal: PropTypes.element.isRequired,
   children: PropTypes.element,
+  toChat: PropTypes.func.isRequired,
 }
 
 export default Delivery
