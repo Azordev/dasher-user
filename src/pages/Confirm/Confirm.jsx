@@ -47,7 +47,7 @@ const Confirm = () => {
   return (
     <Layout
       headerTitle="Hemos terminado"
-      headerSubTitle="Inserta tus datos para finalizar Confirma recepción"
+      headerSubTitle="Inserta tus datos para finalizar"
       RatingModal={
         <Modal isOpen={isRatingModalOpen} handleClick={submitRating} actionText="Aceptar">
           <Text as="h1" color="primary">
