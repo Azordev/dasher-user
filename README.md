@@ -1,6 +1,7 @@
 # dasher-user - Delivery Maps for your users
 
 <!-- PROJECT SHIELDS -->
+
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues-open][issues-open-shield]][issues-url]
@@ -8,11 +9,12 @@
 [![Contributors][contributors-shield]][contributors-url]
 
 <!-- PROJECT LOGO -->
-| Dasher - User App |
-| :---: |
-| ![app-icon][] |
-| ONLINE ACCESS SYSTEM FOR CUSTOMER AND CONSUMER MONITORING. |
-| [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url] |
+
+|                                            Dasher - User App                                             |
+| :------------------------------------------------------------------------------------------------------: |
+|                                              ![app-icon][]                                               |
+|                        ONLINE ACCESS SYSTEM FOR CUSTOMER AND CONSUMER MONITORING.                        |
+|                          [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                           |
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
 - [dasher-user - Delivery Maps for your users](#dasher-user---delivery-maps-for-your-users)
@@ -65,19 +67,17 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 - Linux/GNU, macOS, Windows
 - Love and Passion for code
 
-
 ## Create a .env file
+
 - Create a .env file.
 - Put correct key.
-  
+
 ## Advantages Of Styled-Components
+
 - Easier management of CSS: With every bit of styling tied to a specific component, it is easier to know which CSS is applied This makes it easy to delete unused component styles.
 - Using styled components if we change a variable value then it can change all the value.
 - We can reuse same style component where we need and also we can use it conditionaly.
 - Simple and dynamic styling: Through props and global themes supported in styled-components, styling is simple without manually managing dozens of classes.
-
-
-
 
 ## Using the App
 
@@ -161,8 +161,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Author
 
 | [Israel Laguan][author-github] | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
-|:---:|:---:|
-| ![author-pic][] | ![banner][] |
+| :----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|        ![author-pic][]         |                                                             ![banner][]                                                             |
 
 ## Contributing
 
@@ -192,6 +192,7 @@ Feel free to check the [issues page][issues-url].
 Feel free to fork this project and improve it!
 
 <!-- MARKDOWN LINKS & IMAGES -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/Azordev/dasher-user?style=for-the-badge
 [contributors-url]: https://github.com/Azordev/dasher-user/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Azordev/dasher-user?style=for-the-badge
@@ -216,6 +217,6 @@ Feel free to fork this project and improve it!
 [banner]: https://github.com/Israel-Laguan/Israel-Laguan/raw/master/docs/banner.jpg
 [app-banner]: docs/app-banner.png
 [app-icon]: public/dasher.123.png
-[Icons8]: https://icons8.com/
+[icons8]: https://icons8.com/
 [icons8-logo]: https://img.icons8.com/fluent/20/000000/icons8-new-logo.png
 [api-logo]: https://spoonacular.com/images/spoonacular-logo-b.svg

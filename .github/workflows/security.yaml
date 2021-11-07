@@ -10,3 +10,7 @@ jobs:
     steps:
       - name: gitleaks-action
         uses: zricethezav/gitleaks-action@master
+      - name: nodejsscan scan
+        uses: ajinabraham/njsscan-action@master
+        with:
+          args: '.'

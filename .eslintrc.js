@@ -20,6 +20,10 @@ module.exports = {
   ],
   rules: {
     'no-use-before-define': 'off',
+    complexity: ['error', { max: 7 }],
+    camelcase: ['warn', { ignoreDestructuring: true, ignoreImports: true }],
+    'max-params': ['error', 7],
+    'no-cond-assign': 'error',
   },
   settings: {
     react: {
