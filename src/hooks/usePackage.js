@@ -16,7 +16,7 @@ export const useDasherLatestCoordinates = packageId => {
   useEffect(() => {
     setLatestCoordinates(data)
   }, [data])
-  return { loading, error, latestCoordinates: latestCoordinates }
+  return { loading, error, latestCoordinates }
 }
 
 export const useGetPackagesIdByCode = packageCode => {

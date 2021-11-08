@@ -17,7 +17,7 @@ const Button = styled.button`
   margin: 25px 0;
   padding: 0 25px;
   text-transform: uppercase;
-  width: 90%;
+  width: 80%;
 `
 
 export default Button

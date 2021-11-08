@@ -6,12 +6,16 @@ export const BackBtnContainer = styled.div`
 `
 export const BackBtn = styled.img`
   cursor: pointer;
+  position: relative;
+  left: -15px;
+  margin: 0;
+  margin-bottom: 30px;
 
   @media (max-width: 960px) {
     height: 100%;
     width: 33.33vw;
     padding-right: 15vw;
-    max-width: 13rem;
+    max-width: 5.5rem;
   }
 
   @media (min-width: 961px) {
