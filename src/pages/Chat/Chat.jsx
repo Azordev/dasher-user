@@ -44,10 +44,10 @@ const Chat = () => {
     if (message.length > 0) {
       insertClientMessage({
         variables: {
-          last_client_message: message,
-          last_client_update: new Date(Date.now()).toISOString(),
-          package_id: id,
-          user_type: 'client',
+          lastClientMessage: message,
+          lastClientUpdate: new Date(Date.now()).toISOString(),
+          packageId: id,
+          userType: 'client',
         },
       })
       setMessage('')

@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 export const GET_PACKAGE_ID_QUERY_BY_CODE = gql`
-  query useGetPackageIdByCode($package_code: String!) {
-    packages(where: { package_code: { _eq: $package_code } }) {
+  query useGetPackageIdByCode($packageCode: String!) {
+    packages(where: { package_code: { _eq: $packageCode } }) {
       id
     }
   }
@@ -32,14 +32,14 @@ export const GET_PACKAGE_INFORMATION_QUERY = gql`
   }
 `
 export const CONFIRM_PACKAGE_QUERY = gql`
-  query confirmPackage($id: uuid!, $client_name: String!, $rut: String!, $client_phone: String!) {
+  query confirmPackage($id: uuid!, $clientName: String!, $rut: String!, $clientPhone: String!) {
     packages(
       distinct_on: id
       where: {
         id: { _eq: $id }
-        client_name: { _eq: $client_name }
+        client_name: { _eq: $clientName }
         client_identification_document: { _eq: $rut }
-        client_phone: { _eq: $client_phone }
+        client_phone: { _eq: $clientPhone }
       }
     ) {
       id

@@ -22,7 +22,7 @@ export const useDasherLatestCoordinates = packageId => {
 export const useGetPackagesIdByCode = packageCode => {
   const [packageInformation, setPackageInformation] = useState({ packages: [] })
   const { loading, error, data } = useQuery(GET_PACKAGE_ID_QUERY_BY_CODE, {
-    variables: { package_code: packageCode },
+    variables: { packageCode: packageCode },
   })
 
   useEffect(() => {
@@ -52,9 +52,9 @@ export const useConfirmPackage = () => {
   const { loading, error, data } = useQuery(CONFIRM_PACKAGE_QUERY, {
     variables: {
       id: packageId,
-      client_name: confirmData.name,
+      clientName: confirmData.name,
       rut: confirmData.RUT,
-      client_phone: confirmData.phone,
+      clientPhone: confirmData.phone,
     },
   })
 

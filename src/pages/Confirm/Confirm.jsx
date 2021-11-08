@@ -30,7 +30,7 @@ const Confirm = () => {
     event.preventDefault()
     // Submit rating here
     if (rating) {
-      insertClientRate({ variables: { id, client_rating: rating } })
+      insertClientRate({ variables: { id, clientRating: rating } })
       toggleRatingModal(false)
       toggleFinalModal(true)
     }
@@ -38,9 +38,7 @@ const Confirm = () => {
 
   const submitConfirmation = async event => {
     // Submit form here
-    console.log(event)
     if (event.name && event.RUT && event.phone) {
-      console.log(event)
       confirmPackage(event, id)
     } else {
       alert('Por favor complete los campos')

@@ -23,7 +23,8 @@
     "stylelint",
     "timestamptz",
     "viene",
-    "zricethezav"
+    "zricethezav",
+    "camelcase"
   ],
   "flagWords": [
     "hte"
