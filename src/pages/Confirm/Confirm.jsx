@@ -30,7 +30,7 @@ const Confirm = () => {
     event.preventDefault()
     // Submit rating here
     if (rating) {
-      insertClientRate({ variables: { id, client_rating: rating } })
+      insertClientRate({ variables: { id, clientRating: rating } })
       toggleRatingModal(false)
       toggleFinalModal(true)
     }

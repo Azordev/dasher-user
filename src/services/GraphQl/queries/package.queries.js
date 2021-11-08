@@ -32,7 +32,7 @@ export const GET_PACKAGE_INFORMATION_QUERY = gql`
   }
 `
 export const CONFIRM_PACKAGE_QUERY = gql`
-  query confirmPackage($id: uuid!, $client_name: String!, $rut: String!, $client_phone: String!) {
+  query confirmPackage($id: uuid!, $clientName: String!, $rut: String!, $clientPhone: String!) {
     packages(
       distinct_on: id
       where: {
