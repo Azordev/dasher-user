@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 export const GET_CHAT_MESSAGES_SUBSCRIPTION = gql`
-  subscription getChatMessages($created_at: order_by = asc, $package_id: String!) {
-    chats(order_by: { created_at: $created_at }, where: { package_id: { _eq: $package_id } }) {
+  subscription getChatMessages($createdAt: order_by = asc, $packageId: String!) {
+    chats(order_by: { created_at: $createdAt }, where: { package_id: { _eq: $packageId } }) {
       last_client_message
       last_client_update
       last_dasher_message

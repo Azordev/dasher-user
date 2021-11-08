@@ -10,7 +10,7 @@ import { logError } from '../helpers'
 export const useLatestMessages = ({ packageId }) => {
   const [LatestMessages, setLatestMessages] = useState([])
   const { data, loading } = useSubscription(GET_CHAT_MESSAGES_SUBSCRIPTION, {
-    variables: { package_id: packageId },
+    variables: { packageId: packageId },
   })
   useEffect(() => {
     setLatestMessages(data)
