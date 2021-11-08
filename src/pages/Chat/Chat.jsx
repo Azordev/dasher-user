@@ -16,7 +16,7 @@ const Chat = () => {
   if (!id) {
     history.push('/check')
   }
-  const { LatestMessages = [] } = useLatestMessages({ packageId: id })
+  const { LatestMessages = [] } = useLatestMessages(id)
   const { loading, insertClientMessage } = InsertClientMessage()
   const [message, setMessage] = useState('')
 
