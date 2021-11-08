@@ -18,11 +18,15 @@ export const Header = styled.div`
   background: var(--primary);
   border-radius: 0 0 25px 25px;
 
-  @media (min-width: 960px) {
+  @media (min-width: 961px) {
     width: 50%;
     border-radius: 0000;
     justify-content: start;
     overflow: hidden;
+  }
+
+  @media (max-width: 960px) {
+    flex: none;
   }
 `
 

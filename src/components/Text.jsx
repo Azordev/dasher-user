@@ -7,6 +7,12 @@ const Text = styled.p`
 
   // Size
   ${props =>
+    props.xsmall &&
+    css`
+      ${text.sm};
+    `}
+
+  ${props =>
     props.small &&
     css`
       ${text.base};
@@ -16,9 +22,21 @@ const Text = styled.p`
     props.medium &&
     css`
       ${text['2xl']};
+      @media (max-width: 960px) {
+        font-size: 1rem;
+      }
     `}
 
   ${props =>
+    props.xlarge &&
+    css`
+      ${text['5xl']};
+      @media (max-width: 960px) {
+        font-size: 1.7rem;
+      }
+    `}
+
+    ${props =>
     props.large &&
     css`
       ${text['4xl']};

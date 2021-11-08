@@ -1,18 +1,21 @@
 import PropTypes from 'prop-types'
 import { Text } from '../../components'
 import note from '../../assets/note.png'
-import { Container, Header, MainSection, ConfirmImage } from '../../layouts/Splitted.styled'
+import { Container, Header, MainSection } from '../../layouts/Splitted.styled'
+import { CheckImg, HeaderContainer } from './Confirm.styled'
+import BackButton from '../../components/BackButton'
 
 const Confirm = ({ headerTitle, headerSubTitle, children, RatingModal, FinalModal }) => (
   <Container>
-    <Header className="header-ticket">
-      <Text className="heading-text" as="h1" color="secondary" medium>
-        {headerTitle}
-      </Text>
-      <Text className="heading-subtext" small>
-        {headerSubTitle}
-      </Text>
-      <ConfirmImage src={note} alt="Note icon" />
+    <Header>
+      <HeaderContainer>
+        <BackButton />
+        <Text as="h1" color="secondary" xlarge>
+          {headerTitle}
+        </Text>
+        <Text medium>{headerSubTitle}</Text>
+        <CheckImg src={note} alt="Note icon" />
+      </HeaderContainer>
     </Header>
     <MainSection>{children}</MainSection>
     {RatingModal}

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import star from '../../assets/star.svg'
 import selectedStar from '../../assets/selected-star.svg'
 
-export const StarBtn = styled.img`
+export const StarBtn = styled.div`
   display: inline-block;
   width: 32px;
   height: auto;
@@ -16,7 +16,7 @@ export const StarBtn = styled.img`
   }
 `
 
-export const SelectedStarBtn = styled.img`
+export const SelectedStarBtn = styled.div`
   display: inline-block;
   width: 32px;
   height: auto;
