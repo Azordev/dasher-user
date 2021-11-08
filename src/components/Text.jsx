@@ -40,6 +40,9 @@ const Text = styled.p`
     props.large &&
     css`
       ${text['4xl']};
+      @media (max-width: 960px) {
+        font-size: 1.7rem;
+      }
     `}
 
   // Weight
