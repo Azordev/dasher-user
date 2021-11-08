@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [main, dev]
 jobs:
-  Explore-GitHub-Actions:
+  Security-And-Code-Scanning:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -18,3 +18,5 @@ jobs:
         uses: ajinabraham/njsscan-action@master
         with:
           args: '.'
+      - name: Run Codacy Analysis CLI
+        uses: codacy/codacy-analysis-cli-action@master
