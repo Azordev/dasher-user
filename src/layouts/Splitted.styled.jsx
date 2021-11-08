@@ -17,9 +17,11 @@ export const Header = styled.div`
   flex-direction: column;
   background: var(--primary);
   border-radius: 0 0 25px 25px;
+  padding: 0 2rem;
 
   @media (min-width: 961px) {
     width: 50%;
+    padding-top: 3rem;
     border-radius: 0000;
     justify-content: start;
     overflow: hidden;
@@ -33,7 +35,7 @@ export const Header = styled.div`
 export const TicketImage = styled.img`
   width: 140px;
   align-self: flex-start;
-  margin: 0 0 -13px 15px;
+  margin: 2.5rem 0 -13px 15px;
 
   @media (min-width: 960px) {
     width: 40vh;
@@ -63,6 +65,7 @@ export const MainSection = styled.div`
   height: 100%;
   display: grid;
   align-content: center;
+  text-align: center;
 
   @media (min-width: 960px) {
     background: var(--secondary);

@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
   --secondary: ${({ theme }) => theme.colors.yellow06};
   --black: ${({ theme }) => theme.colors.gray09};
   --light-gray: ${({ theme }) => theme.colors.gray02};
+  --light-gray-2: ${({ theme }) => theme.colors.gray04};
   --white: white;
   --danger: ${({ theme }) => theme.colors.gray09};
 

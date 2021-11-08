@@ -46,13 +46,19 @@ const Check = () => {
       }
     >
       <div className="check-ticket">
-        <Text color="primary" bold uppercase>
+        <Text color="secondary" bold uppercase>
           Confirmar n° boleta o pedido
         </Text>
         <Form formData={setPackageCode} onSubmit={e => toDelivery(e)}>
           {({ handleFormChange, value }) => (
             <>
-              <FormInput placeholder="Ingresa aquí..." name="packageCode" value={value} onChange={handleFormChange} />
+              <FormInput
+                width="10"
+                placeholder="Ingresa aquí..."
+                name="packageCode"
+                value={value}
+                onChange={handleFormChange}
+              />
             </>
           )}
         </Form>

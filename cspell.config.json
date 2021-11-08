@@ -26,9 +26,7 @@
     "zricethezav",
     "camelcase"
   ],
-  "flagWords": [
-    "hte"
-  ],
+  "flagWords": ["hte"],
   "ignorePaths": [
     "node_modules/**",
     "public/**",
