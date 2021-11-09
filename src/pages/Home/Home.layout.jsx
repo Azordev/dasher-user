@@ -24,7 +24,7 @@ const Home = ({ title, subtitle, buttonText }) => (
       {/**/}
     </HalfSection>
 
-    <HalfSection bg={Colors.blue08} fxJtyCt="center" fxAlIt="center">
+    <HalfSection mobileHeight="400px" bg={Colors.blue08} fxJtyCt="center" fxAlIt="center">
       <TextContainer>
         {/**/}
         <DisplayText as="h1" color="secondary" large>

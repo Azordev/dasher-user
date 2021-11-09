@@ -12,6 +12,7 @@ export const Header = styled.div`
   max-height: 100vh;
 
   @media (min-width: 960px) {
+    flex-wrap: nowrap;
     flex-direction: row;
   }
 `
@@ -19,6 +20,7 @@ export const HalfSection = styled.div`
   ${props => `background-color: ${props.bg};`}
   ${props => `justify-content: ${props.fxJtyCt};`}
   ${props => `align-items: ${props.fxAlIt};`}
+  ${props => `height: ${props.mobileHeight};`}
 
   display: flex;
   flex-direction: column;
@@ -39,19 +41,27 @@ export const Logo = styled.img`
 `
 export const ManImage = styled.img`
   display: block;
-
   width: 70%;
+  margin-top: 20%;
+
+  object-fit: cover;
+  position: absolute;
+  transform: translateY(-80%);
 
   @media (min-width: 960px) {
+    transform: translateY(0%);
+    position: static;
     align-self: center;
     margin-top: 12%;
     height: 68vh;
   }
 `
 export const TextContainer = styled.div`
+  transform: translateY(-80%);
   max-width: 100%;
 
   @media (min-width: 960px) {
+    transform: translateY(0%);
     max-width: 70%;
   }
 `
@@ -87,8 +97,8 @@ export const Button = styled(Link)`
   border: none;
   color: var(--white);
   height: 100%;
+  width: 70%;
   max-height: 40px;
-  width: 100%;
   align-items: center;
   justify-content: center;
   display: block;
@@ -97,14 +107,23 @@ export const Button = styled(Link)`
   text-align: center;
   text-decoration: none;
   line-height: 40px;
+  font-weight: bold;
+
+  position: relative;
+  transform: translate(0%, 1100%);
 
   @media (min-width: 960px) {
+    transform: translate(0, 0);
+    position: static;
     background-color: var(--secondary);
     height: 50%;
+    width: 100%;
     padding: 1rem 0 3rem 0;
     font-weight: bold;
     font-size: 1.5rem;
+
     border-radius: 2rem;
     letter-spacing: 2px;
+    transform: translate(0, 0);
   }
 `
