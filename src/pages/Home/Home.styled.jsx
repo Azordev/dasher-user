@@ -17,9 +17,9 @@ export const Header = styled.div`
   }
 `
 export const HalfSection = styled.div`
-  ${props => `background-color: ${props.bg};`}
-  ${props => `justify-content: ${props.fxJtyCt};`}
-  ${props => `align-items: ${props.fxAlIt};`}
+  ${props => `background-color: ${props.backgroundColor};`}
+  ${props => `justify-content: ${props.justifyContent};`}
+  ${props => `align-items: ${props.alignItems};`}
   ${props => `height: ${props.mobileHeight};`}
 
   display: flex;

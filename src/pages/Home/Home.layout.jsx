@@ -17,22 +17,18 @@ import { Button, Header, Logo, ManImage, DisplayText, SubtitleText, HalfSection,
  */
 const Home = ({ title, subtitle, buttonText }) => (
   <Header>
-    <HalfSection bg={Colors.yellow06}>
-      {/**/}
+    <HalfSection backgroundColor={Colors.yellow06}>
       <Logo src={logo} alt="logo" />
       <ManImage style={{ display: 'nones' }} src={deliveryMan} alt="Delivery man" />
-      {/**/}
     </HalfSection>
 
-    <HalfSection mobileHeight="400px" bg={Colors.blue08} fxJtyCt="center" fxAlIt="center">
+    <HalfSection mobileHeight="400px" backgroundColor={Colors.blue08} justifyContent="center" alignItems="center">
       <TextContainer>
-        {/**/}
         <DisplayText as="h1" color="secondary" large>
           {title}
         </DisplayText>
         <SubtitleText small>{subtitle}</SubtitleText>
         <Button to="/check">{buttonText}</Button>
-        {/**/}
       </TextContainer>
     </HalfSection>
   </Header>
