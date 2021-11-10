@@ -1,8 +1,9 @@
 import deliveryMan from '../../assets/delivery-man.png'
 import logo from '../../assets/logo.svg'
+import Colors from '../../styles/colors'
 import PropTypes from 'prop-types'
 
-import { Button, Header, Logo, ManImage, Text } from './Home.styled'
+import { Button, Header, Logo, ManImage, DisplayText, SubtitleText, HalfSection, TextContainer } from './Home.styled'
 
 /**
  * Home Layout
@@ -16,13 +17,20 @@ import { Button, Header, Logo, ManImage, Text } from './Home.styled'
  */
 const Home = ({ title, subtitle, buttonText }) => (
   <Header>
-    <Logo src={logo} alt="logo" />
-    <Text as="h1" color="secondary" large>
-      {title}
-    </Text>
-    <Text small>{subtitle}</Text>
-    <ManImage src={deliveryMan} alt="Delivery man" />
-    <Button to="/check">{buttonText}</Button>
+    <HalfSection backgroundColor={Colors.yellow06}>
+      <Logo src={logo} alt="logo" />
+      <ManImage src={deliveryMan} alt="Delivery man" />
+    </HalfSection>
+
+    <HalfSection mobileHeight="400px" backgroundColor={Colors.blue08} justifyContent="center" alignItems="center">
+      <TextContainer>
+        <DisplayText as="h1" color="secondary" large>
+          {title}
+        </DisplayText>
+        <SubtitleText small>{subtitle}</SubtitleText>
+        <Button to="/check">{buttonText}</Button>
+      </TextContainer>
+    </HalfSection>
   </Header>
 )
 
