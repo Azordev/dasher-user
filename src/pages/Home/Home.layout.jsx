@@ -19,7 +19,7 @@ const Home = ({ title, subtitle, buttonText }) => (
   <Header>
     <HalfSection backgroundColor={Colors.yellow06}>
       <Logo src={logo} alt="logo" />
-      <ManImage style={{ display: 'nones' }} src={deliveryMan} alt="Delivery man" />
+      <ManImage src={deliveryMan} alt="Delivery man" />
     </HalfSection>
 
     <HalfSection mobileHeight="400px" backgroundColor={Colors.blue08} justifyContent="center" alignItems="center">
