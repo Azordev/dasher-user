@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
   --light-gray-2: ${({ theme }) => theme.colors.gray04};
   --white: white;
   --danger: ${({ theme }) => theme.colors.gray09};
+  --blue-text: ${({ theme }) => theme.colors.blue06};
 
   --font-family: 'Poppins', sans-serif;
   --z-normal: 0;

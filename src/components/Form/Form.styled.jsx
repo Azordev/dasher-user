@@ -11,7 +11,7 @@ export const FormContainer = styled.form`
 export const FormButton = styled.button`
   width: 280px;
   height: 40px;
-  border-radius: 20px;
+  border-radius: 2rem;
   margin: 10px;
   margin-top: 60px;
   border: none;
@@ -25,5 +25,9 @@ export const FormButton = styled.button`
   &:focus {
     border: solid 1px var(--dark, #000);
     box-shadow: 2px 5px 6px rgb(0 0 0 / 0.3);
+  }
+
+  @media (min-width: 960px) {
+    width: 350px;
   }
 `
