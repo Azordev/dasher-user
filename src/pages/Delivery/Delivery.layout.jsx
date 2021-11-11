@@ -10,6 +10,7 @@ import {
   HeaderSubTitle,
   FooterMap,
   FooterMapAddress,
+  MapContainer,
 } from './Delivery.styled'
 import assistant from '../../assets/assistant.png'
 import chat from '../../assets/chat.png'
@@ -54,18 +55,20 @@ const Delivery = ({
             <ChatBtn onClick={toChat} src={chat} />
           </ChatBtnContainer>
         </HeaderMap>
-        {children}
+        <MapContainer>{children}</MapContainer>
         <FooterMap>
           <FooterMapAddress cols={'0 0 100%'} txt={clientAddress} style={{ flexDirection: 'row' }}>
             <img src={gps} alt="Gps icon" />
           </FooterMapAddress>
           <FooterMapAddress cols={'0 0 50%'} txt={'Tiempo estimado de llegada'}>
-            <Text small bold uppercase>
+            <Text small bold uppercase margin="8" color="secondary">
               {estimatedArrival}
             </Text>
           </FooterMapAddress>
           <FooterMapAddress cols={'0 0 50%'} txt={'Central Dasher'}>
-            <img src={assistant} alt="Central Dasher" />
+            <a href="https://wa.me/56962478976" target="_blank" rel="noreferrer">
+              <img src={assistant} alt="Central Dasher" />
+            </a>
           </FooterMapAddress>
         </FooterMap>
       </MapLayoutContainer>

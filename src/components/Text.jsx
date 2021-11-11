@@ -81,6 +81,13 @@ const Text = styled.p`
     css`
       text-align: center;
     `}
+
+    // Margin
+    ${props =>
+    props.margin &&
+    css`
+      margin: ${props.margin}px;
+    `}
 `
 
 export default Text

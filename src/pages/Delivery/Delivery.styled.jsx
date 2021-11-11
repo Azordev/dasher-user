@@ -28,13 +28,15 @@ const HeaderText = styled.div`
   width: 33.33vw;
   text-align: center;
   color: #f7cd46;
-  font-size: 1em;
   display: flex;
   flex-direction: column;
   margin: auto 0;
   height: auto;
+  @media (max-width: 960px) {
+    font-size: 1.2em;
+  }
 
-  @media (min-width: 900px) {
+  @media (min-width: 961px) {
     font-size: 2em;
   }
 
@@ -57,7 +59,7 @@ const ChatBtn = styled.img`
 
   @media (min-width: 960px) {
     width: auto;
-    height: 10vh;
+    height: 7vh;
   }
 
   @media (max-width: 960px) {
@@ -114,8 +116,8 @@ const FooterMapAddress = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #f8d24c;
-  padding: 5px 0;
+  color: white;
+  padding: 10px 0;
 
   ::after {
     content: '${props => props.txt}';
@@ -134,6 +136,20 @@ const FooterMapAddress = styled.div`
   }
 `
 
+const MapContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  @media (max-width: 960px) {
+    min-height: 100vh;
+  }
+
+  @media (min-width: 960px) {
+    margin: 0 auto;
+  }
+`
+
 export {
   MapLayoutContainer,
   HeaderMap,
@@ -144,4 +160,5 @@ export {
   HeaderSubTitle,
   FooterMap,
   FooterMapAddress,
+  MapContainer,
 }

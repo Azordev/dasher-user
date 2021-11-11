@@ -3,6 +3,13 @@ import styled from 'styled-components'
 export const BackBtnContainer = styled.div`
   display: flex;
   width: 33.33vw;
+  @media (max-width: 960px) {
+    padding-left: 15px;
+  }
+
+  @media (min-width: 961px) {
+    padding-left: 10px;
+  }
 `
 export const BackBtn = styled.img`
   cursor: pointer;

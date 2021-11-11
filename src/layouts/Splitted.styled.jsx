@@ -19,7 +19,11 @@ export const Header = styled.div`
   border-radius: 0 0 25px 25px;
   padding: 0 2rem;
 
-  @media (min-width: 961px) {
+  @media (max-width: 960px) {
+    flex: none;
+  }
+
+  @media (min-width: 960px) {
     width: 50%;
     padding-top: 3rem;
     border-radius: 0000;
