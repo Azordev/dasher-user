@@ -5,6 +5,7 @@ import warning from '../../assets/warning.png'
 import { useGetPackagesIdByCode } from '../../hooks'
 import Layout from './Check.layout'
 import FormInput from '../../components/FormInput'
+import { TextHandlerColorMobile } from './Check.styled'
 
 const Check = () => {
   const [packageCode, setPackageCode] = useState('')
@@ -46,9 +47,9 @@ const Check = () => {
       }
     >
       <div className="check-ticket">
-        <Text color="primary" bold uppercase>
+        <TextHandlerColorMobile color="secondary" bold uppercase>
           Confirmar n° boleta o pedido
-        </Text>
+        </TextHandlerColorMobile>
         <Form formData={setPackageCode} onSubmit={e => toDelivery(e)}>
           {({ handleFormChange, value }) => (
             <>

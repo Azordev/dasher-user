@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 import { Container, Header, TicketImage, MainSection } from '../../layouts/Splitted.styled'
-import { CheckText, CheckTextSubtitle } from './Check.components'
+import { CheckText, CheckTextSubtitle } from './Check.styled'
 import ticket from '../../assets/ticket.png'
 
 import BackButton from '../../components/BackButton'
