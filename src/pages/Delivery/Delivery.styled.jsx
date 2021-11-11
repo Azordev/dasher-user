@@ -136,6 +136,20 @@ const FooterMapAddress = styled.div`
   }
 `
 
+const MapContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  @media (max-width: 960px) {
+    min-height: 100vh;
+  }
+
+  @media (min-width: 960px) {
+    margin: 0 auto;
+  }
+`
+
 export {
   MapLayoutContainer,
   HeaderMap,
@@ -146,4 +160,5 @@ export {
   HeaderSubTitle,
   FooterMap,
   FooterMapAddress,
+  MapContainer,
 }
