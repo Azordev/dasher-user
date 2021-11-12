@@ -2,7 +2,7 @@
 import { useParams, useHistory } from 'react-router-dom'
 import { Text, Modal } from '../../components'
 import send from '../../assets/send.png'
-import Map from '../../components/Map/Map'
+import Map from '../../components/Map'
 import { useGetPackageInformation, useClientLocation, useDasherLatestCoordinates } from '../../hooks'
 import { useState } from 'react'
 import Layout from './Delivery.layout'
