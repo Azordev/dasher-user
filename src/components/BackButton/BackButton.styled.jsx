@@ -3,11 +3,13 @@ import styled from 'styled-components'
 export const BackBtnContainer = styled.div`
   display: flex;
   width: 33.33vw;
+  max-height: 68px;
   @media (max-width: 960px) {
     padding-left: 15px;
   }
 
   @media (min-width: 961px) {
+    margin-top: 0.5rem;
     padding-left: 10px;
   }
 `
