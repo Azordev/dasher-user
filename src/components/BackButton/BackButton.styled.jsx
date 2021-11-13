@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const BackBtnContainer = styled.div`
   display: flex;
   width: 33.33vw;
+
   @media (max-width: 960px) {
     padding-left: 15px;
   }

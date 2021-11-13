@@ -32,6 +32,7 @@ const HeaderText = styled.div`
   flex-direction: column;
   margin: auto 0;
   height: auto;
+
   @media (max-width: 960px) {
     font-size: 1.2em;
   }

@@ -25,7 +25,6 @@ export const HalfSection = styled.div`
   ${props => `justify-content: ${props.justifyContent};`}
   ${props => `align-items: ${props.alignItems};`}
   ${props => `height: ${props.mobileHeight};`}
-
   display: flex;
   flex-direction: column;
 
@@ -49,7 +48,6 @@ export const ManImage = styled.img`
   width: 70%;
   margin-top: 20%;
   margin-bottom: -40%;
-
   object-fit: contain;
   position: absolute;
   transform: translateY(-80%);
@@ -159,7 +157,6 @@ export const Button = styled(Link)`
   text-decoration: none;
   line-height: 40px;
   font-weight: bold;
-
   position: relative;
   transform: translate(0%, 1100%);
 
@@ -182,12 +179,10 @@ export const Button = styled(Link)`
     background: ${props => (props.webDisplay ? 'var(--primary);' : 'var(--secondary);')};
     width: ${props => (props.webDisplay ? '70%;' : '100%;')};
     height: 50%;
-
     position: static;
     padding: 0.5rem 0 3rem 0;
     font-weight: bold;
     font-size: 1.5rem;
-
     border-radius: 2rem;
     letter-spacing: 2px;
     transform: none;
