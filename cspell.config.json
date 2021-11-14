@@ -28,6 +28,8 @@
   ],
   "flagWords": ["hte"],
   "ignorePaths": [
+    ".github/**",
+    ".vscode/**",
     "node_modules/**",
     "public/**",
     "src/service-worker.js",
