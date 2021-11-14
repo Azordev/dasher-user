@@ -24,12 +24,13 @@
     "timestamptz",
     "viene",
     "zricethezav",
-    "camelcase"
+    "camelcase",
+    "pnpm"
   ],
   "flagWords": ["hte"],
   "ignorePaths": [
-    ".github/**",
-    ".vscode/**",
+    "./.github/**",
+    "./.vscode/**",
     "node_modules/**",
     "public/**",
     "src/service-worker.js",
