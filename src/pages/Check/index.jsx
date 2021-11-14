@@ -20,7 +20,7 @@ const Check = () => {
         const { id } = await packages[0]
         history.push(`/delivery/${id}`)
       } else {
-        alert('el packcode no existe')
+        alert('el paquete no existe')
       }
     }
   }
