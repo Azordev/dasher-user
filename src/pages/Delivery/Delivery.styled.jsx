@@ -27,11 +27,13 @@ const HeaderMap = styled.div`
 const HeaderText = styled.div`
   width: 33.33vw;
   text-align: center;
-  color: #f7cd46;
+
+  color: var(--secondary);
   display: flex;
   flex-direction: column;
   margin: auto 0;
   height: auto;
+
   @media (max-width: 960px) {
     font-size: 1.2em;
   }

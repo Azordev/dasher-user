@@ -7,7 +7,7 @@ import Marker from '../Marker'
 
 const Wrapper = styled.main`
   min-height: 356px;
-  max-height: auto,
+  max-height: auto;
   max-width: var(--max-width);
   display: flex;
   flex-direction: row;

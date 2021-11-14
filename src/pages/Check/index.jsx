@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router-dom'
 import { Form, Modal, Text } from '../../components'
 import warning from '../../assets/warning.png'
 import { useGetPackagesIdByCode } from '../../hooks'
