@@ -27,7 +27,6 @@ const HeaderMap = styled.div`
 const HeaderText = styled.div`
   width: 33.33vw;
   text-align: center;
-
   color: var(--secondary);
   display: flex;
   flex-direction: column;

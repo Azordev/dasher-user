@@ -1,4 +1,3 @@
-// cSpell:word iacute
 import { useParams, useHistory } from 'react-router-dom'
 import { Text, Modal } from '../../components'
 import send from '../../assets/send.png'

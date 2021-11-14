@@ -31,7 +31,7 @@ function logDelta({ name, value, id, delta }) {
       console.warn(`${name} value ${value} is in a bit out of range and the speed is moderate.`)
     }
     if (value > 4000) {
-      console.error(`${name} value ${value} is completly out of range and the speed is slow.`)
+      console.error(`${name} value ${value} is completely out of range and the speed is slow.`)
     }
   } else {
     // eslint-disable-next-line
