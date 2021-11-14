@@ -39,6 +39,7 @@
     "eslint": "eslint src --color --cache -f table; echo 'JS format fine! 🧪✓'",
     "lint:js:fix": "eslint src --fix",
     "prettier": "prettier src  --write --config ./.prettierrc.js; echo 'JS style fine! 📋✓'",
+    "prettier:ci": "prettier  --write --config ./.prettierrc.js; echo 'JS style fine! 📋✓'",
     "test": "jest --passWithNoTests",
     "test:c": "jest --coverage --watchAll=false --ci --passWithNoTests; echo 'JS tests fine! 📋✓'",
     "test:cw": "jest --coverage --watchAll",

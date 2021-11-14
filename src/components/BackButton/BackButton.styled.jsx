@@ -18,7 +18,6 @@ export const BackBtn = styled.img`
   cursor: pointer;
   position: relative;
   left: -15px;
-
   margin: 0;
   margin-bottom: 30px;
 
