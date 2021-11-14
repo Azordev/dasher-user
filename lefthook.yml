@@ -4,7 +4,7 @@ pre-commit:
   commands:
     eslint:
       glob: '*.{js,jsx}'
-      run: npm run lint:js:fix {staged_files}
+      run: npm run lint:js {staged_files}
     stylelint:
       glob: './**/*.styled.jsx' # For CSS-in-JS
       run: npm run lint:css {staged_files}

@@ -4,6 +4,7 @@ export const BackBtnContainer = styled.div`
   display: flex;
   width: 33.33vw;
   max-height: 68px;
+
   @media (max-width: 960px) {
     padding-left: 15px;
   }
@@ -17,6 +18,7 @@ export const BackBtn = styled.img`
   cursor: pointer;
   position: relative;
   left: -15px;
+  
   margin: 0;
   margin-bottom: 30px;
 
