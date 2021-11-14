@@ -45,7 +45,14 @@ jobs:
       - uses: actionsx/prettier@v2
         with:
           # prettier CLI arguments.
-          args: --check .
+          args: --check --config ./.prettierrc.js src
+      - uses: bradennapier/eslint-plus-action@v3.4.2
+        with: 
+          issueSummaryType: full
+          issueSummaryOnlyOnEvent: true
+          configFile: .eslintrc.js
+      - uses: streetsidesoftware/cspell-action@v1.0.1
+
 
       - name: test
         run: pnpm test
