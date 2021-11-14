@@ -11,17 +11,21 @@ on:
 jobs:
   build:
     name: Lint Code Base
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-21.04
+    strategy:
+      matrix:
+        node-version: [16.13]
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Use Node.js 16.13
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: 16.13
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
       - name: Cache dependencies
         id: cache
@@ -34,7 +38,7 @@ jobs:
 
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.0.2
+          version: 6.20.3
           run_install: true
 
       - name: Lint Code Base
@@ -48,6 +52,6 @@ jobs:
           VALIDATE_CSS: true
 
       - name: test
-        run: npm test
+        run: pnpm test
       - name: build
-        run: npm run build --if-present
+        run: pnpm run build --if-present

@@ -62,7 +62,7 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 
 - `create-react-app`
 - `ESLint`
-- `npm`
+- `pnpm` 6.20.3 +
 - `vscode` with _ESLint_ extension
 - Linux/GNU, macOS, Windows
 - Love and Passion for code
@@ -88,6 +88,7 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 ### Prerequisites
 
 - `npm` 6.13 +
+= `pnpm` 6.20.3 +
 - `node` 14.17 +
 - `docker` and `docker-compose` (optional)
 - A Text Editor like VSCode
@@ -101,7 +102,8 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 ```sh
 > git clone https://github.com/Azordev/dasher-user.git
 > cd dasher-user
-> npm i
+> pnpm env use -g 16
+> pnpm i
 > docker-compose build
 > docker-compose up frontend
 ```
@@ -121,7 +123,7 @@ Now that you are set up, open a terminal and:
 ```sh
 git clone https://github.com/Azordev/dasher-user.git
 cd dasher-user
-npm i && npm start
+pnpm i && pnpm start
 ```
 
 Then open [http://localhost:3000/](http://localhost:3000/) to see the app.
@@ -130,7 +132,7 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see the app.
 
 In the project directory, you can run:
 
-#### `npm start`
+#### `pnpm start`
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -138,7 +140,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-#### `npm run build`
+#### `pnpm run build`
 
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
