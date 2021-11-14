@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Lint Code Base
-    runs-on: ubuntu-21.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.13]
