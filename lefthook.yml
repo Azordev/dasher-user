@@ -26,9 +26,6 @@ commit-msg:
 pre-push:
   parallel: true
   commands:
-    spelling:
-      glob: '*.{js,jsx,md}'
-      run: npm run spelling {staged_files}
     markdown-link-check:
       glob: '*.md'
       run: npx markdown-link-check {staged_files}
