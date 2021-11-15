@@ -14,7 +14,9 @@ export default class ErrorBoundary extends Component {
   }
 
   static getDerivedStateFromError(_error) {
-    return { hasError: true }
+    if (_error) {
+      return { hasError: true }
+    }
   }
 
   componentDidCatch(error, errorInfo) {
