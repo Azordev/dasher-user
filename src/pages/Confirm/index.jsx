@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* cSpell:disable */
 import { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { Modal, Text, Rating, Form, FormInput } from '../../components'
@@ -26,6 +28,7 @@ const Confirm = () => {
     }
   }, [packageInformation])
 
+  /** @param {Event} event */
   const submitRating = event => {
     event.preventDefault()
     // Submit rating here
@@ -36,6 +39,7 @@ const Confirm = () => {
     }
   }
 
+  /** @param {React.FormEvent<HTMLFormElement>} event */
   const submitConfirmation = async event => {
     // Submit form here
     if (event.name && event.RUT && event.phone) {

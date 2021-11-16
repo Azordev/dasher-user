@@ -28,6 +28,7 @@ export default class ErrorBoundary extends Component {
 
     if (hasError) {
       const errorId = logError({ error: error, codeLocation: 'codeLocation', type: 'crash' })
+      // @ts-ignore
       return <Error errorInfo={errorInfo} errorId={errorId} />
     }
 

@@ -60,7 +60,9 @@
     "aquí",
     "paquete",
     "xsmall",
-    "xlarge"
+    "xlarge",
+    "nocheck",
+    "jsdoc"
   ],
   "flagWords": ["hte"],
   "ignorePaths": [

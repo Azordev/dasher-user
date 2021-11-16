@@ -57,5 +57,5 @@
     }
   ],
   "githubIssues.issueBranchTitle": "feature/#${issueNumber}",
-  "js/ts.implicitProjectConfig.checkJs": false
+  "js/ts.implicitProjectConfig.checkJs": true
 }

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FormButton, FormContainer } from './Form.styled'
@@ -10,6 +11,7 @@ const FormContext = React.createContext({
 const Form = ({ children, onSubmit, formData = e => e, FormButtonTitle = 'Confirmar' }) => {
   const [form, setForm] = useState({})
 
+  /** @param {React.ChangeEvent<HTMLInputElement>} event */
   const handleFormChange = event => {
     const updatedForm = { ...form }
     updatedForm[event.target.name] = event.target.value
@@ -17,6 +19,7 @@ const Form = ({ children, onSubmit, formData = e => e, FormButtonTitle = 'Confir
     setForm(updatedForm)
   }
 
+  /** @param {React.FormEvent<HTMLFormElement>} event */
   const handleSubmit = event => {
     event.preventDefault()
     onSubmit(form)

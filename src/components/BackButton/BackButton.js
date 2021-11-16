@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* cSpell:disable */
 import { BackBtn, BackTxt, BackBtnContainer } from './BackButton.styled'
 import { useParams, useHistory } from 'react-router-dom'
 import arrow from '../../assets/arrow-left.svg'
@@ -5,6 +7,7 @@ import arrow from '../../assets/arrow-left.svg'
 const BackButton = () => {
   const { id } = useParams()
   const history = useHistory()
+
   const handleClick = () => {
     if (history.location.pathname === '/check') {
       history.push('/')

@@ -7,6 +7,7 @@ import {
   CONFIRM_PACKAGE_QUERY,
 } from '../services/GraphQl'
 
+/** @param packageId */
 export const useDasherLatestCoordinates = packageId => {
   const [latestCoordinates, setLatestCoordinates] = useState([])
   const { data, error, loading } = useSubscription(GET_PACKAGE_INFORMATION_SUBSCRIPTION, {
@@ -19,6 +20,7 @@ export const useDasherLatestCoordinates = packageId => {
   return { loading, error, latestCoordinates }
 }
 
+/** @param packageCode */
 export const useGetPackagesIdByCode = packageCode => {
   const [packageInformation, setPackageInformation] = useState({ packages: [] })
   const { loading, error, data } = useQuery(GET_PACKAGE_ID_QUERY_BY_CODE, {
@@ -32,6 +34,7 @@ export const useGetPackagesIdByCode = packageCode => {
   return { loading, error, packages: packageInformation?.packages || [] }
 }
 
+/** @param packageId */
 export const useGetPackageInformation = packageId => {
   const [packageInformation, setPackageInformation] = useState([])
   const { loading, error, data } = useQuery(GET_PACKAGE_INFORMATION_QUERY, {
