@@ -1,5 +1,4 @@
 // @ts-nocheck
-/* cSpell:disable */
 import { useParams, useHistory } from 'react-router-dom'
 import { Text, Modal } from '../../components'
 import send from '../../assets/send.png'
@@ -28,6 +27,7 @@ const Delivery = () => {
 
   const toChat = () => history.push(`/chat/${id}`)
 
+  // @ts-ignore
   if (isLoading || !packageInformation?.packages[0]?.package_code) {
     return <pre>Loading...</pre>
   }
@@ -41,7 +41,9 @@ const Delivery = () => {
       packageId={id}
       headerTitle="En camino..."
       headerSubtitle="Vamos con tu envio..."
+      // @ts-ignore
       clientAddress={packageInformation?.packages[0]?.client_address}
+      // @ts-ignore
       estimatedArrival={packageInformation?.packages[0]?.estimated_arrival}
       isLoading={isLoading}
       hasError={hasError}

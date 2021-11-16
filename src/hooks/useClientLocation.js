@@ -1,5 +1,4 @@
 // @ts-nocheck
-/* cSpell:disable */
 import { useEffect, useState } from 'react'
 
 /**

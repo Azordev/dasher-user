@@ -1,5 +1,4 @@
 // @ts-nocheck
-/* cSpell:disable */
 import { BackBtn, BackTxt, BackBtnContainer } from './BackButton.styled'
 import { useParams, useHistory } from 'react-router-dom'
 import arrow from '../../assets/arrow-left.svg'
