@@ -12,6 +12,7 @@ export const logError = ({ error, codeLocation, type }) => {
 
     const { insertErrors } = InsertErrors()
 
+    // @ts-ignore
     insertErrors({ params })
       .then(res => {
         const errorId = res.data.insert_errors.returning[0]

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Form, Modal, Text } from '../../components'

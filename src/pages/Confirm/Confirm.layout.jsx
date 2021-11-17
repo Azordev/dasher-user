@@ -1,3 +1,4 @@
+// @ts-nocheck
 import PropTypes from 'prop-types'
 import { Text } from '../../components'
 import note from '../../assets/note.png'
@@ -5,7 +6,7 @@ import { Container, Header, MainSection } from '../../layouts/Splitted.styled'
 import { CheckImg, HeaderContainer } from './Confirm.styled'
 import BackButton from '../../components/BackButton'
 
-const Confirm = ({ headerTitle, headerSubTitle, children, RatingModal, FinalModal }) => (
+const Confirm = ({ headerTitle, headerSubTitle, children, RatingModal, FinalModal, ConfirmErrorModal }) => (
   <Container>
     <Header>
       <BackButton />
@@ -20,6 +21,7 @@ const Confirm = ({ headerTitle, headerSubTitle, children, RatingModal, FinalModa
     <MainSection>{children}</MainSection>
     {RatingModal}
     {FinalModal}
+    {ConfirmErrorModal}
   </Container>
 )
 
@@ -29,6 +31,7 @@ Confirm.propTypes = {
   children: PropTypes.node,
   RatingModal: PropTypes.element,
   FinalModal: PropTypes.element,
+  ConfirmErrorModal: PropTypes.element,
 }
 
 export default Confirm
