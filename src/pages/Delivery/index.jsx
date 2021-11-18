@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useParams, useHistory } from 'react-router-dom'
 import { Text, Modal } from '../../components'
 import send from '../../assets/send.png'
@@ -8,6 +7,7 @@ import { useState } from 'react'
 import Layout from './Delivery.layout'
 
 const Delivery = () => {
+  /** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
   const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)

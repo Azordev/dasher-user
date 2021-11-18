@@ -62,7 +62,10 @@
     "xsmall",
     "xlarge",
     "nocheck",
-    "jsdoc"
+    "jsdoc",
+    "sido",
+    "confirmado",
+    "rechazado"
   ],
   "flagWords": ["hte"],
   "ignorePaths": [
