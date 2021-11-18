@@ -14,7 +14,9 @@ export default class ErrorBoundary extends Component {
   }
 
   static getDerivedStateFromError(_error) {
-    return { hasError: true }
+    if (_error) {
+      return { hasError: true }
+    }
   }
 
   componentDidCatch(error, errorInfo) {
@@ -26,6 +28,7 @@ export default class ErrorBoundary extends Component {
 
     if (hasError) {
       const errorId = logError({ error: error, codeLocation: 'codeLocation', type: 'crash' })
+      // @ts-ignore
       return <Error errorInfo={errorInfo} errorId={errorId} />
     }
 

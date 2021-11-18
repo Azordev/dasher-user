@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import { InfoContainer, ModalButton, ModalContainer, Overlay } from './Modal.styled'
-// @ts-check
 const Modal = ({ children, isOpen, actionText, toggle, handleClick = () => toggle(false) }) => (
   <div test-id="Components/Modal">
     {isOpen && (

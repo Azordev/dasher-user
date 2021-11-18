@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useState } from 'react'
 
 /**
@@ -5,7 +6,6 @@ import { useEffect, useState } from 'react'
  * @param data package data
  * @param error error in fetch package data
  * @param loading loading package data
- *
  */
 
 export function useClientLocation({ data, error, loading }) {
@@ -44,6 +44,8 @@ export function useClientLocation({ data, error, loading }) {
   }, [data])
   return { isLoading, hasError, center, dasher, currentStatus }
 }
+
+/** @param {data} */
 /* cspell:disable-next-line */
 export function useDasherliveLocation({ data }) {
   const [isLoading, setLoading] = useState(true)

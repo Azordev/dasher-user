@@ -7,6 +7,7 @@ import {
 } from '../services/GraphQl'
 import { logError } from '../helpers'
 
+/** @param packageId */
 export const useLatestMessages = packageId => {
   const [LatestMessages, setLatestMessages] = useState([])
   const { data, loading } = useSubscription(GET_CHAT_MESSAGES_SUBSCRIPTION, {

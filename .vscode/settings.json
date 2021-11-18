@@ -56,5 +56,6 @@
       "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
     }
   ],
-  "githubIssues.issueBranchTitle": "feature/#${issueNumber}"
+  "githubIssues.issueBranchTitle": "feature/#${issueNumber}",
+  "js/ts.implicitProjectConfig.checkJs": true
 }
