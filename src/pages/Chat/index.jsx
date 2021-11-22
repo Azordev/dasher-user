@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useParams, useHistory } from 'react-router-dom'
 import deliveryManWhite from '../../assets/delivery-chat-white.png'
 import userIcon from '../../assets/user-icon.png'
@@ -54,6 +55,12 @@ const Chat = () => {
     }
   }
 
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') {
+      handleSubmit()
+    }
+  }
+
   return (
     <Layout
       SendForm={
@@ -63,6 +70,7 @@ const Chat = () => {
             placeholder="Escribe aqui..."
             value={message}
             onChange={e => setMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
           <img src={sendChat} alt="send Chat" onClick={() => handleSubmit()} />
         </FooterChatInput>

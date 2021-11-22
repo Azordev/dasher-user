@@ -13,12 +13,31 @@ const Check = () => {
   const history = useHistory()
   const { packages, loading, error } = useGetPackagesIdByCode(packageCode?.packageCode)
 
-  const toDelivery = async e => {
+  // eslint-disable-next-line complexity
+  const toDelivery = async (/** @type {{ packageCode: String; }} */ e) => {
     if (e?.packageCode && !error && !loading) {
-      const foundPackage = (await packages.length) > 0
+      const foundPackage = packages.length > 0
+
       if (foundPackage) {
-        const { id } = await packages[0]
-        history.push(`/delivery/${id}`)
+        const { id, order_status } = await packages[0]
+        // eslint-disable-next-line camelcase
+        switch (order_status) {
+          case 'ready':
+            history.push(`/delivery/${id}`)
+            break
+          case 'collected':
+            history.push(`/delivery/${id}`)
+            break
+          case 'in_travel':
+            history.push(`/delivery/${id}`)
+            break
+          case 'destination_reached':
+            history.push(`/confirm/${id}`)
+            break
+          default:
+            alert('el paquete ya fue entregado')
+            break
+        }
       } else {
         alert('el paquete no existe')
       }
