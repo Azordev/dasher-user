@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useParams, useHistory } from 'react-router-dom'
 import deliveryManWhite from '../../assets/delivery-chat-white.png'
 import userIcon from '../../assets/user-icon.png'
@@ -11,6 +10,7 @@ import { useState } from 'react'
 import Layout from './Chat.layout'
 
 const Chat = () => {
+  // @ts-ignore
   const { id } = useParams()
   const history = useHistory()
 
@@ -22,18 +22,24 @@ const Chat = () => {
   const [message, setMessage] = useState('')
 
   const Messages =
+    // @ts-ignore
     LatestMessages.chats &&
+    // @ts-ignore
     LatestMessages.chats.map((message, id) => {
       if (message.user_type === 'client') {
         return (
-          <MessageRow type={'client'} key={`chat-message-${id}`}>
+          <MessageRow 
+// @ts-ignore
+          type={'client'} key={`chat-message-${id}`}>
             <Avatar src={userIcon} />
             <MessageBox>{message.last_client_message}</MessageBox>
           </MessageRow>
         )
       } else {
         return (
-          <MessageRow type={'dasher'} key={`chat-message-${id}`}>
+          <MessageRow 
+// @ts-ignore
+          type={'dasher'} key={`chat-message-${id}`}>
             <Avatar src={deliveryManWhite} />
             <MessageBox>{message.last_dasher_message}</MessageBox>
           </MessageRow>
@@ -64,8 +70,11 @@ const Chat = () => {
   return (
     <Layout
       SendForm={
-        <FooterChatInput cols={'0 0 100%'}>
+        <FooterChatInput 
+// @ts-ignore
+        cols={'0 0 100%'}>
           <Input
+            // @ts-ignore
             bgColor="gray"
             placeholder="Escribe aqui..."
             value={message}
@@ -79,7 +88,9 @@ const Chat = () => {
       <>
         {Messages}
         {loading && (
-          <MessageRow type={'client'}>
+          <MessageRow 
+// @ts-ignore
+          type={'client'}>
             <Avatar src={userIcon} />
             <MessageBox>Loading..</MessageBox>
           </MessageRow>
