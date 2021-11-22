@@ -11,6 +11,7 @@ import { RatingImg } from './Confirm.styled'
 
 const Confirm = () => {
   const { id } = useParams()
+  const packageId = JSON.parse(sessionStorage.getItem('packageId'))
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
   const [isRatingModalOpen, toggleRatingModal] = useState(false)
@@ -18,7 +19,7 @@ const Confirm = () => {
   const { insertClientRate } = InsertClientRate()
   const { confirmPackage, packageInformation } = useConfirmPackage()
 
-  if (!id) {
+  if (!id || !packageId) {
     history.push('/check')
   }
 
@@ -33,7 +34,7 @@ const Confirm = () => {
     event.preventDefault()
     // Submit rating here
     if (rating) {
-      insertClientRate({ variables: { id, clientRating: rating } })
+      insertClientRate({ variables: { id: packageId, clientRating: rating } })
       toggleRatingModal(false)
       toggleFinalModal(true)
     }
@@ -43,10 +44,17 @@ const Confirm = () => {
   const submitConfirmation = async event => {
     // Submit form here
     if (event.name && event.RUT && event.phone) {
-      confirmPackage(event, id)
+      confirmPackage(event, packageId)
     } else {
       alert('Por favor complete los campos')
     }
+  }
+
+  /** @param {Event} event */
+  const redirectToCheck = event => {
+    // Submit rating here
+    sessionStorage.removeItem('packageId')
+    history.push('/check')
   }
 
   return (
@@ -65,7 +73,7 @@ const Confirm = () => {
         </Modal>
       }
       FinalModal={
-        <Modal isOpen={isFinalModalOpen} handleClick={() => history.push('/check')} actionText="Aceptar">
+        <Modal isOpen={isFinalModalOpen} handleClick={() => redirectToCheck()} actionText="Aceptar">
           <img src={handshake} alt="Handshake Image" />
           <Text as="h1" color="primary" medium center>
             !Gracias por confiar <br /> en nosotros!
