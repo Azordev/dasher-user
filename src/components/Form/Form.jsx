@@ -1,10 +1,11 @@
-// @ts-nocheck
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FormButton, FormContainer } from './Form.styled'
 
 const FormContext = React.createContext({
+  /** @type {Object} */
   form: {},
+  /** @type {Function} */
   handleFormChange: () => {},
 })
 

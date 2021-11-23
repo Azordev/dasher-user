@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { Modal, Text, Rating, Form, FormInput } from '../../components'
@@ -10,6 +9,7 @@ import { RatingImg } from './Confirm.styled'
 import warning from '../../assets/warning.png'
 
 const Confirm = () => {
+  /** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
@@ -50,7 +50,10 @@ const Confirm = () => {
   /** @param {React.FormEvent<HTMLFormElement>} event */
   const submitConfirmation = async event => {
     // Submit form here
+    // @ts-ignore
     if (event.RUT) {
+      // @ts-ignore
+
       confirmPackage(event, id)
     } else {
       alert('Por favor complete los campos')
@@ -67,7 +70,7 @@ const Confirm = () => {
       headerTitle="Hemos terminado"
       headerSubTitle="Inserta tus datos para finalizar"
       RatingModal={
-        <Modal isOpen={isRatingModalOpen} handleClick={submitRating} actionText="Aceptar">
+        <Modal isOpen={isRatingModalOpen} handleClick={e => submitRating(e)} actionText="Aceptar">
           <Text as="h1" color="primary">
             ¿Qué tal tu experiencia?
           </Text>
@@ -81,7 +84,7 @@ const Confirm = () => {
         <Modal isOpen={isFinalModalOpen} handleClick={() => history.push('/check')} actionText="Aceptar">
           <img src={handshake} alt="Handshake Image" />
           <Text as="h1" color="primary" medium center>
-            !Gracias por confiar <br /> en nosotros!
+            ¡Gracias por confiar <br /> en nosotros!
           </Text>
         </Modal>
       }
