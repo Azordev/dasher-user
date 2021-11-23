@@ -28,10 +28,12 @@ const Delivery = () => {
   const toChat = () => history.push(`/chat/${id}`)
 
   const headerStatus = {
-    ready: { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
-    collected: { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
+    "ready": { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
+    "collected": { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
     "in_travel": { headerTitle: 'En camino', headerSubtitle: 'Vamos con tu envio...' },
-    ' destination_reached': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+    'destination_reached': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+    'rated': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+    'destination_confirmed': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
   }
 
   // @ts-ignore
