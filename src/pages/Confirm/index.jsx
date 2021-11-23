@@ -91,7 +91,3 @@ const Confirm = () => {
 }
 
 export default Confirm
-function confirmPackage(event, id) {
-  throw new Error('Function not implemented.')
-}
-
