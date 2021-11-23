@@ -10,36 +10,30 @@ import { useState } from 'react'
 import Layout from './Chat.layout'
 
 const Chat = () => {
-  // @ts-ignore
+/** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
 
   if (!id) {
     history.push('/check')
   }
-  const { LatestMessages = [] } = useLatestMessages(id)
+  const { LatestMessages = { chats: [] } } = useLatestMessages(id)
   const { loading, insertClientMessage } = InsertClientMessage()
   const [message, setMessage] = useState('')
 
   const Messages =
-    // @ts-ignore
     LatestMessages.chats &&
-    // @ts-ignore
     LatestMessages.chats.map((message, id) => {
       if (message.user_type === 'client') {
         return (
-          <MessageRow 
-// @ts-ignore
-          type={'client'} key={`chat-message-${id}`}>
+          <MessageRow type={'client'} key={`chat-message-${id}`}>
             <Avatar src={userIcon} />
             <MessageBox>{message.last_client_message}</MessageBox>
           </MessageRow>
         )
       } else {
         return (
-          <MessageRow 
-// @ts-ignore
-          type={'dasher'} key={`chat-message-${id}`}>
+          <MessageRow type={'dasher'} key={`chat-message-${id}`}>
             <Avatar src={deliveryManWhite} />
             <MessageBox>{message.last_dasher_message}</MessageBox>
           </MessageRow>
@@ -70,9 +64,10 @@ const Chat = () => {
   return (
     <Layout
       SendForm={
-        <FooterChatInput 
-// @ts-ignore
-        cols={'0 0 100%'}>
+        <FooterChatInput
+          // @ts-ignore
+          cols={'0 0 100%'}
+        >
           <Input
             // @ts-ignore
             bgColor="gray"
@@ -88,9 +83,10 @@ const Chat = () => {
       <>
         {Messages}
         {loading && (
-          <MessageRow 
-// @ts-ignore
-          type={'client'}>
+          <MessageRow
+            // @ts-ignore
+            type={'client'}
+          >
             <Avatar src={userIcon} />
             <MessageBox>Loading..</MessageBox>
           </MessageRow>

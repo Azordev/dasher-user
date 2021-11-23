@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useParams, useHistory } from 'react-router-dom'
 import { Text, Modal } from '../../components'
 import send from '../../assets/send.png'
@@ -8,6 +7,7 @@ import { useState } from 'react'
 import Layout from './Delivery.layout'
 
 const Delivery = () => {
+  /** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
   const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)
@@ -28,10 +28,10 @@ const Delivery = () => {
   const toChat = () => history.push(`/chat/${id}`)
 
   const headerStatus = {
-    "ready": { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
-    "collected": { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
+    ready: { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
+    collected: { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
     "in_travel": { headerTitle: 'En camino', headerSubtitle: 'Vamos con tu envio...' },
-    "destination_reached": { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' }
+    ' destination_reached': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
   }
 
   // @ts-ignore
@@ -39,9 +39,6 @@ const Delivery = () => {
     return <pre>Loading...</pre>
   }
 
-  if (hasError) {
-    return <pre>Error</pre>
-  }
   return (
     <Layout
       packageId={id}

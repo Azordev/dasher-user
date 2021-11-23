@@ -14,26 +14,24 @@ const Check = () => {
   const { packages, loading, error } = useGetPackagesIdByCode(packageCode?.packageCode)
 
   // eslint-disable-next-line complexity
-  const toDelivery = async (/** @type {{ packageCode: String; }} */ e) => {
-    if (e?.packageCode && !error && !loading) {
+  const toDelivery = async (/** @type {{ packageCode: String; }} */ event) => {
+    if (event?.packageCode && !error && !loading) {
       const foundPackage = packages.length > 0
 
       if (foundPackage) {
-        const { id, order_status } = await packages[0]
+        const { id, order_status } = packages[0]
         // eslint-disable-next-line camelcase
         switch (order_status) {
           case 'ready':
-            history.push(`/delivery/${id}`)
-            break
           case 'collected':
-            history.push(`/delivery/${id}`)
-            break
           case 'in_travel':
             history.push(`/delivery/${id}`)
             break
           case 'destination_reached':
             history.push(`/confirm/${id}`)
             break
+          case 'rated':
+          case 'destination_confirmed':
           default:
             alert('el paquete ya fue entregado')
             break
