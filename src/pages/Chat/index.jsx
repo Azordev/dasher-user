@@ -10,7 +10,7 @@ import { useState } from 'react'
 import Layout from './Chat.layout'
 
 const Chat = () => {
-/** @type {{id: String}} */
+  /** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
 
@@ -41,7 +41,8 @@ const Chat = () => {
       }
     })
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
+    e.preventDefault()
     if (message.length > 0) {
       insertClientMessage({
         variables: {
@@ -55,18 +56,13 @@ const Chat = () => {
     }
   }
 
-  const handleKeyDown = event => {
-    if (event.key === 'Enter') {
-      handleSubmit()
-    }
-  }
-
   return (
     <Layout
       SendForm={
         <FooterChatInput
           // @ts-ignore
           cols={'0 0 100%'}
+          onSubmit={handleSubmit}
         >
           <Input
             // @ts-ignore
@@ -74,9 +70,10 @@ const Chat = () => {
             placeholder="Escribe aqui..."
             value={message}
             onChange={e => setMessage(e.target.value)}
-            onKeyDown={handleKeyDown}
           />
-          <img src={sendChat} alt="send Chat" onClick={() => handleSubmit()} />
+          <button type="submit">
+            <img src={sendChat} alt="send Chat" />
+          </button>
         </FooterChatInput>
       }
     >

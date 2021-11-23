@@ -28,12 +28,12 @@ const Delivery = () => {
   const toChat = () => history.push(`/chat/${id}`)
 
   const headerStatus = {
-    "ready": { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
-    "collected": { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
-    "in_travel": { headerTitle: 'En camino', headerSubtitle: 'Vamos con tu envio...' },
+    ready: { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
+    collected: { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
+    'in_travel': { headerTitle: 'En camino', headerSubtitle: 'Vamos con tu envio...' },
     'destination_reached': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
-    'rated': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
-    'destination_confirmed': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+    rated: { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+   'destination_confirmed': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
   }
 
   // @ts-ignore
@@ -44,8 +44,8 @@ const Delivery = () => {
   return (
     <Layout
       packageId={id}
-      headerTitle={headerStatus[currentStatus].headerTitle}
-      headerSubtitle={headerStatus[currentStatus].headerSubtitle}
+      headerTitle={headerStatus[currentStatus]?.headerTitle}
+      headerSubtitle={headerStatus[currentStatus]?.headerSubtitle}
       // @ts-ignore
       clientAddress={packageInformation?.packages[0]?.client_address}
       // @ts-ignore
