@@ -18,7 +18,7 @@ const Check = () => {
       const foundPackage = (await packages.length) > 0
       if (foundPackage) {
         const { id } = await packages[0]
-        sessionStorage.setItem('packageId', JSON.stringify(id))
+        localStorage.setItem('packageId', JSON.stringify(id))
         history.push(`/delivery/${packageCode?.packageCode}`)
       } else {
         alert('el paquete no existe')

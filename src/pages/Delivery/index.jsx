@@ -9,7 +9,7 @@ import Layout from './Delivery.layout'
 
 const Delivery = () => {
   const { id } = useParams()
-  const packageId = JSON.parse(sessionStorage.getItem('packageId')) 
+  const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()
   const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)
   const { packageInformation } = useGetPackageInformation(packageId)
@@ -32,7 +32,6 @@ const Delivery = () => {
   if (isLoading || !packageInformation?.packages[0]?.package_code) {
     return <pre>Loading...</pre>
   }
-
 
   return (
     <Layout

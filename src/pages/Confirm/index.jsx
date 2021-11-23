@@ -11,7 +11,7 @@ import { RatingImg } from './Confirm.styled'
 
 const Confirm = () => {
   const { id } = useParams()
-  const packageId = JSON.parse(sessionStorage.getItem('packageId'))
+  const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
   const [isRatingModalOpen, toggleRatingModal] = useState(false)
@@ -20,7 +20,7 @@ const Confirm = () => {
   const { confirmPackage, packageInformation } = useConfirmPackage()
 
   if (!id || !packageId) {
-    history.push('/check')
+    redirectToCheck()
   }
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const Confirm = () => {
   /** @param {Event} event */
   const redirectToCheck = event => {
     // Submit rating here
-    sessionStorage.removeItem('packageId')
+    localStorage.removeItem('packageId')
     history.push('/check')
   }
 

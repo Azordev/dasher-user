@@ -12,7 +12,7 @@ import Layout from './Chat.layout'
 const Chat = () => {
   const { id } = useParams()
   const history = useHistory()
-  const packageId = JSON.parse(sessionStorage.getItem('packageId'))
+  const packageId = JSON.parse(localStorage.getItem('packageId'))
   if (!id || !packageId) {
     history.push('/check')
   }
