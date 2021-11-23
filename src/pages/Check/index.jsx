@@ -19,9 +19,9 @@ const Check = () => {
       const foundPackage = packages.length > 0
 
       if (foundPackage) {
-        const { id, order_status } = packages[0]
-        // eslint-disable-next-line camelcase
-        switch (order_status) {
+        const { id, order_status: orderStatus } = packages[0]
+
+        switch (orderStatus) {
           case 'ready':
           case 'collected':
           case 'in_travel':
