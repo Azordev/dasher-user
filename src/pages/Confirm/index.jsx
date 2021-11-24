@@ -72,7 +72,7 @@ const Confirm = () => {
       headerTitle="Hemos terminado"
       headerSubTitle="Inserta tus datos para finalizar"
       RatingModal={
-        <Modal isOpen={isRatingModalOpen} handleClick={submitRating} actionText="Aceptar">
+        <Modal isOpen={isRatingModalOpen} handleClick={e => submitRating(e)} actionText="Aceptar">
           <Text as="h1" color="primary">
             ¿Qué tal tu experiencia?
           </Text>
@@ -86,7 +86,7 @@ const Confirm = () => {
         <Modal isOpen={isFinalModalOpen} handleClick={() => redirectToCheck()} actionText="Aceptar">
           <img src={handshake} alt="Handshake Image" />
           <Text as="h1" color="primary" medium center>
-            !Gracias por confiar <br /> en nosotros!
+            ¡Gracias por confiar <br /> en nosotros!
           </Text>
         </Modal>
       }
