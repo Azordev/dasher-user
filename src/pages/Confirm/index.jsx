@@ -11,7 +11,6 @@ import warning from '../../assets/warning.png'
 const Confirm = () => {
   /** @type {{id: String}} */
   const { id } = useParams()
-  const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
   const [isRatingModalOpen, toggleRatingModal] = useState(false)
@@ -20,7 +19,7 @@ const Confirm = () => {
   const { insertClientRate } = InsertClientRate()
   const { confirmPackage, packageInformation } = useConfirmPackage()
 
-  if (!id || !packageId) {
+  if (!id) {
     redirectToCheck()
   }
 
@@ -41,7 +40,7 @@ const Confirm = () => {
   const submitRating = event => {
     event.preventDefault()
     if (rating) {
-      insertClientRate({ variables: { id: packageId, clientRating: rating } })
+      insertClientRate({ variables: { id, clientRating: rating } })
       toggleRatingModal(false)
       toggleFinalModal(true)
     }
@@ -50,7 +49,7 @@ const Confirm = () => {
   /** @param {React.FormEvent<HTMLFormElement>} event */
   const submitConfirmation = async event => {
     if (event.name && event.RUT && event.phone) {
-      confirmPackage(event, packageId)
+      confirmPackage(event, id)
     } else {
       alert('Por favor complete los campos')
     }
@@ -107,7 +106,9 @@ const Confirm = () => {
         <Form onSubmit={e => submitConfirmation(e)}>
           {({ handleFormChange, value }) => (
             <>
+              <FormInput placeholder="Nombre" name="name" value={value} onChange={handleFormChange} />
               <FormInput placeholder="RUT" name="RUT" value={value} onChange={handleFormChange} />
+              <FormInput placeholder="Celular" name="phone" value={value} onChange={handleFormChange} />
             </>
           )}
         </Form>

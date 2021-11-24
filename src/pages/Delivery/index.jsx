@@ -9,18 +9,17 @@ import Layout from './Delivery.layout'
 const Delivery = () => {
   /** @type {{id: String}} */
   const { id } = useParams()
-  const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()
   const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)
-  const { packageInformation } = useGetPackageInformation(packageId)
-  const { latestCoordinates, error, loading } = useDasherLatestCoordinates(packageId)
+  const { packageInformation } = useGetPackageInformation(id)
+  const { latestCoordinates, error, loading } = useDasherLatestCoordinates(id)
   const { isLoading, hasError, center, dasher, currentStatus, permission } = useClientLocation({
     data: latestCoordinates,
     error: error,
     loading: loading,
   })
 
-  if (!id || !packageId) {
+  if (!id) {
     history.push('/check')
   }
 
