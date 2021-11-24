@@ -1,13 +1,6 @@
 // @ts-nocheck
 import { useEffect, useState } from 'react'
 
-/**
- *
- * @param data package data
- * @param error error in fetch package data
- * @param loading loading package data
- */
-
 export function useClientLocation({ data, error, loading }) {
   const [isLoading, setLoading] = useState(true)
   const [hasError, setError] = useState(false)

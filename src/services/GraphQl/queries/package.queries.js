@@ -33,17 +33,10 @@ export const GET_PACKAGE_INFORMATION_QUERY = gql`
   }
 `
 export const CONFIRM_PACKAGE_QUERY = gql`
-  query confirmPackage($id: uuid!, $clientName: String!, $rut: String!, $clientPhone: String!) {
-    packages(
-      distinct_on: id
-      where: {
-        id: { _eq: $id }
-        client_name: { _eq: $clientName }
-        client_identification_document: { _eq: $rut }
-        client_phone: { _eq: $clientPhone }
-      }
-    ) {
+  query confirmPackage($id: uuid!, $rut: String!) {
+    packages(distinct_on: id, where: { id: { _eq: $id }, client_identification_document: { _eq: $rut } }) {
       id
+      order_status
     }
   }
 `
