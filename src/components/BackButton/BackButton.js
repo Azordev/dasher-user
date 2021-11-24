@@ -1,9 +1,9 @@
-// @ts-nocheck
 import { BackBtn, BackTxt, BackBtnContainer } from './BackButton.styled'
 import { useParams, useHistory } from 'react-router-dom'
 import arrow from '../../assets/arrow-left.svg'
 
 const BackButton = () => {
+  /** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
 
@@ -24,7 +24,7 @@ const BackButton = () => {
   return (
     <BackBtnContainer>
       <BackBtn onClick={() => handleClick()} src={arrow} />
-      <BackTxt onClick={() => handleClick()} txt={'Atrás'}></BackTxt>
+      <BackTxt onClick={() => handleClick()}>Atrás</BackTxt>
     </BackBtnContainer>
   )
 }

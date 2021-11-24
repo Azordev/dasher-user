@@ -1,3 +1,4 @@
+// @ts-nocheck
 import PropTypes from 'prop-types'
 
 import { Container, Header, TicketImage, MainSection } from '../../layouts/Splitted.styled'

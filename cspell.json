@@ -62,7 +62,19 @@
     "xsmall",
     "xlarge",
     "nocheck",
-    "jsdoc"
+    "jsdoc",
+    "entregado",
+    "sido",
+    "confirmado",
+    "rechazado",
+    "Listo",
+    "salir",
+    "encuentra",
+    "listo",
+    "Recolectado",
+    "recogido",
+    "Destino",
+    "alcanzado"
   ],
   "flagWords": ["hte"],
   "ignorePaths": [

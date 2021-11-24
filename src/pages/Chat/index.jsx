@@ -13,8 +13,7 @@ const Chat = () => {
   /** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
-  const packageId = JSON.parse(localStorage.getItem('packageId'))
-  if (!id || !packageId) {
+  if (!id) {
     history.push('/check')
   }
   const { LatestMessages = { chats: [] } } = useLatestMessages(id)
@@ -26,15 +25,15 @@ const Chat = () => {
     LatestMessages.chats.map((message, packageId) => {
       if (message.user_type === 'client') {
         return (
-          <MessageRow type={'client'} key={`chat-message-${packageId}`}>
-            <Avatar src={userIcon} />
+          <MessageRow key={`chat-message-${packageId}`}>
+            <Avatar src={userIcon} type={'client'} />
             <MessageBox>{message.last_client_message}</MessageBox>
           </MessageRow>
         )
       } else {
         return (
-          <MessageRow type={'dasher'} key={`chat-message-${packageId}`}>
-            <Avatar src={deliveryManWhite} />
+          <MessageRow key={`chat-message-${packageId}`}>
+            <Avatar src={deliveryManWhite} type={'dasher'} />
             <MessageBox>{message.last_dasher_message}</MessageBox>
           </MessageRow>
         )
@@ -48,7 +47,7 @@ const Chat = () => {
         variables: {
           lastClientMessage: message,
           lastClientUpdate: new Date(Date.now()).toISOString(),
-          packageId: packageId,
+          packageId: id,
           userType: 'client',
         },
       })

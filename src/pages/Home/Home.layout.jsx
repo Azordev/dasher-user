@@ -1,3 +1,4 @@
+// @ts-nocheck
 import deliveryMan from '../../assets/delivery-man.png'
 import logo from '../../assets/logo.svg'
 import Colors from '../../styles/colors'

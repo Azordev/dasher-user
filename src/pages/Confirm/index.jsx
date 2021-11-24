@@ -6,34 +6,41 @@ import RatingMan from '../../assets/man-rate.png'
 import { InsertClientRate, useConfirmPackage } from '../../hooks'
 import Layout from './Confirm.layout'
 import { RatingImg } from './Confirm.styled'
+import warning from '../../assets/warning.png'
 
 const Confirm = () => {
   /** @type {{id: String}} */
   const { id } = useParams()
-  const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
   const [isRatingModalOpen, toggleRatingModal] = useState(false)
+  const [isErrorModalOpen, toggleErrorModal] = useState(false)
   const [rating, setRating] = useState(0)
   const { insertClientRate } = InsertClientRate()
   const { confirmPackage, packageInformation } = useConfirmPackage()
 
-  if (!id || !packageId) {
+  if (!id) {
     redirectToCheck()
   }
 
   useEffect(() => {
     if (packageInformation.length > 0) {
-      toggleRatingModal(true)
+      const orderStatus = packageInformation[0].order_status
+
+      if (orderStatus === 'rated' || orderStatus === 'delivery_confirmed' || orderStatus === 'delivery_rejected') {
+        console.log(orderStatus)
+        toggleErrorModal(true)
+      } else {
+        toggleRatingModal(true)
+      }
     }
   }, [packageInformation])
 
   /** @param {Event} event */
   const submitRating = event => {
     event.preventDefault()
-    // Submit rating here
     if (rating) {
-      insertClientRate({ variables: { id: packageId, clientRating: rating } })
+      insertClientRate({ variables: { id, clientRating: rating } })
       toggleRatingModal(false)
       toggleFinalModal(true)
     }
@@ -41,9 +48,8 @@ const Confirm = () => {
 
   /** @param {React.FormEvent<HTMLFormElement>} event */
   const submitConfirmation = async event => {
-    // Submit form here
     if (event.name && event.RUT && event.phone) {
-      confirmPackage(event, packageId)
+      confirmPackage(event, id)
     } else {
       alert('Por favor complete los campos')
     }
@@ -51,8 +57,12 @@ const Confirm = () => {
 
   /** @param {Event} event */
   const redirectToCheck = event => {
-    // Submit rating here
     localStorage.removeItem('packageId')
+    history.push('/check')
+  }
+
+  const closeErrorModal = () => {
+    toggleErrorModal(false)
     history.push('/check')
   }
 
@@ -61,7 +71,7 @@ const Confirm = () => {
       headerTitle="Hemos terminado"
       headerSubTitle="Inserta tus datos para finalizar"
       RatingModal={
-        <Modal isOpen={isRatingModalOpen} handleClick={submitRating} actionText="Aceptar">
+        <Modal isOpen={isRatingModalOpen} handleClick={e => submitRating(e)} actionText="Aceptar">
           <Text as="h1" color="primary">
             ¿Qué tal tu experiencia?
           </Text>
@@ -75,8 +85,17 @@ const Confirm = () => {
         <Modal isOpen={isFinalModalOpen} handleClick={() => redirectToCheck()} actionText="Aceptar">
           <img src={handshake} alt="Handshake Image" />
           <Text as="h1" color="primary" medium center>
-            !Gracias por confiar <br /> en nosotros!
+            ¡Gracias por confiar <br /> en nosotros!
           </Text>
+        </Modal>
+      }
+      ConfirmErrorModal={
+        <Modal isOpen={isErrorModalOpen} handleClick={closeErrorModal} actionText="Aceptar">
+          <img src={warning} alt="Warning" />
+          <Text as="h1" color="primary" small>
+            Error
+          </Text>
+          <Text color="danger">No puedes confirmar un paquete que ya ha sido confirmado o rechazado</Text>
         </Modal>
       }
     >

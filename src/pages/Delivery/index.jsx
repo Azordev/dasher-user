@@ -9,18 +9,17 @@ import Layout from './Delivery.layout'
 const Delivery = () => {
   /** @type {{id: String}} */
   const { id } = useParams()
-  const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()
   const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)
-  const { packageInformation } = useGetPackageInformation(packageId)
-  const { latestCoordinates, error, loading } = useDasherLatestCoordinates(packageId)
-  const { isLoading, hasError, center, dasher, currentStatus } = useClientLocation({
+  const { packageInformation } = useGetPackageInformation(id)
+  const { latestCoordinates, error, loading } = useDasherLatestCoordinates(id)
+  const { isLoading, hasError, center, dasher, currentStatus, permission } = useClientLocation({
     data: latestCoordinates,
     error: error,
     loading: loading,
   })
 
-  if (!id || !packageId) {
+  if (!id) {
     history.push('/check')
   }
 
@@ -31,10 +30,10 @@ const Delivery = () => {
   const headerStatus = {
     ready: { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
     collected: { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
-    'in_travel': { headerTitle: 'En camino', headerSubtitle: 'Vamos con tu envio...' },
-    'destination_reached': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+    in_travel: { headerTitle: 'En camino', headerSubtitle: 'Vamos con tu envio...' },
+    destination_reached: { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
     rated: { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
-   'destination_confirmed': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+    destination_confirmed: { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
   }
 
   // @ts-ignore
@@ -49,7 +48,6 @@ const Delivery = () => {
       headerSubtitle={headerStatus[currentStatus]?.headerSubtitle}
       // @ts-ignore
       clientAddress={packageInformation?.packages[0]?.client_address}
-      // @ts-ignore
       estimatedArrival={packageInformation?.packages[0]?.estimated_arrival}
       isLoading={isLoading}
       hasError={hasError}
@@ -73,7 +71,7 @@ const Delivery = () => {
         </Modal>
       }
     >
-      {center[0] && <Map center={center} dasher={dasher} />}
+      {center[0] && <Map center={center} dasher={dasher} permission={permission} />}
     </Layout>
   )
 }

@@ -41,10 +41,6 @@ export const BackTxt = styled.p`
   margin: auto 0;
   max-width: 10rem;
 
-  ::before {
-    content: '${props => props.txt}';
-  }
-
   @media (max-width: 960px) {
     display: none;
   }

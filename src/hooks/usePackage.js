@@ -36,7 +36,7 @@ export const useGetPackagesIdByCode = packageCode => {
 
 /** @param packageId */
 export const useGetPackageInformation = packageId => {
-  const [packageInformation, setPackageInformation] = useState([])
+  const [packageInformation, setPackageInformation] = useState({ packages: [] })
   const { loading, error, data } = useQuery(GET_PACKAGE_INFORMATION_QUERY, {
     variables: { id: packageId },
   })
@@ -49,18 +49,20 @@ export const useGetPackageInformation = packageId => {
 }
 
 export const useConfirmPackage = () => {
-  const [confirmData, setConfirmData] = useState({ name: '', RUT: '', phone: '' })
+  const [confirmData, setConfirmData] = useState({ RUT: '' })
   const [packageId, setPackageId] = useState('')
-  const [packageInformation, setPackageInformation] = useState('')
+  const [packageInformation, setPackageInformation] = useState([])
   const { loading, error, data } = useQuery(CONFIRM_PACKAGE_QUERY, {
     variables: {
       id: packageId,
-      clientName: confirmData.name,
       rut: confirmData.RUT,
-      clientPhone: confirmData.phone,
     },
   })
 
+  /**
+   * @param {{RUT: string}} formData
+   * @param {String} Id
+   */
   const confirmPackage = async (formData, Id) => {
     setConfirmData(formData)
     setPackageId(Id)
@@ -68,7 +70,7 @@ export const useConfirmPackage = () => {
 
   useEffect(() => {
     if (data?.packages[0]?.id) {
-      setPackageInformation(data?.packages[0]?.id)
+      setPackageInformation(data?.packages)
     }
   }, [data])
 

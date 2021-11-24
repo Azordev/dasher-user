@@ -1,3 +1,4 @@
+// @ts-nocheck
 import PropTypes from 'prop-types'
 import { Text, BackButton } from '../../components'
 import {
@@ -20,7 +21,7 @@ import { Fragment } from 'react'
 /**
  * Delivery Layout
  *
- * @augments { React.Component<{ packageId, headerTitle, headerSubtitle, clientAddress, estimatedArrival, isLoading, hasError, DeliveryConfirmedModal, children }, {}> }
+ * @param {{ packageId: string, headerTitle: string, headerSubtitle:string, clientAddress:string, estimatedArrival:string, isLoading:boolean, hasError: boolean, DeliveryConfirmedModal: any, children: any }}
  */
 const Delivery = ({
   packageId,

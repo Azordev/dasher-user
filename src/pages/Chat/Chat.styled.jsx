@@ -86,14 +86,14 @@ export const FooterChatInput = styled.form`
   align-items: center;
   padding: 0.5rem;
 
-  & button {
-    width: 3rem;
+  button {
     margin: 1rem;
     cursor: pointer;
     background: none;
     border: none;
     width: fit-content;
-    & img {
+
+    img {
       width: 3rem;
       cursor: pointer;
     }
@@ -107,11 +107,6 @@ export const MessageRow = styled.div`
   &::after {
     clear: both;
     display: table;
-  }
-
-  & img {
-    float: ${({ type }) => (type === 'client' ? `left` : `right`)};
-    width: 3rem;
   }
 `
 
@@ -139,6 +134,7 @@ export const MessageBox = styled.div`
 
 export const Avatar = styled.img`
   display: inline-block;
+  float: ${({ type }) => (type === 'client' ? `left` : `right`)};
   width: 14vw;
   margin: auto 0;
 
