@@ -15,7 +15,6 @@ import { text } from '../styles/mixins'
  *    margin?: string,
  * }} TextProps
  */
-
 const Text =
   /** @type {import('styled-components').ThemedStyledFunction<'p', TextProps>} */
   (styled.p)`
