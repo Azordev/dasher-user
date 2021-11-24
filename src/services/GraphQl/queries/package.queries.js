@@ -4,6 +4,7 @@ export const GET_PACKAGE_ID_QUERY_BY_CODE = gql`
   query useGetPackageIdByCode($packageCode: String!) {
     packages(where: { package_code: { _eq: $packageCode } }) {
       id
+      order_status
     }
   }
 `

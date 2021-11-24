@@ -9,17 +9,18 @@ import Layout from './Delivery.layout'
 const Delivery = () => {
   /** @type {{id: String}} */
   const { id } = useParams()
+  const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()
   const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)
-  const { packageInformation } = useGetPackageInformation(id)
-  const { latestCoordinates, error, loading } = useDasherLatestCoordinates(id)
+  const { packageInformation } = useGetPackageInformation(packageId)
+  const { latestCoordinates, error, loading } = useDasherLatestCoordinates(packageId)
   const { isLoading, hasError, center, dasher, currentStatus } = useClientLocation({
     data: latestCoordinates,
     error: error,
     loading: loading,
   })
 
-  if (!id) {
+  if (!id || !packageId) {
     history.push('/check')
   }
 
@@ -27,19 +28,26 @@ const Delivery = () => {
 
   const toChat = () => history.push(`/chat/${id}`)
 
-  if (isLoading || !packageInformation?.packages[0]?.package_code) {
-    return <pre>Loading...</pre>
+  const headerStatus = {
+    ready: { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
+    collected: { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
+    'in_travel': { headerTitle: 'En camino', headerSubtitle: 'Vamos con tu envio...' },
+    'destination_reached': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+    rated: { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+   'destination_confirmed': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
   }
 
-  if (hasError) {
-    return <pre>Error</pre>
+  // @ts-ignore
+  if (isLoading || !packageInformation?.packages[0]?.package_code) {
+    return <pre>Loading...</pre>
   }
 
   return (
     <Layout
       packageId={id}
-      headerTitle="En camino..."
-      headerSubtitle="Vamos con tu envio..."
+      headerTitle={headerStatus[currentStatus]?.headerTitle}
+      headerSubtitle={headerStatus[currentStatus]?.headerSubtitle}
+      // @ts-ignore
       clientAddress={packageInformation?.packages[0]?.client_address}
       estimatedArrival={packageInformation?.packages[0]?.estimated_arrival}
       isLoading={isLoading}

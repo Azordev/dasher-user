@@ -10,29 +10,30 @@ import { useState } from 'react'
 import Layout from './Chat.layout'
 
 const Chat = () => {
+  /** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
-
-  if (!id) {
+  const packageId = JSON.parse(localStorage.getItem('packageId'))
+  if (!id || !packageId) {
     history.push('/check')
   }
-  const { LatestMessages = [] } = useLatestMessages(id)
+  const { LatestMessages = { chats: [] } } = useLatestMessages(id)
   const { loading, insertClientMessage } = InsertClientMessage()
   const [message, setMessage] = useState('')
 
   const Messages =
     LatestMessages.chats &&
-    LatestMessages.chats.map((message, id) => {
+    LatestMessages.chats.map((message, packageId) => {
       if (message.user_type === 'client') {
         return (
-          <MessageRow type={'client'} key={`chat-message-${id}`}>
+          <MessageRow type={'client'} key={`chat-message-${packageId}`}>
             <Avatar src={userIcon} />
             <MessageBox>{message.last_client_message}</MessageBox>
           </MessageRow>
         )
       } else {
         return (
-          <MessageRow type={'dasher'} key={`chat-message-${id}`}>
+          <MessageRow type={'dasher'} key={`chat-message-${packageId}`}>
             <Avatar src={deliveryManWhite} />
             <MessageBox>{message.last_dasher_message}</MessageBox>
           </MessageRow>
@@ -40,13 +41,14 @@ const Chat = () => {
       }
     })
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
+    e.preventDefault()
     if (message.length > 0) {
       insertClientMessage({
         variables: {
           lastClientMessage: message,
           lastClientUpdate: new Date(Date.now()).toISOString(),
-          packageId: id,
+          packageId: packageId,
           userType: 'client',
         },
       })
@@ -57,21 +59,31 @@ const Chat = () => {
   return (
     <Layout
       SendForm={
-        <FooterChatInput cols={'0 0 100%'}>
+        <FooterChatInput
+          // @ts-ignore
+          cols={'0 0 100%'}
+          onSubmit={handleSubmit}
+        >
           <Input
+            // @ts-ignore
             bgColor="gray"
             placeholder="Escribe aqui..."
             value={message}
             onChange={e => setMessage(e.target.value)}
           />
-          <img src={sendChat} alt="send Chat" onClick={() => handleSubmit()} />
+          <button type="submit">
+            <img src={sendChat} alt="send Chat" />
+          </button>
         </FooterChatInput>
       }
     >
       <>
         {Messages}
         {loading && (
-          <MessageRow type={'client'}>
+          <MessageRow
+            // @ts-ignore
+            type={'client'}
+          >
             <Avatar src={userIcon} />
             <MessageBox>Loading..</MessageBox>
           </MessageRow>
