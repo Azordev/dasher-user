@@ -14,7 +14,7 @@ const Delivery = () => {
   const [openDeliveryConfirmedModal, toggleDeliveryConfirmedModal] = useState(true)
   const { packageInformation } = useGetPackageInformation(packageId)
   const { latestCoordinates, error, loading } = useDasherLatestCoordinates(packageId)
-  const { isLoading, hasError, center, dasher, currentStatus } = useClientLocation({
+  const { isLoading, hasError, center, dasher, currentStatus, permission } = useClientLocation({
     data: latestCoordinates,
     error: error,
     loading: loading,
@@ -72,7 +72,7 @@ const Delivery = () => {
         </Modal>
       }
     >
-      {center[0] && <Map center={center} dasher={dasher} />}
+      {center[0] && <Map center={center} dasher={dasher} permission={permission} />}
     </Layout>
   )
 }

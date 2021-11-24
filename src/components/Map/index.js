@@ -29,18 +29,20 @@ const Wrapper = styled.main`
   }
 `
 
-const Map = ({ center, dasher }) => (
-  <Wrapper>
-    <GoogleMapReact bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_KEY }} defaultZoom={13} defaultCenter={center}>
-      <Marker key={0} text="You" isCenter lat={center[0]} lng={center[1]} />
-      <Marker key={1} text="dasher" lat={dasher[0]} lng={dasher[1]} />
-    </GoogleMapReact>
-  </Wrapper>
-)
-
+const Map = ({ center, dasher, permission }) => {
+  return (
+    <Wrapper>
+      <GoogleMapReact bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_KEY }} defaultZoom={13} defaultCenter={center}>
+        {permission && <Marker key={0} text="You" isCenter lat={center[0]} lng={center[1]} />}
+        <Marker key={1} text="dasher" lat={dasher[0]} lng={dasher[1]} />
+      </GoogleMapReact>
+    </Wrapper>
+  )
+}
 Map.propTypes = {
   center: PropTypes.arrayOf(PropTypes.number).isRequired,
   dasher: PropTypes.arrayOf(PropTypes.number).isRequired,
+  permission: PropTypes.bool.isRequired,
 }
 
 export default React.memo(Map, (prevProps, nextProps) => {

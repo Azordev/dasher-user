@@ -11,6 +11,9 @@ Marker.defaultProps = {
 Marker.propTypes = {
   onClick: PropTypes.func,
   isCenter: PropTypes.bool,
+  text: PropTypes.string,
+  lat: PropTypes.number,
+  lng: PropTypes.number,
 }
 
 export default Marker
