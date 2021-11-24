@@ -36,7 +36,7 @@ export const useGetPackagesIdByCode = packageCode => {
 
 /** @param packageId */
 export const useGetPackageInformation = packageId => {
-  const [packageInformation, setPackageInformation] = useState([])
+  const [packageInformation, setPackageInformation] = useState({ packages: [] })
   const { loading, error, data } = useQuery(GET_PACKAGE_INFORMATION_QUERY, {
     variables: { id: packageId },
   })
