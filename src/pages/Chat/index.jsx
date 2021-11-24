@@ -10,13 +10,14 @@ import { useState } from 'react'
 import Layout from './Chat.layout'
 
 const Chat = () => {
+  /** @type {{id: String}} */
   const { id } = useParams()
   const history = useHistory()
   const packageId = JSON.parse(localStorage.getItem('packageId'))
   if (!id || !packageId) {
     history.push('/check')
   }
-  const { LatestMessages = [] } = useLatestMessages(packageId)
+  const { LatestMessages = { chats: [] } } = useLatestMessages(id)
   const { loading, insertClientMessage } = InsertClientMessage()
   const [message, setMessage] = useState('')
 
@@ -40,7 +41,8 @@ const Chat = () => {
       }
     })
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
+    e.preventDefault()
     if (message.length > 0) {
       insertClientMessage({
         variables: {
@@ -57,21 +59,31 @@ const Chat = () => {
   return (
     <Layout
       SendForm={
-        <FooterChatInput cols={'0 0 100%'}>
+        <FooterChatInput
+          // @ts-ignore
+          cols={'0 0 100%'}
+          onSubmit={handleSubmit}
+        >
           <Input
+            // @ts-ignore
             bgColor="gray"
             placeholder="Escribe aqui..."
             value={message}
             onChange={e => setMessage(e.target.value)}
           />
-          <img src={sendChat} alt="send Chat" onClick={() => handleSubmit()} />
+          <button type="submit">
+            <img src={sendChat} alt="send Chat" />
+          </button>
         </FooterChatInput>
       }
     >
       <>
         {Messages}
         {loading && (
-          <MessageRow type={'client'}>
+          <MessageRow
+            // @ts-ignore
+            type={'client'}
+          >
             <Avatar src={userIcon} />
             <MessageBox>Loading..</MessageBox>
           </MessageRow>

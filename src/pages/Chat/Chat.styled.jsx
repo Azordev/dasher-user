@@ -78,7 +78,7 @@ export const FooterChat = styled.div`
   position: fixed;
 `
 
-export const FooterChatInput = styled.div`
+export const FooterChatInput = styled.form`
   ${[p({ x: '0', y: '5%' }), text.textCenter, bg.white]}
   flex: ${props => props.cols};
   display: flex;
@@ -86,10 +86,17 @@ export const FooterChatInput = styled.div`
   align-items: center;
   padding: 0.5rem;
 
-  & img {
+  & button {
     width: 3rem;
     margin: 1rem;
     cursor: pointer;
+    background: none;
+    border: none;
+    width: fit-content;
+    & img {
+      width: 3rem;
+      cursor: pointer;
+    }
   }
 `
 

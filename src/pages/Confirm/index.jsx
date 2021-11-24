@@ -1,5 +1,3 @@
-// @ts-nocheck
-/* cSpell:disable */
 import { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { Modal, Text, Rating, Form, FormInput } from '../../components'
@@ -10,6 +8,7 @@ import Layout from './Confirm.layout'
 import { RatingImg } from './Confirm.styled'
 
 const Confirm = () => {
+  /** @type {{id: String}} */
   const { id } = useParams()
   const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()

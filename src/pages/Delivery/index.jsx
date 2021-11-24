@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useParams, useHistory } from 'react-router-dom'
 import { Text, Modal } from '../../components'
 import send from '../../assets/send.png'
@@ -8,6 +7,7 @@ import { useState } from 'react'
 import Layout from './Delivery.layout'
 
 const Delivery = () => {
+  /** @type {{id: String}} */
   const { id } = useParams()
   const packageId = JSON.parse(localStorage.getItem('packageId'))
   const history = useHistory()
@@ -28,6 +28,15 @@ const Delivery = () => {
 
   const toChat = () => history.push(`/chat/${id}`)
 
+  const headerStatus = {
+    ready: { headerTitle: 'Listo para salir', headerSubtitle: 'El paquete se encuentra listo para salir...' },
+    collected: { headerTitle: 'Recolectado', headerSubtitle: 'El paquete fue recogido por el Dasher...' },
+    'in_travel': { headerTitle: 'En camino', headerSubtitle: 'Vamos con tu envio...' },
+    'destination_reached': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+    rated: { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+   'destination_confirmed': { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
+  }
+
   // @ts-ignore
   if (isLoading || !packageInformation?.packages[0]?.package_code) {
     return <pre>Loading...</pre>
@@ -36,8 +45,8 @@ const Delivery = () => {
   return (
     <Layout
       packageId={id}
-      headerTitle="En camino..."
-      headerSubtitle="Vamos con tu envio..."
+      headerTitle={headerStatus[currentStatus]?.headerTitle}
+      headerSubtitle={headerStatus[currentStatus]?.headerSubtitle}
       // @ts-ignore
       clientAddress={packageInformation?.packages[0]?.client_address}
       // @ts-ignore

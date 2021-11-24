@@ -13,13 +13,29 @@ const Check = () => {
   const history = useHistory()
   const { packages, loading, error } = useGetPackagesIdByCode(packageCode?.packageCode)
 
-  const toDelivery = async e => {
-    if (e?.packageCode && !error && !loading) {
-      const foundPackage = (await packages.length) > 0
+  // eslint-disable-next-line complexity
+  const toDelivery = async (/** @type {{ packageCode: String; }} */ event) => {
+    if (event?.packageCode && !error && !loading) {
+      const foundPackage = packages.length > 0
+
       if (foundPackage) {
-        const { id } = await packages[0]
-        localStorage.setItem('packageId', JSON.stringify(id))
-        history.push(`/delivery/${packageCode?.packageCode}`)
+        const { id, order_status: orderStatus } = packages[0]
+
+        switch (orderStatus) {
+          case 'ready':
+          case 'collected':
+          case 'in_travel':
+            history.push(`/delivery/${id}`)
+            break
+          case 'destination_reached':
+            history.push(`/confirm/${id}`)
+            break
+          case 'rated':
+          case 'destination_confirmed':
+          default:
+            alert('el paquete ya fue entregado')
+            break
+        }
       } else {
         alert('el paquete no existe')
       }
