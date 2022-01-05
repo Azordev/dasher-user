@@ -52,10 +52,10 @@ export const ManImage = styled.img`
   position: absolute;
   transform: translateY(-80%);
 
-  position:relative;
+  position: relative;
   left: 50%;
   transform: translateY(-80%) translateX(-50%);
-  max-height:410px;
+  max-height: 410px;
 
   @media (max-width: 320px) {
     margin-top: 0;
