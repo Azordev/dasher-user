@@ -47,6 +47,7 @@ export const TicketImage = styled.img`
     align-self: flex-end;
     position: fixed;
     margin-left: -50px;
+    margin-bottom: -43px;
   }
 `
 
