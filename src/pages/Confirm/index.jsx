@@ -17,24 +17,28 @@ const Confirm = () => {
   const [isErrorModalOpen, toggleErrorModal] = useState(false)
   const [rating, setRating] = useState(0)
   const { insertClientRate } = InsertClientRate()
-  const { confirmPackage, packageInformation } = useConfirmPackage()
+  const { confirmPackage, packageInformation, loading } = useConfirmPackage()
 
   if (!id) {
     redirectToCheck()
   }
 
+  // eslint-disable-next-line complexity
   useEffect(() => {
     if (packageInformation.length > 0) {
       const orderStatus = packageInformation[0].order_status
 
-      if (orderStatus === 'rated' || orderStatus === 'delivery_confirmed' || orderStatus === 'delivery_rejected') {
-        console.log(orderStatus)
-        toggleErrorModal(true)
-      } else {
-        toggleRatingModal(true)
+      if (orderStatus === 'ready' || orderStatus === 'collected' || orderStatus === 'in_travel') {
+        return toggleRatingModal(true)
+      } else if (
+        orderStatus === 'rated' ||
+        orderStatus === 'delivery_confirmed' ||
+        orderStatus === 'delivery_rejected'
+      ) {
+        return toggleErrorModal(true)
       }
     }
-  }, [packageInformation])
+  }, [packageInformation, loading])
 
   /** @param {Event} event */
   const submitRating = event => {
@@ -49,7 +53,9 @@ const Confirm = () => {
   /** @param {React.FormEvent<HTMLFormElement>} event */
   const submitConfirmation = async event => {
     if (event.name && event.RUT && event.phone) {
-      confirmPackage(event, id)
+      await confirmPackage(event, id)
+      console.log(packageInformation)
+      console.log(loading)
     } else {
       alert('Por favor complete los campos')
     }
