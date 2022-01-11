@@ -19,6 +19,9 @@ const Confirm = () => {
   const { insertClientRate } = InsertClientRate()
   const { confirmPackage, packageInformation, loading } = useConfirmPackage()
 
+  const incompleteStatus = ['ready', 'collected', 'in_travel']
+  const completeStatus = ['rated', 'delivery_confirmed', 'delivery_rejected']
+
   if (!id) {
     redirectToCheck()
   }
@@ -28,13 +31,9 @@ const Confirm = () => {
     if (packageInformation.length > 0) {
       const orderStatus = packageInformation[0].order_status
 
-      if (orderStatus === 'ready' || orderStatus === 'collected' || orderStatus === 'in_travel') {
+      if (incompleteStatus.includes(orderStatus)) {
         return toggleRatingModal(true)
-      } else if (
-        orderStatus === 'rated' ||
-        orderStatus === 'delivery_confirmed' ||
-        orderStatus === 'delivery_rejected'
-      ) {
+      } else if (completeStatus.includes(orderStatus)) {
         return toggleErrorModal(true)
       }
     }
@@ -54,8 +53,6 @@ const Confirm = () => {
   const submitConfirmation = async event => {
     if (event.name && event.RUT && event.phone) {
       await confirmPackage(event, id)
-      console.log(packageInformation)
-      console.log(loading)
     } else {
       alert('Por favor complete los campos')
     }
