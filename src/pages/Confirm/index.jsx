@@ -14,7 +14,7 @@ const Confirm = () => {
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
   const [isRatingModalOpen, toggleRatingModal] = useState(false)
-  const [isErrorModalOpen, toggleErrorModal] = useState(false)
+  const [errorModal, toggleErrorModal] = useState({ isShow: false, message: '' })
   const [rating, setRating] = useState(0)
   const { insertClientRate } = InsertClientRate()
   const { confirmPackage, packageInformation, loading } = useConfirmPackage()
@@ -33,10 +33,11 @@ const Confirm = () => {
       if (incompleteStatus.includes(orderStatus)) {
         return toggleRatingModal(true)
       } else if (completeStatus.includes(orderStatus)) {
-        return toggleErrorModal(true)
+        return toggleErrorModal({
+          isShow: true,
+          message: 'No puedes confirmar un paquete que ya ha sido confirmado o rechazado',
+        })
       }
-    } else {
-      toggleErrorModal(true)
     }
   }, [packageInformation, loading])
 
@@ -54,6 +55,12 @@ const Confirm = () => {
   const submitConfirmation = async event => {
     if (event.name && event.RUT && event.phone) {
       await confirmPackage(event, id)
+      if (packageInformation.length === 0) {
+        toggleErrorModal({
+          isShow: true,
+          message: 'El RUT y el Id del paquete no coinciden, o el paquete no existe',
+        })
+      }
     } else {
       alert('Por favor complete los campos')
     }
@@ -94,12 +101,12 @@ const Confirm = () => {
         </Modal>
       }
       ConfirmErrorModal={
-        <Modal isOpen={isErrorModalOpen} handleClick={closeErrorModal} actionText="Aceptar">
+        <Modal isOpen={errorModal.isShow} handleClick={closeErrorModal} actionText="Aceptar">
           <img src={warning} alt="Warning" />
           <Text as="h1" color="primary" small>
             Error
           </Text>
-          <Text color="danger">No puedes confirmar un paquete que ya ha sido confirmado o rechazado</Text>
+          <Text color="danger">{errorModal.message}</Text>
         </Modal>
       }
     >
