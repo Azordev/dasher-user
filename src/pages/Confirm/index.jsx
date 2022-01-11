@@ -26,7 +26,6 @@ const Confirm = () => {
     redirectToCheck()
   }
 
-  // eslint-disable-next-line complexity
   useEffect(() => {
     if (packageInformation.length > 0) {
       const orderStatus = packageInformation[0].order_status
@@ -36,6 +35,8 @@ const Confirm = () => {
       } else if (completeStatus.includes(orderStatus)) {
         return toggleErrorModal(true)
       }
+    } else {
+      toggleErrorModal(true)
     }
   }, [packageInformation, loading])
 
