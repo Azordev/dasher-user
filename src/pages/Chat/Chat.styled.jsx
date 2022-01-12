@@ -63,7 +63,7 @@ export const HeaderTitle = styled.div`
 `
 
 export const ChatBodyWrapper = styled.div`
-  grid-row:2/3;
+  grid-row: 2/3;
   padding: 1rem 2rem;
   overflow-y: scroll;
   display: flex;
@@ -104,7 +104,7 @@ export const MessageRow = styled.div`
   grid-template-columns: 40px calc(100% - 40px - 2rem);
   width: 100%;
 
-  @media (min-width: 960px){
+  @media (min-width: 960px) {
     width: 47vw;
   }
 
@@ -126,6 +126,7 @@ export const MessageBox = styled.div`
   ]}
   display: inline-block;
   width: 100%;
+  overflow-wrap: break-word;
 
   @media (min-width: 3180px) {
     line-height: 3.5vw;
