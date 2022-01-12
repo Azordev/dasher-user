@@ -14,7 +14,7 @@ const Confirm = () => {
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
   const [isRatingModalOpen, toggleRatingModal] = useState(false)
-  const [errorModal, toggleErrorModal] = useState({ isShow: false, message: '' })
+  const [errorModal, toggleErrorModal] = useState({ isShow: false, message: '', redirect: false })
   const [rating, setRating] = useState(0)
   const { insertClientRate } = InsertClientRate()
   const { confirmPackage, packageInformation, loading } = useConfirmPackage()
@@ -36,6 +36,7 @@ const Confirm = () => {
         return toggleErrorModal({
           isShow: true,
           message: 'No puedes confirmar un paquete que ya ha sido confirmado o rechazado',
+          redirect: true,
         })
       }
     }
@@ -59,6 +60,7 @@ const Confirm = () => {
         toggleErrorModal({
           isShow: true,
           message: 'El RUT y el Id del paquete no coinciden, o el paquete no existe',
+          redirect: false,
         })
       }
     } else {
@@ -73,8 +75,10 @@ const Confirm = () => {
   }
 
   const closeErrorModal = () => {
-    toggleErrorModal(false)
-    history.push('/check')
+    toggleErrorModal({ isShow: false, message: '', redirect: false })
+    if (errorModal.redirect) {
+      history.push('/check')
+    }
   }
 
   return (
