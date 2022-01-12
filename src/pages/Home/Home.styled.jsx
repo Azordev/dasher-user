@@ -32,6 +32,11 @@ export const HalfSection = styled.div`
     width: 100%;
     min-height: 100vh;
   }
+
+  &.images-section{
+    display: flex;
+    justify-content: center
+  }
 `
 export const Logo = styled.img`
   display: none;
@@ -39,8 +44,10 @@ export const Logo = styled.img`
 
   @media (min-width: 768px) {
     display: block;
-    margin-top: 8%;
-    margin-left: 8%;
+    position: absolute;
+    top:4%;
+    left:4%;
+    height: 32px;
   }
 `
 export const ManImage = styled.img`
@@ -51,7 +58,7 @@ export const ManImage = styled.img`
   object-fit: contain;
   position: absolute;
   transform: translateY(-80%);
-
+  max-height: 350px;
   position: relative;
   left: 50%;
   transform: translateY(-80%) translateX(-50%);
@@ -75,19 +82,10 @@ export const ManImage = styled.img`
     align-self: center;
     margin-top: 30%;
     height: 68vh;
+    margin: 0;
+
   }
 
-  @media (min-width: 960px) {
-    margin-top: 12%;
-  }
-
-  @media (min-width: 1024px) and (min-height: 850px) {
-    margin-top: 25%;
-  }
-
-  @media (min-width: 1024px) and (max-height: 950px) {
-    margin-top: 15%;
-  }
 `
 export const TextContainer = styled.div`
   transform: translateY(-80%);
@@ -102,7 +100,7 @@ export const TextContainer = styled.div`
     max-width: 70%;
   }
 
-  @media (min-height: 700px) and (min-width: 375px) and (max-width: 600px) {
+  @media (min-height: 700px) and (min-width: 375px) and (max-width: 767px) {
     margin-top: 30%;
   }
 `

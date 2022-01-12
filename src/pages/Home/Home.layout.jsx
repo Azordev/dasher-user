@@ -18,7 +18,7 @@ import { Button, Header, Logo, ManImage, DisplayText, SubtitleText, HalfSection,
  */
 const Home = ({ title, subtitle, buttonText }) => (
   <Header>
-    <HalfSection backgroundColor={Colors.yellow06}>
+    <HalfSection backgroundColor={Colors.yellow06} className="images-section">
       <Logo src={logo} alt="logo" />
       <ManImage src={deliveryMan} alt="Delivery man" />
     </HalfSection>
