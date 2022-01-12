@@ -14,10 +14,13 @@ const Confirm = () => {
   const history = useHistory()
   const [isFinalModalOpen, toggleFinalModal] = useState(false)
   const [isRatingModalOpen, toggleRatingModal] = useState(false)
-  const [isErrorModalOpen, toggleErrorModal] = useState(false)
+  const [errorModal, toggleErrorModal] = useState({ isShow: false, message: '', redirect: false })
   const [rating, setRating] = useState(0)
   const { insertClientRate } = InsertClientRate()
-  const { confirmPackage, packageInformation } = useConfirmPackage()
+  const { confirmPackage, packageInformation, loading } = useConfirmPackage()
+
+  const incompleteStatus = ['ready', 'collected', 'in_travel']
+  const completeStatus = ['rated', 'delivery_confirmed', 'delivery_rejected']
 
   if (!id) {
     redirectToCheck()
@@ -27,14 +30,17 @@ const Confirm = () => {
     if (packageInformation.length > 0) {
       const orderStatus = packageInformation[0].order_status
 
-      if (orderStatus === 'rated' || orderStatus === 'delivery_confirmed' || orderStatus === 'delivery_rejected') {
-        console.log(orderStatus)
-        toggleErrorModal(true)
-      } else {
-        toggleRatingModal(true)
+      if (incompleteStatus.includes(orderStatus)) {
+        return toggleRatingModal(true)
+      } else if (completeStatus.includes(orderStatus)) {
+        return toggleErrorModal({
+          isShow: true,
+          message: 'No puedes confirmar un paquete que ya ha sido confirmado o rechazado',
+          redirect: true,
+        })
       }
     }
-  }, [packageInformation])
+  }, [packageInformation, loading])
 
   /** @param {Event} event */
   const submitRating = event => {
@@ -49,7 +55,14 @@ const Confirm = () => {
   /** @param {React.FormEvent<HTMLFormElement>} event */
   const submitConfirmation = async event => {
     if (event.name && event.RUT && event.phone) {
-      confirmPackage(event, id)
+      await confirmPackage(event, id)
+      if (packageInformation.length === 0) {
+        toggleErrorModal({
+          isShow: true,
+          message: 'El RUT y el Id del paquete no coinciden, o el paquete no existe',
+          redirect: false,
+        })
+      }
     } else {
       alert('Por favor complete los campos')
     }
@@ -62,8 +75,10 @@ const Confirm = () => {
   }
 
   const closeErrorModal = () => {
-    toggleErrorModal(false)
-    history.push('/check')
+    toggleErrorModal({ isShow: false, message: '', redirect: false })
+    if (errorModal.redirect) {
+      history.push('/check')
+    }
   }
 
   return (
@@ -90,12 +105,12 @@ const Confirm = () => {
         </Modal>
       }
       ConfirmErrorModal={
-        <Modal isOpen={isErrorModalOpen} handleClick={closeErrorModal} actionText="Aceptar">
+        <Modal isOpen={errorModal.isShow} handleClick={closeErrorModal} actionText="Aceptar">
           <img src={warning} alt="Warning" />
           <Text as="h1" color="primary" small>
             Error
           </Text>
-          <Text color="danger">No puedes confirmar un paquete que ya ha sido confirmado o rechazado</Text>
+          <Text color="danger">{errorModal.message}</Text>
         </Modal>
       }
     >

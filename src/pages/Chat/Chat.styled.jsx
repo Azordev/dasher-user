@@ -133,8 +133,8 @@ export const MessageBox = styled.div`
 `
 
 export const Avatar = styled.img`
-  display: inline-block;
   float: ${({ type }) => (type === 'client' ? `left` : `right`)};
+  display: inline-block;
   width: 14vw;
   margin: auto 0;
 
