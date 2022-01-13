@@ -6,11 +6,14 @@ export const CheckText = styled(Text)`
 
   @media (min-width: 960px) {
     font-size: 6rem;
-    margin-top: 10rem;
+    margin-top: max(2.5rem, 13vh);
     margin-bottom: 1.2rem;
   }
+  @media (max-height: 480px) {
+    font-size: 5rem;
+    margin-bottom: 0.3rem;
+  }
 `
-
 export const CheckTextSubtitle = styled(Text)`
   margin: 0;
   font-weight: bold;
