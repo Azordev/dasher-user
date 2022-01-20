@@ -6,32 +6,23 @@ import { logError } from '../helpers'
 export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      error: '',
-      errorInfo: '',
-      hasError: false,
-    }
-  }
-
-  static getDerivedStateFromError(_error) {
-    if (_error) {
-      return { hasError: true }
-    }
+    this.state = { error: null, errorInfo: null }
   }
 
   componentDidCatch(error, errorInfo) {
-    this.setState({ errorInfo, error })
+    this.setState({
+      error: error,
+      errorInfo: errorInfo,
+    })
   }
 
   render() {
-    const { hasError, errorInfo, error } = this.state
+    const { errorInfo, error } = this.state
 
-    if (hasError) {
-      const errorId = logError({ error: error, codeLocation: 'codeLocation', type: 'crash' })
-      // @ts-ignore
+    if (errorInfo) {
+      const errorId = logError({ error, codeLocation: 'codeLocation', type: 'crash' })
       return <Error errorInfo={errorInfo} errorId={errorId} />
     }
-
     return this.props.children
   }
 }
