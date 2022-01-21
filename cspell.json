@@ -76,7 +76,18 @@
     "Destino",
     "alcanzado",
     "RUT",
-    "coinciden"
+    "coinciden",
+    "folderstructure",
+    "styledcomponents",
+    "issuenumber",
+    "Laguan",
+    "Peña",
+    "Azocar",
+    "Tarco",
+    "Ildebrando",
+    "Quinchoa",
+    "Osuna",
+    "jhernandez"
   ],
   "flagWords": ["hte"],
   "ignorePaths": [
