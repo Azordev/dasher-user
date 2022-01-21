@@ -1,5 +1,3 @@
-# dasher-user - Delivery Maps for your users
-
 <!-- PROJECT SHIELDS -->
 
 [![Forks][forks-shield]][forks-url]
@@ -17,36 +15,27 @@
 |                          [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                           |
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
-- [dasher-user - Delivery Maps for your users](#dasher-user---delivery-maps-for-your-users)
-  - [The Project](#the-project)
-    - [Features](#features)
 - [Dasher-user Docs](#dasher-user-docs)
-  - [Installation:](#installation)
-  - [**How to run the project:**](#how-to-run-the-project)
+  - [Features](#features)
+  - [How to run the project:](#how-to-run-the-project)
   - [Technologies:](#technologies)
-  - [**Front: **](#front-)
+  - [Front:](#front)
   - [File Structure:](#file-structure)
   - [The styled components:](#the-styled-components)
   - [GIT USE:](#git-use)
   - [FAQ:](#faq)
   - [Collaborators](#collaborators)
 
-## The Project
+# Dasher-user Docs
 
 Do you want to know how your shipment is going and how long it will arrive? You just have to enter this app where you can review the travel of your shipment in real time, see the confirmation of departure and the confirmation of receipt.
 
-### Features
+## Features
 
 ![javascript][]
 ![react][]
 
-# Dasher-user Docs
-
-
-## Installation:
-
-
-## **How to run the project:**
+## How to run the project:
 
 
 
@@ -91,7 +80,7 @@ After executing any of the above commands, a development server will start; gene
 The project has been developed using various technologies. Some of them are:
 
 
-## **Front: **
+## Front:
 
 For the front, React has been used, which is a powerful framework that allows us to interact dynamically with the DOM and encapsulate tons of functionalities through components. [React Docs](https://reactjs.org/docs/getting-started.html)
 
@@ -110,25 +99,29 @@ We like that our projects handle a clean code; that's why every time you commit 
 
 The magic of the project happens inside the src folder. It is there where you will find all the components, pages and styles.
 
-<div style="display:grid; grid-template-columns: auto auto; gap: 4px">
-    <img src="https://i.imgur.com/TCp5gb4.png" style="width: 100%" />
-    <div>
-        <b>assets</b>: In this folder we place all the graphic resources. If you need to add / use a new image, this is the site.<br/><br/>
-        <b>components</b>: The components are functionalities that we can reuse in many parts of our project. For example, if we need a button; we develop it only once and then we can call it as many times as we need it. We like to separate styles from logic and structure. That is why in this folder you will find styled components that are then used in the layout file.<br/><br/>
-        <b>pages</b>: Here we place the structure of each section of the project and it is where we mostly use the components<br/><br/>
-        <b>services</b>: GraphQL works with queries and mutations which are basically the way data is obtained and inserted respectively. The code for the manipulation of the data must go in this folder.<br/><br/>
-        <b>styles</b>: Here we get the global styles that we can use throughout the project.
-    </div>
-</div>
+<table border="0">
+    <td width="300px">
+        <img src="./docs/assets/folderstructure.png">
+    </td>
+    <td>
+        <b>assets:</b> In this folder we place all the graphic resources. If you need to add / use a new image, this is the site.<br/><br/>
+        <b>components:</b> The components are functionalities that we can reuse in many parts of our project. For example, if we need a button; we develop it only once and then we can call it as many times as we need it. We like to separate styles from logic and structure. That is why in this folder you will find styled components that are then used in the layout file.<br/><br/>
+        <b>pages:</b> Here we place the structure of each section of the project and it is where we mostly use the components<br/><br/>
+        <b>services:</b> GraphQL works with queries and mutations which are basically the way data is obtained and inserted respectively. The code for the manipulation of the data must go in this folder.<br/><br/>
+        <b>styles:</b> Here we get the global styles that we can use throughout the project.    
+    </td>
+</table>
 
 ## The styled components:
-
-<div style="display:grid; grid-template-columns: auto auto; gap: 4px">
-    <span>
+<table border="0">
+    <td style="vertical-align: top">
         React allows us to develop html elements from css styles that we can then use in layouts. It is a practical way to organize our components and avoid the use of pure html and inline styles in the views.
-    </span>
-    <img src="https://i.imgur.com/KvfJCaX.png" style="width: 100%" />
-</div>
+    </td>
+    <td width="50%">
+        <img src="./docs/assets/styledcomponents.png" align="right" />
+    </td>
+</table>
+
 
 ## GIT USE:
 
@@ -191,23 +184,23 @@ In the component folder, create a new file with the .jsx extension. Make sure to
 
 | [Israel Laguan][author-github] | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
 | :----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
-|        ![author-pic][]         |                                                             ![banner][]                                                             |
+|        ![author-pic][]         |                                                                                                                          |
 |  [Victor Peña][victor-github]  |  ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]    |
-|        ![victor-pic][]         |                                                             ![banner][]                                                             |
+|        ![victor-pic][]         |                                                                                                                          |
 |[Emanuel Azocar][emanuel-github]|                          ![email-icon][] Email me to [azocarmel@gmail.com][emanuel-email]                                       |
-|        ![emanuel-pic][]        |                                                             ![banner][]                                                             |
+|        ![emanuel-pic][]        |                                                                                                                          |
 | [Angelica Molina][ange-github] |                              ![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                     |
-|         ![ange-pic][]         |                                                             ![banner][]                                                             |
+|         ![ange-pic][]         |                                                                                                                          |
 |[Roman Rodriguez][roman-github] |                            ![email-icon][] Email me to [romanrodri192@gmail.com][roman-email]                                       |
-|         ![roman-pic][]          |                                                             ![banner][]                                                             |
+|         ![roman-pic][]          |                                                                                                                          |
 |    [Tony Tarco][tony-github]   |                              ![email-icon][] Email me to [tonytarco@hotmail.com][tony-email]                                        |
-|          ![tony-pic][]         |                                                             ![banner][]                                                             |
+|          ![tony-pic][]         |                                                                                                                          |
 |[Ildebrando Quinchoa][ild-github]|                           ![email-icon][] Email me to [ildebrandoefrain@gmail.com][ild-email]                                      |
-|          ![ild-pic][]          |                                                             ![banner][]                                                             |
+|          ![ild-pic][]          |                                                                                                                          |
 |[Denis Osuna][denis-github]|                           ![email-icon][] Email me to [denisosuna@gmail.com][denis-email]                                      |
-|          ![denis-pic][]          |                                                             ![banner][]
+|          ![denis-pic][]          |                                                             
 |[Jose Hernandez][jhernandez-github]|                           ![email-icon][] Email me to [josehernandez12@gmail.com][jhernandez-email]                                      |
-|          ![jhernandez-pic][]          |                                                             ![banner][]
+|          ![jhernandez-pic][]          |                                                             
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/Azordev/dasher-user?style=for-the-badge
@@ -231,7 +224,6 @@ In the component folder, create a new file with the .jsx extension. Make sure to
 [author-email]: mailto:contact@israellaguan.com
 [linkedin-icon]: https://img.icons8.com/color/20/000000/linkedin.png
 [email-icon]: https://img.icons8.com/color/20/000000/message-squared.png
-[banner]: https://github.com/Israel-Laguan/Israel-Laguan/raw/master/docs/banner.jpg
 [app-banner]: docs/app-banner.png
 [app-icon]: public/dasher.123.png
 [icons8]: https://icons8.com/
