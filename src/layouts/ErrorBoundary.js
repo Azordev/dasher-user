@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { logError } from '../helpers'
+// import { logError } from '../helpers'
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export default class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    logError({ error, codeLocation: 'codeLocation', type: 'crash' })
+    // logError({ error, codeLocation: 'codeLocation', type: 'crash' }) // the logError crash the app in production environment
     this.setState({
       error: error,
       errorInfo: errorInfo,
