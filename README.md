@@ -42,7 +42,7 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 1. Clone the repository
 
 ```
-git clone [https://github.com/Azordev/dasher-user.git](https://github.com/Azordev/dasher-user.git)
+git clone https://github.com/Azordev/dasher-user.git
 ```
 
 
@@ -59,7 +59,13 @@ cd dasher-user
 
 
 ```
-npm install or yarn install
+npm install
+```
+
+or
+
+```
+yarn install
 ```
 
 
@@ -68,9 +74,14 @@ npm install or yarn install
 
 
 ```
-npm start or yarn start
+npm start
 ```
 
+or
+
+```
+yarn start
+```
 
 After executing any of the above commands, a development server will start; generally on port 3000. You must go to your browser and enter http://localhost:3000 and you will have access to the project.
 
