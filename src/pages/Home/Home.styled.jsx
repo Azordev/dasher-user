@@ -9,7 +9,7 @@ export const Header = styled.div`
   width: 100%;
   height: 100%;
   max-width: 100vw;
-  max-height: 100vh;
+  max-height: 50vh;
 
   @media (min-width: 530px) and (min-height: 850px) {
     flex-wrap: wrap;
@@ -22,20 +22,20 @@ export const Header = styled.div`
 `
 export const HalfSection = styled.div`
   ${props => `background-color: ${props.backgroundColor};`}
-  ${props => `justify-content: ${props.justifyContent};`}
   ${props => `align-items: ${props.alignItems};`}
   ${props => `height: ${props.mobileHeight};`}
   display: flex;
   flex-direction: column;
 
   @media (min-width: 768px) {
+    ${props => `justify-content: ${props.justifyContent};`}
     width: 100%;
     min-height: 100vh;
   }
 
-  &.images-section{
+  &.images-section {
     display: flex;
-    justify-content: center
+    justify-content: center;
   }
 `
 export const Logo = styled.img`
@@ -45,63 +45,35 @@ export const Logo = styled.img`
   @media (min-width: 768px) {
     display: block;
     position: absolute;
-    top:4%;
-    left:4%;
+    top: 4%;
+    left: 4%;
     height: 32px;
   }
 `
 export const ManImage = styled.img`
   display: block;
   width: 70%;
-  margin-top: 20%;
-  margin-bottom: -40%;
-  object-fit: contain;
   position: absolute;
-  transform: translateY(-80%);
-  max-height: 350px;
-  position: relative;
+  top: 25%;
   left: 50%;
-  transform: translateY(-80%) translateX(-50%);
-  max-height: 410px;
-
-  @media (max-width: 320px) {
-    margin-top: 0;
-  }
-
-  @media (min-width: 600px) and (min-height: 850px) {
-    margin-top: 35%;
-  }
-
-  @media (min-height: 700px) and (min-width: 375px) and (max-width: 600px) {
-    margin-top: 25%;
-  }
+  transform: translateX(-50%);
+  object-fit: contain;
+  max-height: 60vh;
+  min-height: 40vh;
 
   @media (min-width: 768px) {
     transform: none;
     position: static;
     align-self: center;
-    margin-top: 30%;
     height: 68vh;
     margin: 0;
-
   }
-
 `
 export const TextContainer = styled.div`
-  transform: translateY(-80%);
   max-width: 100%;
 
-  @media (min-width: 600px) and (min-height: 850px) {
-    margin-top: 10rem;
-  }
-
   @media (min-width: 768px) {
-    transform: none;
     max-width: 70%;
-  }
-
-  @media (min-height: 700px) and (min-width: 375px) and (max-width: 767px) {
-    margin-top: 30%;
   }
 `
 
@@ -151,8 +123,6 @@ export const Button = styled(Link)`
   height: 100%;
   width: 70%;
   max-height: 40px;
-  align-items: center;
-  justify-content: center;
   display: block;
   margin: 0 auto;
   margin-top: 10px;
@@ -160,22 +130,8 @@ export const Button = styled(Link)`
   text-decoration: none;
   line-height: 40px;
   font-weight: bold;
-  position: relative;
-  transform: translate(0%, 1100%);
-
-  @media (max-width: 320px) {
-    transform: translate(0%, 900%);
-  }
-
-  @media (min-height: 700px) and (min-width: 375px) and (max-width: 600px) {
-    transform: translate(0%, 1200%);
-  }
-
-  @media (min-width: 600px) and (min-height: 850px) {
-    transform: translate(0%, 1600%);
-    margin-top: 25%;
-    width: 100%;
-  }
+  position: absolute;
+  top: calc(90% - 10px);
 
   @media (min-width: 768px) {
     display: ${props => props.webDisplay ?? 'block'};
@@ -189,9 +145,6 @@ export const Button = styled(Link)`
     border-radius: 2rem;
     letter-spacing: 2px;
     transform: none;
-  }
-
-  @media (min-width: 960px) {
-    padding: 1rem 0 3rem 0;
+    max-width: 55%;
   }
 `

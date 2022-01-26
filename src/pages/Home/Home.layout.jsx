@@ -29,8 +29,8 @@ const Home = ({ title, subtitle, buttonText }) => (
           {title}
         </DisplayText>
         <SubtitleText small>{subtitle}</SubtitleText>
-        <Button to="/check">{buttonText}</Button>
       </TextContainer>
+      <Button to="/check">{buttonText}</Button>
     </HalfSection>
   </Header>
 )
