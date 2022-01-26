@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useEffect, useState } from 'react'
 
 export function useClientLocation({ data, error, loading }) {
@@ -45,7 +44,6 @@ export function useClientLocation({ data, error, loading }) {
 }
 
 /** @param {data} */
-/* cspell:disable-next-line */
 export function useDasherliveLocation({ data }) {
   const [isLoading, setLoading] = useState(true)
   const [dasher, setDasher] = useState([0, 0])
@@ -56,8 +54,7 @@ export function useDasherliveLocation({ data }) {
     let geoWatch
 
     function watchLocation(myPosition) {
-      // eslint-disable-next-line no-undef
-      if (!isEqual(myPosition, dasher)) {
+      if (!myPosition === dasher) {
         setDasher(myPosition)
       }
     }
