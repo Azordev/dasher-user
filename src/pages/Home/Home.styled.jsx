@@ -66,7 +66,6 @@ export const ManImage = styled.img`
     position: static;
     align-self: center;
     height: 68vh;
-    margin: 0;
   }
 `
 export const TextContainer = styled.div`
