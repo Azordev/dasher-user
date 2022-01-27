@@ -3,8 +3,9 @@ import { bg, m, p, rounded, size, text } from '../../styles/mixins'
 
 export const ChatLayoutContainer = styled.div`
   ${[size({ width: '100vw', minHeight: '100vh' }), bg.white]}
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 100px calc(100vh - 200px) 100px;
+  overflow: hidden;
 `
 
 export const HeaderChat = styled.div`
@@ -13,6 +14,7 @@ export const HeaderChat = styled.div`
   flex-direction: row;
   position: fixed;
   width: 100%;
+  grid-row: 1/2;
 
   @media (min-width: 960px) {
     height: 12vh;
@@ -25,10 +27,14 @@ export const HeaderChat = styled.div`
 export const HeaderChatImgContainer = styled.div`
   width: 33.33vw;
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
 `
 export const HeaderChatImg = styled.img`
-  height: 90%;
   margin: auto 10px;
+  width: 4vw;
+  min-width: 40px;
+  max-width: 50px;
 
   @media (max-width: 960px) {
     margin: auto 0;
@@ -57,25 +63,17 @@ export const HeaderTitle = styled.div`
 `
 
 export const ChatBodyWrapper = styled.div`
+  grid-row: 2/3;
+  padding: 1rem 2rem;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  margin: 6rem auto;
-  margin-bottom: 7rem;
-
-  @media (min-width: 960px) {
-    margin: 10rem auto;
-  }
+  align-items: center;
 `
 
 export const FooterChat = styled.div`
-  align-self: flex-end;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  height: auto;
-  bottom: 0;
-  position: fixed;
+  grid-row: 3/-1;
 `
 
 export const FooterChatInput = styled.form`
@@ -102,7 +100,13 @@ export const FooterChatInput = styled.form`
 
 export const MessageRow = styled.div`
   margin: 10px 0;
-  display: block;
+  display: grid;
+  grid-template-columns: 40px calc(100% - 40px - 2rem);
+  width: 100%;
+
+  @media (min-width: 960px) {
+    width: 47vw;
+  }
 
   &::after {
     clear: both;
@@ -121,10 +125,8 @@ export const MessageBox = styled.div`
     bg.gray,
   ]}
   display: inline-block;
-
-  @media (max-width: 960px) {
-    width: 80vw;
-  }
+  width: 100%;
+  overflow-wrap: break-word;
 
   @media (min-width: 3180px) {
     line-height: 3.5vw;
@@ -133,9 +135,10 @@ export const MessageBox = styled.div`
 `
 
 export const Avatar = styled.img`
-  display: inline-block;
   float: ${({ type }) => (type === 'client' ? `left` : `right`)};
-  width: 14vw;
+  width: 4vw;
+  min-width: 40px;
+  max-width: 50px;
   margin: auto 0;
 
   @media (min-width: 960px) {

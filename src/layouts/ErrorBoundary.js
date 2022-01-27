@@ -1,37 +1,42 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import Error from '../pages/Error'
-import { logError } from '../helpers'
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      error: '',
-      errorInfo: '',
-      hasError: false,
-    }
-  }
-
-  static getDerivedStateFromError(_error) {
-    if (_error) {
-      return { hasError: true }
-    }
+    this.state = { error: null, errorInfo: null }
   }
 
   componentDidCatch(error, errorInfo) {
-    this.setState({ errorInfo, error })
+    this.setState({
+      error: error,
+      errorInfo: errorInfo,
+    })
   }
 
   render() {
-    const { hasError, errorInfo, error } = this.state
-
-    if (hasError) {
-      const errorId = logError({ error: error, codeLocation: 'codeLocation', type: 'crash' })
-      // @ts-ignore
-      return <Error errorInfo={errorInfo} errorId={errorId} />
+    if (this.state.errorInfo) {
+      return (
+        <div>
+          <p>
+            There was an error in loading this page.{' '}
+            <button
+              style={{ cursor: 'pointer', color: '#0077FF' }}
+              onClick={() => {
+                window.location.reload()
+              }}
+            >
+              Reload this page
+            </button>{' '}
+          </p>
+          <details style={{ whiteSpace: 'pre-wrap' }}>
+            {this.state.error && this.state.error.toString()}
+            <br />
+            {this.state.errorInfo.componentStack}
+          </details>
+        </div>
+      )
     }
-
     return this.props.children
   }
 }
