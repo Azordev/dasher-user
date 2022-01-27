@@ -36,7 +36,6 @@ const Delivery = () => {
     destination_confirmed: { headerTitle: 'Destino alcanzado', headerSubtitle: 'Hemos llegado' },
   }
 
-  // @ts-ignore
   if (isLoading || !packageInformation?.packages[0]?.package_code) {
     return <pre>Loading...</pre>
   }
@@ -46,7 +45,6 @@ const Delivery = () => {
       packageId={id}
       headerTitle={headerStatus[currentStatus]?.headerTitle}
       headerSubtitle={headerStatus[currentStatus]?.headerSubtitle}
-      // @ts-ignore
       clientAddress={packageInformation?.packages[0]?.client_address}
       estimatedArrival={packageInformation?.packages[0]?.estimated_arrival}
       isLoading={isLoading}
