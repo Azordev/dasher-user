@@ -58,13 +58,13 @@ export const ManImage = styled.img`
   left: 50%;
   transform: translateX(-50%);
   object-fit: contain;
-  max-height: 60vh;
-  min-height: 40vh;
+  height: 60vh;
 
   @media (min-width: 768px) {
     transform: none;
     position: static;
     align-self: center;
+    max-width: 500px;
     height: 68vh;
   }
 `
@@ -119,12 +119,10 @@ export const Button = styled(Link)`
   border-radius: 20px;
   border: none;
   color: var(--white);
-  height: 100%;
   width: 70%;
   max-height: 40px;
   display: block;
-  margin: 0 auto;
-  margin-top: 10px;
+  margin: 10px auto 0px;
   text-align: center;
   text-decoration: none;
   line-height: 40px;
@@ -135,8 +133,7 @@ export const Button = styled(Link)`
   @media (min-width: 768px) {
     display: ${props => props.webDisplay ?? 'block'};
     background: ${props => (props.webDisplay ? 'var(--primary);' : 'var(--secondary);')};
-    width: ${props => (props.webDisplay ? '70%;' : '100%;')};
-    height: 50%;
+    width: 65%;
     position: static;
     padding: 0.5rem 0 3rem 0;
     font-weight: bold;
@@ -144,6 +141,6 @@ export const Button = styled(Link)`
     border-radius: 2rem;
     letter-spacing: 2px;
     transform: none;
-    max-width: 55%;
+    max-width: 378px;
   }
 `
