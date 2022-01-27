@@ -23,7 +23,7 @@ const Home = ({ title, subtitle, buttonText }) => (
       <ManImage src={deliveryMan} alt="Delivery man" />
     </HalfSection>
 
-    <HalfSection mobileHeight="400px" backgroundColor={Colors.blue08} justifyContent="center" alignItems="center">
+    <HalfSection mobileHeight="50vh" backgroundColor={Colors.blue08} justifyContent="center" alignItems="center">
       <TextContainer>
         <DisplayText as="h1" color="secondary" large>
           {title}
