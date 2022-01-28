@@ -70,8 +70,10 @@ export const ManImage = styled.img`
 `
 export const TextContainer = styled.div`
   max-width: 100%;
+  margin-top: 3rem;
 
   @media (min-width: 768px) {
+    margin-top: 0px;
     max-width: 70%;
   }
 `
