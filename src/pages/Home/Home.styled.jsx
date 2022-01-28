@@ -91,11 +91,11 @@ export const DisplayText = styled(Text)`
   @media (min-width: 768px) {
     font-size: 5rem;
     text-align: left;
+    line-height: 1;
   }
 
   @media (min-width: 1025px) {
     font-size: 6.5rem;
-    line-height: 1;
   }
 `
 
