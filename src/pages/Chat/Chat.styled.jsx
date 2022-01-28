@@ -12,18 +12,13 @@ export const HeaderChat = styled.div`
   ${[rounded({ bl: '25px', br: '25px' }), p({ all: '1.5%' }), size({ height: '11vh' }), bg.primary]}
   display: flex;
   flex-direction: row;
+  align-items: center;
   position: fixed;
   width: 100%;
   grid-row: 1/2;
-
-  @media (min-width: 1025px) {
-    height: 12vh;
-  }
-
-  @media (min-width: 3180px) {
-    height: 14vh;
-  }
+  height: 80px;
 `
+
 export const HeaderChatImgContainer = styled.div`
   width: 33.33vw;
   text-align: right;
