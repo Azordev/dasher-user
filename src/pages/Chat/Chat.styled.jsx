@@ -37,10 +37,8 @@ export const HeaderChatImg = styled.img`
 `
 
 export const HeaderText = styled.div`
-  ${[m({ x: '0', y: 'auto' }), size({ width: '33.33%' }), text.base, text[700], text.secondary, text.textCenter]}
+  ${[size({ width: '33.33%' }), text.base, text[700], text.secondary, text.textCenter]}
   display: flex;
-  flex: 1;
-  flex-direction: column;
 
   @media (min-width: 1025px) {
     font-size: 2em;

@@ -4,30 +4,18 @@ export const BackBtnContainer = styled.div`
   display: flex;
   width: 33.33vw;
   max-height: 68px;
-
-  @media (max-width: 960px) {
-    padding-left: 15px;
-    margin-top: 1rem;
-  }
+  align-items: center;
+  margin-left: -10px;
 
   @media (min-width: 961px) {
-    margin-top: 0.5rem;
-    padding-left: 10px;
+    margin-left: -6px;
   }
 `
 export const BackBtn = styled.img`
   cursor: pointer;
-  position: relative;
-  left: -15px;
   margin: 0;
-  margin-bottom: 30px;
 
   @media (max-width: 960px) {
-    height: 100%;
-    padding-right: 15vw;
-  }
-
-  @media (min-width: 961px) {
     height: 100%;
   }
 `
@@ -39,12 +27,10 @@ export const BackTxt = styled.p`
   font-size: 1em;
   margin: auto 0;
   max-width: 10rem;
-
-  @media (max-width: 960px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 961px) {
+    display: block;
     font-size: 1.5em;
   }
 
