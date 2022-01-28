@@ -91,7 +91,7 @@ export const DisplayText = styled(Text)`
     margin: 2rem 0 30px 30px;
   }
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     font-size: 6.5rem;
     text-align: left;
     margin: 10px 0 30px -5px;
@@ -102,7 +102,7 @@ export const SubtitleText = styled(Text)`
   margin-top: 3px;
   font-size: 1rem;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     margin: 15px 0;
     font-size: 2rem;
     line-height: 30px;

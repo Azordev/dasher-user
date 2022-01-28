@@ -27,7 +27,7 @@ export const FormButton = styled.button`
     box-shadow: 2px 5px 6px rgb(0 0 0 / 0.3);
   }
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     width: 350px;
   }
 `
