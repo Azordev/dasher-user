@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useEffect, useState } from 'react'
 
 export function useClientLocation({ data, error, loading }) {
@@ -42,56 +41,4 @@ export function useClientLocation({ data, error, loading }) {
     }
   }, [data])
   return { isLoading, hasError, center, dasher, currentStatus, permission }
-}
-
-/** @param {data} */
-/* cspell:disable-next-line */
-export function useDasherliveLocation({ data }) {
-  const [isLoading, setLoading] = useState(true)
-  const [dasher, setDasher] = useState([0, 0])
-
-  useEffect(() => {
-    setLoading(true)
-
-    let geoWatch
-
-    function watchLocation(myPosition) {
-      // eslint-disable-next-line no-undef
-      if (!isEqual(myPosition, dasher)) {
-        setDasher(myPosition)
-      }
-    }
-
-    function startWatch() {
-      if (!geoWatch) {
-        if ('geolocation' in navigator && 'watchPosition' in navigator.geolocation) {
-          geoWatch = navigator.geolocation.watchPosition(
-            position => watchLocation([Number(position.coords.latitude), Number(position.coords.longitude)]),
-            e => console.error(e),
-            {
-              enableHighAccuracy: false,
-              timeout: 15000,
-              maximumAge: 0,
-            },
-          )
-        }
-      }
-    }
-    function stopWatch() {
-      navigator.geolocation.clearWatch(geoWatch)
-      geoWatch = undefined
-    }
-
-    if (
-      data.packages[0]?.order_status === 'in_travel' ||
-      data.packages[0]?.order_status === 'ready' ||
-      data.packages[0]?.order_status === 'collected'
-    ) {
-      startWatch()
-    } else {
-      stopWatch()
-    }
-  }, [data, dasher])
-
-  return { isLoading, dasher }
 }

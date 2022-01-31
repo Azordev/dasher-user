@@ -37,26 +37,19 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 
 ## How to run the project:
 
-
-
 1. Clone the repository
 
 ```
 git clone https://github.com/Azordev/dasher-user.git
 ```
 
-
 2. Go to the project folder
-
 
 ```
 cd dasher-user
 ```
 
-
-
 3. Install dependencies
-
 
 ```
 npm install
@@ -68,10 +61,7 @@ or
 yarn install
 ```
 
-
-
 4. Run
-
 
 ```
 npm start
@@ -83,13 +73,11 @@ or
 yarn start
 ```
 
-After executing any of the above commands, a development server will start; generally on port 3000. You must go to your browser and enter http://localhost:3000 and you will have access to the project.
-
+After executing any of the above commands, a development server will start; generally on port 3000. You must go to your browser and enter [localhost:3000](localhost:3000) and you will have access to the project.
 
 ## Technologies:
 
 The project has been developed using various technologies. Some of them are:
-
 
 ## Front:
 
@@ -99,12 +87,9 @@ For the front, React has been used, which is a powerful framework that allows us
 
 GraphQL is a language that allows us to manipulate the data to generate efficient and fast APIs. [GraphQL Docs](https://graphql.org/learn/)
 
-**EsLint:** 
-
-	
+**EsLint:**
 
 We like that our projects handle a clean code; that's why every time you commit & push, EsLint will analyze your input to make sure it complies with best practices.
-
 
 ## File Structure:
 
@@ -124,6 +109,7 @@ The magic of the project happens inside the src folder. It is there where you wi
 </table>
 
 ## The styled components:
+
 <table border="0">
     <td style="vertical-align: top">
         React allows us to develop html elements from css styles that we can then use in layouts. It is a practical way to organize our components and avoid the use of pure html and inline styles in the views.
@@ -132,7 +118,6 @@ The magic of the project happens inside the src folder. It is there where you wi
         <img src="./docs/assets/styledcomponents.png" align="right" />
     </td>
 </table>
-
 
 ## GIT USE:
 
@@ -148,27 +133,21 @@ git branch <name of branch>
 
 For convenience, the branches should have a defined structure. For example, if the issue is about adding a new feature, the branch should be:
 
-
 ```
 feature/#issuenumber-brief-description-of-the-feature
 ```
 
-
 Suppose we have issue #12 that asks us to add a header to the main page. Then, the branch would be as follows:
-
 
 ```
 feature/#12-add-header-to-main-page
 ```
 
-
 If it is about solving a bug, we just have to put the word "fix" in front of it. For example:
-
 
 ```
 fix/#14-remove-bad-media-queries-in-rating-component
 ```
-
 
 **Commits:**
 
@@ -184,7 +163,6 @@ The PR’s are requests that as developers we make once the solution of an issue
 
 Once we have done a commit & push in our branch, a notification with a yellow background will appear in the github repository and will ask us to continue with the PR. In the TextArea to perform the PR you will find several sections that you want to complete: A brief description of what you did, a snapshot (if applicable), the tasks that were completed and the steps to view them.
 
-
 ## FAQ:
 
 **How do I create a new component?**
@@ -193,25 +171,26 @@ In the component folder, create a new file with the .jsx extension. Make sure to
 
 ## Collaborators
 
-| [Israel Laguan][author-github] | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
-| :----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
-|        ![author-pic][]         |                                                                                                                          |
-|  [Victor Peña][victor-github]  |  ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]    |
-|        ![victor-pic][]         |                                                                                                                          |
-|[Emanuel Azocar][emanuel-github]|                          ![email-icon][] Email me to [azocarmel@gmail.com][emanuel-email]                                       |
-|        ![emanuel-pic][]        |                                                                                                                          |
-| [Angelica Molina][ange-github] |                              ![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                     |
-|         ![ange-pic][]         |                                                                                                                          |
-|[Roman Rodriguez][roman-github] |                            ![email-icon][] Email me to [romanrodri192@gmail.com][roman-email]                                       |
-|         ![roman-pic][]          |                                                                                                                          |
-|    [Tony Tarco][tony-github]   |                              ![email-icon][] Email me to [tonytarco@hotmail.com][tony-email]                                        |
-|          ![tony-pic][]         |                                                                                                                          |
-|[Ildebrando Quinchoa][ild-github]|                           ![email-icon][] Email me to [ildebrandoefrain@gmail.com][ild-email]                                      |
-|          ![ild-pic][]          |                                                                                                                          |
-|[Denis Osuna][denis-github]|                           ![email-icon][] Email me to [denisosuna@gmail.com][denis-email]                                      |
-|          ![denis-pic][]          |                                                             
-|[Jose Hernandez][jhernandez-github]|                           ![email-icon][] Email me to [josehernandez12@gmail.com][jhernandez-email]                                      |
-|          ![jhernandez-pic][]          |                                                             
+|   [Israel Laguan][author-github]    | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
+| :---------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|           ![author-pic][]           |                                                                                                                                     |
+|    [Victor Peña][victor-github]     | ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]  |
+|           ![victor-pic][]           |                                                                                                                                     |
+|  [Emanuel Azocar][emanuel-github]   |                                  ![email-icon][] Email me to [azocarmel@gmail.com][emanuel-email]                                   |
+|          ![emanuel-pic][]           |                                                                                                                                     |
+|   [Angelica Molina][ange-github]    |                                 ![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                  |
+|            ![ange-pic][]            |                                                                                                                                     |
+|   [Roman Rodriguez][roman-github]   |                                 ![email-icon][] Email me to [romanrodri192@gmail.com][roman-email]                                  |
+|           ![roman-pic][]            |                                                                                                                                     |
+|      [Tony Tarco][tony-github]      |                                   ![email-icon][] Email me to [tonytarco@hotmail.com][tony-email]                                   |
+|            ![tony-pic][]            |                                                                                                                                     |
+|  [Ildebrando Quinchoa][ild-github]  |                                 ![email-icon][] Email me to [ildebrandoefrain@gmail.com][ild-email]                                 |
+|            ![ild-pic][]             |                                                                                                                                     |
+|     [Denis Osuna][denis-github]     |                                   ![email-icon][] Email me to [denisosuna@gmail.com][denis-email]                                   |
+|           ![denis-pic][]            |
+| [Jose Hernandez][jhernandez-github] |                              ![email-icon][] Email me to [josehernandez12@gmail.com][jhernandez-email]                              |
+|         ![jhernandez-pic][]         |
+
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/Azordev/dasher-user?style=for-the-badge
@@ -240,36 +219,28 @@ In the component folder, create a new file with the .jsx extension. Make sure to
 [icons8]: https://icons8.com/
 [icons8-logo]: https://img.icons8.com/fluent/20/000000/icons8-new-logo.png
 [api-logo]: https://spoonacular.com/images/spoonacular-logo-b.svg
-
 [victor-github]: https://github.com/Katsu08
 [victor-pic]: https://avatars.githubusercontent.com/u/66505715?v=4
 [victor-email]: mailto:victordev2002@gmail.com
 [victor-linkedin]: https://www.linkedin.com/in/v%C3%ADctor-pe%C3%B1a-348a3918a/
-
 [emanuel-github]: https://github.com/e-azocar
 [emanuel-pic]: https://avatars.githubusercontent.com/u/61360270?v=4
 [emanuel-email]: mailto:azocarmel@gmail.com
-
 [roman-github]: https://github.com/romanrguez192
 [roman-pic]: https://avatars.githubusercontent.com/u/69876913?s=200&v=4
 [roman-email]: mailto:romanrodri192@gmail.com
-
 [tony-github]: https://github.com/Tonytarco
 [tony-pic]: https://avatars.githubusercontent.com/u/37258801?s=200&v=4
 [tony-email]: mailto:tonytarco@hotmail.com
-
 [ange-github]: https://github.com/angelik0828
 [ange-pic]: https://avatars.githubusercontent.com/u/4030477?s=200&v=4
 [ange-email]: mailto:angeli.molina1@gmail.com
-
 [ild-github]: https://github.com/ildebr
 [ild-pic]: https://avatars.githubusercontent.com/u/73916430?v=4
 [ild-email]: mailto:ildebrandoefrain@gmail.com
-
 [denis-github]: https://github.com/denisosuna
 [denis-pic]: https://avatars.githubusercontent.com/u/21060798?v=4
 [denis-email]: denisosuna@gmail.com
-
 [jhernandez-github]: https://github.com/elpollo12
 [jhernandez-pic]: https://avatars.githubusercontent.com/u/7535800?v=4
-[jhernandez-email]: josehernandez12@gmail.com 
+[jhernandez-email]: josehernandez12@gmail.com
