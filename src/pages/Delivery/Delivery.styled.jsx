@@ -58,7 +58,7 @@ const ChatBtn = styled.img`
   cursor: pointer;
   margin: auto 0;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     width: auto;
     height: 7vh;
   }
@@ -128,7 +128,7 @@ const FooterMapAddress = styled.div`
     font-size: 0.7em;
   }
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     font-size: 1em;
   }
 
@@ -146,7 +146,7 @@ const MapContainer = styled.div`
     min-height: 100vh;
   }
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     margin: 0 auto;
   }
 `

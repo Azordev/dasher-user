@@ -15,7 +15,7 @@ const Wrapper = styled.main`
   margin: 30px auto;
   justify-content: center;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     width: 70vw;
   }
 

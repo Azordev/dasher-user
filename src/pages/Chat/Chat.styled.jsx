@@ -16,7 +16,7 @@ export const HeaderChat = styled.div`
   width: 100%;
   grid-row: 1/2;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     height: 12vh;
   }
 
@@ -47,7 +47,7 @@ export const HeaderText = styled.div`
   flex: 1;
   flex-direction: column;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     font-size: 2em;
   }
 
@@ -104,7 +104,7 @@ export const MessageRow = styled.div`
   grid-template-columns: 40px calc(100% - 40px - 2rem);
   width: 100%;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     width: 47vw;
   }
 
@@ -141,7 +141,7 @@ export const Avatar = styled.img`
   max-width: 50px;
   margin: auto 0;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     width: 4vw;
   }
 `

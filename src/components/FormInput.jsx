@@ -26,7 +26,7 @@ export const FormInput = styled.input`
     outline: none;
   }
 
-  @media (min-width: 960px) {
+  @media (min-width: 1025px) {
     width: 350px;
     height: 60px;
 
