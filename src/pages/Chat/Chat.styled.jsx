@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { bg, m, p, rounded, size, text } from '../../styles/mixins'
+import { bg, p, rounded, size, text } from '../../styles/mixins'
 
 export const ChatLayoutContainer = styled.div`
   ${[size({ width: '100vw', minHeight: '100vh' }), bg.white]}
@@ -105,11 +105,12 @@ export const FooterChatInput = styled.form`
 export const MessageRow = styled.div`
   margin: 10px 0;
   display: grid;
-  grid-template-columns: 40px calc(100% - 40px - 2rem);
+  grid-template-columns: 50px calc(100% - 50px - 2rem);
   width: 100%;
 
   @media (min-width: 1025px) {
     width: 47vw;
+    gap: 11px;
   }
 
   &::after {
@@ -141,13 +142,7 @@ export const MessageBox = styled.div`
 `
 
 export const Avatar = styled.img`
-  float: ${({ type }) => (type === 'client' ? `left` : `right`)};
   width: 4vw;
   min-width: 40px;
   max-width: 50px;
-  margin: auto 0;
-
-  @media (min-width: 1025px) {
-    width: 4vw;
-  }
 `
