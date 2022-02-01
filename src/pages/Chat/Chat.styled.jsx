@@ -57,11 +57,15 @@ export const HeaderTitle = styled.div`
 
 export const ChatBodyWrapper = styled.div`
   grid-row: 2/3;
-  padding: 1rem 2rem;
+  padding: 1rem 0.8rem;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 1025px) {
+    padding: 1rem 2rem;
+  }
 `
 
 export const FooterChat = styled.div`
@@ -120,20 +124,17 @@ export const MessageRow = styled.div`
 `
 
 export const MessageBox = styled.div`
-  ${[
-    m({ x: '1vw', y: '0' }),
-    p({ all: '10px' }),
-    rounded({ all: '15px' }),
-    size({ width: '40vw' }),
-    text.base,
-    text.gray09,
-    bg.gray,
-  ]}
+  ${[p({ all: '10px' }), rounded({ all: '15px' }), size({ width: '40vw' }), text.base, text.gray09, bg.gray]}
   display: inline-block;
   width: max-content;
   min-width: 80px;
   max-width: 100%;
   overflow-wrap: break-word;
+  font-size: 0.9rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 
   @media (min-width: 3180px) {
     line-height: 3.5vw;
