@@ -70,8 +70,10 @@ export const ManImage = styled.img`
 `
 export const TextContainer = styled.div`
   max-width: 100%;
+  margin-top: 3rem;
 
   @media (min-width: 768px) {
+    margin-top: 0px;
     max-width: 70%;
   }
 `
@@ -83,35 +85,32 @@ export const Text = styled(OriginalText)`
 export const DisplayText = styled(Text)`
   font-size: 3rem;
   text-align: left;
-  margin: 3rem 0 5px -5px;
+  margin: 0px;
+  text-align: left;
 
   @media (min-width: 768px) {
     font-size: 5rem;
     text-align: left;
-    margin: 2rem 0 30px 30px;
+    line-height: 1;
   }
 
   @media (min-width: 1025px) {
     font-size: 6.5rem;
-    text-align: left;
-    margin: 10px 0 30px -5px;
   }
 `
 
 export const SubtitleText = styled(Text)`
   margin-top: 3px;
   font-size: 1rem;
+  text-align: left;
 
   @media (min-width: 1025px) {
-    margin: 15px 0;
     font-size: 2rem;
-    line-height: 30px;
+    line-height: 1;
   }
 
   @media (min-width: 768px) {
-    margin: 15px 0;
     font-size: 1.5rem;
-    line-height: 30px;
   }
 `
 export const Button = styled(Link)`
