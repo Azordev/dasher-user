@@ -52,7 +52,7 @@ const Delivery = () => {
       toChat={toChat}
       DeliveryConfirmedModal={
         <Modal
-          isOpen={true}
+          isOpen={currentStatus === 'destination_reached' && openDeliveryConfirmedModal}
           handleClick={() => {
             toggleDeliveryConfirmedModal(!openDeliveryConfirmedModal)
             toConfirm()
