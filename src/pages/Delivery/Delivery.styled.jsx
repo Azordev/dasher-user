@@ -9,6 +9,7 @@ const MapLayoutContainer = styled.div`
 
 const HeaderMap = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: row;
   background: var(--primary);
   border-bottom-right-radius: 25px;
