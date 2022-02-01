@@ -130,6 +130,8 @@ export const MessageBox = styled.div`
   ]}
   display: inline-block;
   width: max-content;
+  min-width: 80px;
+  max-width: 100%;
   overflow-wrap: break-word;
 
   @media (min-width: 3180px) {
