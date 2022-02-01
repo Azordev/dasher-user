@@ -42,6 +42,7 @@ export const InfoContainer = styled.div`
   h1 {
     font-size: 20px;
     color: blue;
+    margin-bottom: 0;
   }
 
   p {
@@ -49,6 +50,11 @@ export const InfoContainer = styled.div`
     color: gray;
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  h4{
+    margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   ul {
