@@ -67,15 +67,26 @@ export const ChatBodyWrapper = styled.div`
 export const FooterChat = styled.div`
   width: 100%;
   grid-row: 3/-1;
+  display: flex;
+  align-items: center;
 `
 
 export const FooterChatInput = styled.form`
   ${[p({ x: '0', y: '5%' }), text.textCenter, bg.white]}
   flex: ${props => props.cols};
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--secondary);
   padding: 0.5rem;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+
+    @media (min-width: 1025px) {
+      width: 47vw;
+    }
+  }
 
   button {
     margin: 1rem;
@@ -118,7 +129,7 @@ export const MessageBox = styled.div`
     bg.gray,
   ]}
   display: inline-block;
-  width: 100%;
+  width: max-content;
   overflow-wrap: break-word;
 
   @media (min-width: 3180px) {

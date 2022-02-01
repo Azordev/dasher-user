@@ -63,16 +63,18 @@ const Chat = () => {
           cols={'0 0 100%'}
           onSubmit={handleSubmit}
         >
-          <Input
-            // @ts-ignore
-            bgColor="gray"
-            placeholder="Escribe aqui..."
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-          />
-          <button type="submit">
-            <img src={sendChat} alt="send Chat" />
-          </button>
+          <div>
+            <Input
+              // @ts-ignore
+              bgColor="gray"
+              placeholder="Escribe aqui..."
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+            />
+            <button type="submit">
+              <img src={sendChat} alt="send Chat" />
+            </button>
+          </div>
         </FooterChatInput>
       }
     >
