@@ -41,7 +41,7 @@ Before to start you need have installed the following programs:
 
 1. [Node.js](https://nodejs.org/) > v14.0.0
 
-   Node.js es un entorno de ejecución para Javascript que nos permite usar el lenguaje fuera del navegador, en este caso lo usamos para configurar y ejecutar el servidor de desarrollo.
+   Node.js is a runtime environment for Javascript that allows us to use the language outside of the browser, in this case we use it to configure and run the development server.
 
 2. [npm](https://www.npmjs.com/) > v6.0.0
 
