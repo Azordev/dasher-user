@@ -35,6 +35,22 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 ![javascript][]
 ![react][]
 
+## Pre requirements
+
+Before to start you need have installed the following programs:
+
+1. [Node.js](https://nodejs.org/) > v14.0.0
+
+   Node.js es un entorno de ejecución para Javascript que nos permite usar el lenguaje fuera del navegador, en este caso lo usamos para configurar y ejecutar el servidor de desarrollo.
+
+2. [npm](https://www.npmjs.com/) > v6.0.0
+
+   npm is a package manager for Node.js and comes installed with it, we use it to install and manage application dependencies.
+
+3. [Git](https://git-scm.com/) > v2.0.0
+
+   Git is a version control system for code, we use it to manage the different branches of the code.
+
 ## How to run the project:
 
 1. Clone the repository
@@ -176,8 +192,8 @@ In the component folder, create a new file with the .jsx extension. Make sure to
 |           ![author-pic][]           |                                                                                                                                     |
 |    [Victor Peña][victor-github]     | ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]  |
 |           ![victor-pic][]           |                                                                                                                                     |
-|  [Emanuel Azocar][emanuel-github]   |                                  ![email-icon][] Email me to [azocarmel@gmail.com][emanuel-email]                                   |
-|          ![emanuel-pic][]           |                                                                                                                                     |
+| [Emmanuel Azócar][emmanuel-github]  |                                  ![email-icon][] Email me to [azocarmel@gmail.com][emmanuel-email]                                  |
+|          ![emmanuel-pic][]          |                                                                                                                                     |
 |   [Angelica Molina][ange-github]    |                                 ![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                  |
 |            ![ange-pic][]            |                                                                                                                                     |
 |   [Roman Rodriguez][roman-github]   |                                 ![email-icon][] Email me to [romanrodri192@gmail.com][roman-email]                                  |
@@ -190,6 +206,33 @@ In the component folder, create a new file with the .jsx extension. Make sure to
 |           ![denis-pic][]            |
 | [Jose Hernandez][jhernandez-github] |                              ![email-icon][] Email me to [josehernandez12@gmail.com][jhernandez-email]                              |
 |         ![jhernandez-pic][]         |
+
+## Contributing
+
+[![contributions welcome][contributions-welcome]][issues-url]
+
+🤝 Contributions, issues and feature requests are welcome!
+Feel free to check the [issues page][issues-url].
+
+## Show your support
+
+🤗 Give a ⭐️ if you like this project!
+
+- API: Powered by [Google Maps](https://developers.google.com/maps/documentation/javascript/overview)
+
+- <https://blog.logrocket.com/deep-dive-into-lefthook-react-native/>
+- <https://blog.logrocket.com/build-robust-react-app-husky-pre-commit-hooks-github-actions/>
+- Favicon from [favicon.io](https://favicon.io/emoji-favicons/)
+- Production deployment using [Netlify](https://app.netlify.com/sites/azordev-dasher-user/overview)
+- <https://www.seoptimer.com/meta-tag-generator>
+- <https://dev.to/nitzano/linting-docker-containers-2lo6?utm_source=lefthook>
+
+## License
+
+[![License][badge-apache]][apache-license]
+
+📝 This project is licensed under the [Apache 2](LICENSE)\
+Feel free to fork this project and improve it!
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
@@ -223,9 +266,9 @@ In the component folder, create a new file with the .jsx extension. Make sure to
 [victor-pic]: https://avatars.githubusercontent.com/u/66505715?v=4
 [victor-email]: mailto:victordev2002@gmail.com
 [victor-linkedin]: https://www.linkedin.com/in/v%C3%ADctor-pe%C3%B1a-348a3918a/
-[emanuel-github]: https://github.com/e-azocar
-[emanuel-pic]: https://avatars.githubusercontent.com/u/61360270?v=4
-[emanuel-email]: mailto:azocarmel@gmail.com
+[emmanuel-github]: https://github.com/e-azocar
+[emmanuel-pic]: https://avatars.githubusercontent.com/u/61360270?v=4
+[emmanuel-email]: mailto:azocarmel@gmail.com
 [roman-github]: https://github.com/romanrguez192
 [roman-pic]: https://avatars.githubusercontent.com/u/69876913?s=200&v=4
 [roman-email]: mailto:romanrodri192@gmail.com
