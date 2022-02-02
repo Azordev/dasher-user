@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { bg, m, p, rounded, size, text } from '../../styles/mixins'
+import { bg, p, rounded, size, text } from '../../styles/mixins'
 
 export const ChatLayoutContainer = styled.div`
   ${[size({ width: '100vw', minHeight: '100vh' }), bg.white]}
   display: grid;
-  grid-template-rows: 100px calc(100vh - 200px) 100px;
+  grid-template-rows: 80px calc(100vh - 185px) 105px;
   overflow: hidden;
 `
 
@@ -57,25 +57,40 @@ export const HeaderTitle = styled.div`
 
 export const ChatBodyWrapper = styled.div`
   grid-row: 2/3;
-  padding: 1rem 2rem;
+  padding: 1rem 0.8rem;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 1025px) {
+    padding: 1rem 2rem;
+  }
 `
 
 export const FooterChat = styled.div`
   width: 100%;
   grid-row: 3/-1;
+  display: flex;
+  align-items: center;
 `
 
 export const FooterChatInput = styled.form`
   ${[p({ x: '0', y: '5%' }), text.textCenter, bg.white]}
   flex: ${props => props.cols};
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--secondary);
   padding: 0.5rem;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+
+    @media (min-width: 1025px) {
+      width: 47vw;
+    }
+  }
 
   button {
     margin: 1rem;
@@ -94,11 +109,12 @@ export const FooterChatInput = styled.form`
 export const MessageRow = styled.div`
   margin: 10px 0;
   display: grid;
-  grid-template-columns: 40px calc(100% - 40px - 2rem);
+  grid-template-columns: 50px calc(100% - 50px - 2rem);
   width: 100%;
 
   @media (min-width: 1025px) {
     width: 47vw;
+    gap: 11px;
   }
 
   &::after {
@@ -108,18 +124,17 @@ export const MessageRow = styled.div`
 `
 
 export const MessageBox = styled.div`
-  ${[
-    m({ x: '1vw', y: '0' }),
-    p({ all: '10px' }),
-    rounded({ all: '15px' }),
-    size({ width: '40vw' }),
-    text.base,
-    text.gray09,
-    bg.gray,
-  ]}
+  ${[p({ all: '10px' }), rounded({ all: '15px' }), size({ width: '40vw' }), text.base, text.gray09, bg.gray]}
   display: inline-block;
-  width: 100%;
+  width: max-content;
+  min-width: 80px;
+  max-width: 100%;
   overflow-wrap: break-word;
+  font-size: 0.9rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 
   @media (min-width: 3180px) {
     line-height: 3.5vw;
@@ -128,13 +143,7 @@ export const MessageBox = styled.div`
 `
 
 export const Avatar = styled.img`
-  float: ${({ type }) => (type === 'client' ? `left` : `right`)};
   width: 4vw;
   min-width: 40px;
   max-width: 50px;
-  margin: auto 0;
-
-  @media (min-width: 1025px) {
-    width: 4vw;
-  }
 `
