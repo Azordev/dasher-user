@@ -2,6 +2,32 @@
   "name": "dasher-user",
   "version": "0.1.4",
   "private": true,
+  "description": "Do you want to know how your shipment is going and how long it will arrive? You just have to enter this app where you can review the travel of your shipment in real time, see the confirmation of departure and the confirmation of receipt.",
+  "keywords": ["react", "tracking", "styled-components", "delivery", "pwa-app", "map", "real-time", "map", "chat", "graphql", "subscriptions"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Azordev/dasher-user/"
+  },
+  "homepage": "https://github.com/Azordev/dasher-user#readme",
+  "bugs": {
+    "url" : "https://github.com/Azordev/dasher-user/issues"
+  },
+  "license" : "Apache-2.0",
+  "author": {
+    "name": "Israel Laguan",
+    "email": "israellaguan@gmail.com",
+    "url": "https://github.com/Israel-Laguan"
+  },
+  "contributors": [
+    {"name":"Victor Peña","email":"victordev2002@gmail.com","url":"https://github.com/Katsu08"},
+    {"name":"Emmanuel Azócar","email":"azocarmel@gmail.com","url":"https://github.com/e-azocar"},
+    {"name":"Roman Rodriguez","email":"romanrodri192@gmail.com","url":"https://github.com/romanrguez192"},
+    {"name":"Tony Tarco","email":"tonytarco@hotmail.com","url":"https://github.com/Tonytarco"},
+    {"name":"Angelica Molina","email":"angeli.molina1@gmail.com","url":"https://github.com/angelik0828"},
+    {"name":"Ildebrando Quinchoa", "email":"ildebrandoefrain@gmail.com","url":"https://github.com/ildebr"},
+    {"name":"Denis Osuna","email":"denisosuna@gmail.com","url":"https://github.com/denisosuna"},
+    {"name":"Jose Hernandez","email":"josehernandez12@gmail.com","url":"https://github.com/elpollo12"}
+  ],
   "dependencies": {
     "@apollo/client": "~3.4.15",
     "google-map-react": "~2.1.10",
