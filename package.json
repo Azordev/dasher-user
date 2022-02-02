@@ -29,7 +29,7 @@
     {"name":"Jose Hernandez","email":"josehernandez12@gmail.com","url":"https://github.com/elpollo12"}
   ],
   "dependencies": {
-    "@apollo/client": "~3.4.15",
+    "@apollo/client": "~3.5.8",
     "google-map-react": "~2.1.10",
     "graphql": "~15.7.2",
     "graphql-tag": "~2.12.6",
