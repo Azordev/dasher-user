@@ -37,7 +37,7 @@ Do you want to know how your shipment is going and how long it will arrive? You 
 
 ## Pre requirements
 
-Before to start you need have installed the following programs:
+Before to start you need have some requirements:
 
 1. [Node.js](https://nodejs.org/) > v14.0.0
 
@@ -50,6 +50,10 @@ Before to start you need have installed the following programs:
 3. [Git](https://git-scm.com/) > v2.0.0
 
    Git is a version control system for code, we use it to manage the different branches of the code.
+
+4. Connection to internet
+
+5. [Visual Studio Code](https://code.visualstudio.com/) or another code editor (optional)
 
 ## How to run the project:
 
