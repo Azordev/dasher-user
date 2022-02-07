@@ -229,7 +229,6 @@ Feel free to check the [issues page][issues-url].
 - Favicon from [favicon.io](https://favicon.io/emoji-favicons/)
 - Production deployment using [Netlify](https://app.netlify.com/sites/azordev-dasher-user/overview)
 - <https://www.seoptimer.com/meta-tag-generator>
-- <https://dev.to/nitzano/linting-docker-containers-2lo6?utm_source=lefthook>
 
 ## License
 
