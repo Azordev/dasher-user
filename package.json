@@ -39,7 +39,7 @@
     "styled-components": "~5.3.3",
     "styled-normalize": "~8.0.7",
     "subscriptions-transport-ws": "~0.9.19",
-    "web-vitals": "~2.1.2",
+    "web-vitals": "~2.1.4",
     "workbox-background-sync": "6.3.0",
     "workbox-broadcast-update": "6.3.0",
     "workbox-cacheable-response": "6.3.0",
