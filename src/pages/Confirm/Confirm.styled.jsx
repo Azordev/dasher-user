@@ -10,6 +10,8 @@ export const RatingImg = styled.img`
 export const ConfirmText = styled(Text)`
   margin: 0px;
   line-height: 1.5;
+  text-align: center;
+  font-size: 18px !important;
 
   &:nth-child(2) {
     margin: 0px 0px 15px;
