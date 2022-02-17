@@ -5,7 +5,7 @@ import handshake from '../../assets/handshake.png'
 import RatingMan from '../../assets/man-rate.png'
 import { InsertClientRate, useConfirmPackage } from '../../hooks'
 import Layout from './Confirm.layout'
-import { RatingImg } from './Confirm.styled'
+import { RatingImg, ConfirmText } from './Confirm.styled'
 import warning from '../../assets/warning.png'
 
 const Confirm = () => {
@@ -87,11 +87,15 @@ const Confirm = () => {
       headerSubTitle="Inserta tus datos para finalizar"
       RatingModal={
         <Modal isOpen={isRatingModalOpen} handleClick={e => submitRating(e)} actionText="Aceptar">
+          <ConfirmText small bold color="primary">
+            La propina esta en tus manos
+          </ConfirmText>
+          <ConfirmText margin="0px 0px 15px" bold color="gray">
+            Si deseas, puedes compartirla.
+          </ConfirmText>
           <Text as="h1" color="primary">
             ¿Qué tal tu experiencia?
           </Text>
-          <Text small>La propina esta en tus manos</Text>
-          <Text>Si deseas, puedes compartirla.</Text>
           <RatingImg src={RatingMan} alt="Delivery man" />
           <Rating setRating={setRating} />
         </Modal>

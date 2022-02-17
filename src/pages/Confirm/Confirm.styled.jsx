@@ -1,9 +1,21 @@
 import styled from 'styled-components'
+import { Text } from '../../components'
 
 export const RatingImg = styled.img`
   max-width: 100px;
   height: auto;
-  margin: auto;
+  margin: 1rem auto;
+`
+
+export const ConfirmText = styled(Text)`
+  margin: 0px;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 18px !important;
+
+  &:nth-child(2) {
+    margin: 0px 0px 15px;
+  }
 `
 
 export const CheckImg = styled.img`

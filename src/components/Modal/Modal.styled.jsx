@@ -47,12 +47,11 @@ export const InfoContainer = styled.div`
 
   p {
     font-size: 16px;
-    color: gray;
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  h4{
+  h4 {
     margin-top: 0;
     margin-bottom: 2rem;
   }
