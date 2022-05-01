@@ -50,7 +50,7 @@ jobs:
           issueSummaryType: full
           issueSummaryOnlyOnEvent: true
           configFile: .eslintrc.js
-      - uses: streetsidesoftware/cspell-action@v1.6.0
+      - uses: streetsidesoftware/cspell-action@v1.6.1
         config: '.'
 
       - name: test
